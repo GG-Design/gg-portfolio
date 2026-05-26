@@ -1,10 +1,12 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 const cards = [
   {
     id: 1,
+    slug: "/work/times-higher-education",
     tagline: "Design System · 40% faster delivery",
     category: "SaaS · EdTech",
     title: "Times Higher Education",
@@ -16,6 +18,7 @@ const cards = [
   },
   {
     id: 2,
+    slug: null,
     tagline: "iOS & Android · End-to-end redesign",
     category: "Fintech · Mobile",
     title: "GlintPay",
@@ -27,6 +30,7 @@ const cards = [
   },
   {
     id: 3,
+    slug: null,
     tagline: "Activation flow · Onboarding",
     category: "Fintech · Banking",
     title: "NatWest CurrencyPay",
@@ -46,6 +50,7 @@ interface CardProps {
 }
 
 function Card({ card, index, total, progress }: CardProps) {
+  const navigate = useNavigate();
   const scale = useTransform(
     progress,
     [index / total, (index + 1) / total],
@@ -58,6 +63,7 @@ function Card({ card, index, total, progress }: CardProps) {
       style={{ top: `${72 + index * 20}px` }}
     >
       <motion.div
+        onClick={card.slug ? () => navigate(card.slug!) : undefined}
         style={{
           scale,
           backgroundColor: card.bg,
@@ -66,8 +72,12 @@ function Card({ card, index, total, progress }: CardProps) {
           minHeight: "380px",
           display: "flex",
           flexDirection: "column",
+          cursor: card.slug ? "pointer" : "default",
         }}
-        className="w-full max-w-5xl mx-auto rounded-3xl"
+        className={[
+          "w-full max-w-5xl mx-auto rounded-3xl transition-shadow duration-200",
+          card.slug ? "hover:shadow-[0_-4px_32px_rgba(0,0,0,0.5),0_28px_72px_rgba(0,0,0,0.4)]" : "",
+        ].join(" ")}
       >
         {/* Tagline bar — always visible at top */}
         <div
