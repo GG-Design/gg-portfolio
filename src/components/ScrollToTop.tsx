@@ -8,11 +8,17 @@ export default function ScrollToTop() {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual'
     }
-    const timer = setTimeout(() => {
-      document.documentElement.scrollTop = 0
-      document.body.scrollTop = 0
-    }, 50)
-    return () => clearTimeout(timer)
+
+    // Stop Lenis if it exists
+    const lenis = (window as any).__lenis
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true })
+    }
+
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
+    window.scrollTo(0, 0)
+
   }, [pathname])
 
   return null

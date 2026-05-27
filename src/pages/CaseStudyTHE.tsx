@@ -273,7 +273,7 @@ export default function CaseStudyTHE() {
               </div>
               <div className="bg-zinc-100 rounded-2xl overflow-hidden p-8 flex items-center justify-center">
                 <img
-                  src="/images/maze%202.png"
+                  src="/images/maze2.png"
                   alt="Stakeholder workshop outputs"
                   className="w-auto h-auto max-w-full block"
                 />
@@ -337,7 +337,7 @@ export default function CaseStudyTHE() {
               <div className="bg-zinc-100 rounded-2xl p-16 overflow-hidden
                               flex items-center justify-center">
                 <img
-                  src="/images/desktop%20nav.png"
+                  src="/images/desktop_nav.png"
                   alt="Redesigned profile — desktop, full scroll"
                   className="w-auto h-auto max-w-full mx-auto block"
                 />

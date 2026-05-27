@@ -6,7 +6,8 @@ export function useLenis() {
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    })
+    });
+    (window as any).__lenis = lenis
 
     function raf(time: number) {
       lenis.raf(time)
