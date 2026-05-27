@@ -219,7 +219,6 @@ export default function CaseStudyTHE() {
         <FadeUp>
           <Card
             className="shadow-none border-stone-200 border-t-2 border-t-cyan-400 overflow-hidden rounded-2xl"
-            className="bg-white"
           >
             <CardContent className="p-0 flex">
               {[
@@ -493,7 +492,6 @@ export default function CaseStudyTHE() {
                   "Get engineers in the room before estimates — not after the brief",
                 ].map((item, i) => (
                   <Card key={i} className="shadow-none border-stone-200 rounded-2xl"
-                    className="bg-white"
                   >
                     <CardContent className="px-5 py-4 flex gap-3 items-start">
                       <ArrowRight className="w-3.5 h-3.5 text-cyan-500 shrink-0 mt-0.5" />
