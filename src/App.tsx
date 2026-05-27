@@ -9,6 +9,7 @@ import { Contact }      from "@/components/sections/Contact"
 import { Footer }       from "@/components/Footer"
 import { useLenis }     from "@/hooks/useLenis"
 import CaseStudyTHE     from "@/pages/CaseStudyTHE"
+import ScrollToTop      from "@/components/ScrollToTop"
 
 function HomePage() {
   useLenis()
@@ -31,6 +32,7 @@ function HomePage() {
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/work/times-higher-education" element={<CaseStudyTHE />} />
