@@ -1,56 +1,109 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Card }   from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Tagline } from "@/components/ui/tagline";
+
+// ─── Data ─────────────────────────────────────────────────────────────────────
 
 const cards = [
   {
     id: 1,
     slug: "/work/times-higher-education",
-    tagline: "Design System · 40% faster delivery",
-    category: "SaaS · EdTech",
-    title: "Times Higher Education",
-    description: "Built THE's first design system, reducing delivery time 40% across 100+ global universities.",
-    bg: "#e8e4dc",
-    textColor: "#1a1a1a",
-    mutedColor: "#6b6b6b",
-    imageBg: "rgba(0,0,0,0.12)",
+    imagePath: "/images/profiles.png",
+    badge:     "B2C · EdTech",
+    title:     "Times Higher Education",
+    subline:   "University Profiles — first design system, validated with 700+ students",
   },
   {
     id: 2,
-    slug: null,
-    tagline: "iOS & Android · End-to-end redesign",
-    category: "Fintech · Mobile",
-    title: "GlintPay",
-    description: "End-to-end iOS & Android redesign improving clarity, engagement and customer retention.",
-    bg: "#1a1a2e",
-    textColor: "#f8fafc",
-    mutedColor: "rgba(255,255,255,0.45)",
-    imageBg: "rgba(255,255,255,0.05)",
-  },
-  {
-    id: 3,
-    slug: null,
-    tagline: "Activation flow · Onboarding",
-    category: "Fintech · Banking",
-    title: "NatWest CurrencyPay",
-    description: "Activation and compliance flow redesign improving onboarding conversion rates.",
-    bg: "#0d3d56",
-    textColor: "#e0f7fa",
-    mutedColor: "rgba(224,247,250,0.5)",
-    imageBg: "rgba(255,255,255,0.06)",
+    slug: null as string | null,
+    imagePath: "/images/glint.png",
+    badge:     "Fintech · Mobile",
+    title:     "GlintPay",
+    subline:   "End-to-end iOS & Android redesign",
   },
 ];
 
-interface CardProps {
-  card: typeof cards[0];
-  index: number;
-  total: number;
-  progress: any;
+type CardData = typeof cards[0];
+
+// ─── Card ─────────────────────────────────────────────────────────────────────
+
+/** Centered Figma-matched card */
+function ImageCard({ card }: { card: CardData }) {
+  const navigate = useNavigate();
+
+  return (
+    <Card
+      onClick={card.slug ? () => navigate(card.slug!) : undefined}
+      className="group overflow-hidden rounded-3xl border-0
+                 shadow-[0_24px_80px_rgba(0,0,0,0.24)]
+                 bg-white cursor-pointer"
+    >
+      {/* ── Content area — centred column ───────────────── */}
+      <div className="py-16 px-8 max-w-[800px] mx-auto w-full
+                      flex flex-col items-center gap-6">
+
+        {/* Tagline pill */}
+        <Tagline>{card.badge}</Tagline>
+
+        {/* Title */}
+        <h2
+          className="text-zinc-900 font-semibold text-center"
+          style={{ fontSize: "60px", lineHeight: "60px", letterSpacing: "-1.5px" }}
+        >
+          {card.title}
+        </h2>
+
+        {/* Description */}
+        <p className="text-lg text-zinc-500 leading-8 text-center max-w-[600px] mx-auto">
+          {card.subline}
+        </p>
+
+        {/* CTA */}
+        <Button
+          className="bg-zinc-900 text-white rounded-full px-5 h-9 text-sm
+                     font-medium hover:bg-zinc-700 gap-1.5"
+        >
+          Case study
+          <ArrowRight size={14} />
+        </Button>
+      </div>
+
+      {/* Cyan image stage — 24px margin from card edge, padded inside */}
+      <div
+        className="mx-6 mb-6 bg-[#06B6D4] rounded-2xl p-6 overflow-hidden
+                   transition-colors duration-500 group-hover:bg-[#0284C7]"
+        style={{ maxHeight: "280px" }}
+      >
+        <motion.div
+          whileHover={{ y: -40 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+        >
+          <img
+            src={card.imagePath!}
+            alt={card.title}
+            className="w-full object-contain block"
+            style={{ maxHeight: "420px" }}
+          />
+        </motion.div>
+      </div>
+    </Card>
+  );
 }
 
-function Card({ card, index, total, progress }: CardProps) {
-  const navigate = useNavigate();
+// ─── Scroll-stack wrapper ─────────────────────────────────────────────────────
+
+interface PortfolioCardProps {
+  card: CardData;
+  index: number;
+  total: number;
+  progress: ReturnType<typeof useScroll>["scrollYProgress"];
+}
+
+function PortfolioCard({ card, index, total, progress }: PortfolioCardProps) {
   const scale = useTransform(
     progress,
     [index / total, (index + 1) / total],
@@ -59,64 +112,20 @@ function Card({ card, index, total, progress }: CardProps) {
 
   return (
     <div
-      className="sticky w-full px-4 md:px-8"
+      className="sticky w-full"
       style={{ top: `${72 + index * 20}px` }}
     >
       <motion.div
-        onClick={card.slug ? () => navigate(card.slug!) : undefined}
-        style={{
-          scale,
-          backgroundColor: card.bg,
-          transformOrigin: "top center",
-          boxShadow: "0 -4px 32px rgba(0,0,0,0.4), 0 24px 64px rgba(0,0,0,0.3)",
-          minHeight: "380px",
-          display: "flex",
-          flexDirection: "column",
-          cursor: card.slug ? "pointer" : "default",
-        }}
-        className={[
-          "w-full max-w-5xl mx-auto rounded-3xl transition-shadow duration-200",
-          card.slug ? "hover:shadow-[0_-4px_32px_rgba(0,0,0,0.5),0_28px_72px_rgba(0,0,0,0.4)]" : "",
-        ].join(" ")}
+        style={{ scale, transformOrigin: "top center" }}
+        className={`max-w-5xl mx-auto px-6${index > 0 ? " -mt-8" : ""}`}
       >
-        {/* Tagline bar — always visible at top */}
-        <div
-          className="flex justify-between items-center px-8 py-5 text-xs font-mono tracking-widest uppercase"
-          style={{ color: card.mutedColor }}
-        >
-          <span>{card.tagline}</span>
-          <span>{card.category}</span>
-        </div>
-        <hr style={{ borderColor: card.mutedColor, opacity: 0.3, margin: 0 }} />
-
-        {/* Card body */}
-        <div className="px-10 pt-8 pb-10 flex flex-col flex-1">
-          <div className="flex justify-between items-start mb-6">
-            <div>
-              <h3
-                className="text-4xl md:text-5xl font-bold leading-tight"
-                style={{ color: card.textColor }}
-              >
-                {card.title}
-              </h3>
-              <p
-                className="mt-3 text-sm max-w-lg leading-relaxed"
-                style={{ color: card.mutedColor }}
-              >
-                {card.description}
-              </p>
-            </div>
-            <ArrowUpRight
-              className="shrink-0 ml-4 mt-1"
-              size={28}
-              style={{ color: card.mutedColor }}
-            />
-          </div>
-        </div>
+        <ImageCard card={card} />
       </motion.div>
     </div>
   );
 }
+
+// ─── Section ──────────────────────────────────────────────────────────────────
 
 export default function CaseStudies() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -127,18 +136,17 @@ export default function CaseStudies() {
 
   return (
     <section id="work" className="bg-[#09090b] pt-24 pb-24">
-      <p className="text-xs tracking-widest text-zinc-500 uppercase mb-16 max-w-5xl mx-auto px-4 md:px-8">
+      <p className="text-xs tracking-widest text-zinc-500 uppercase mb-16 max-w-5xl mx-auto px-6">
         Featured Work
       </p>
 
-      {/* Each card gets 100vh of scroll room so you see one at a time */}
       <div
         ref={containerRef}
         style={{ height: `${cards.length * 100}vh` }}
         className="relative"
       >
         {cards.map((card, index) => (
-          <Card
+          <PortfolioCard
             key={card.id}
             card={card}
             index={index}
@@ -148,7 +156,7 @@ export default function CaseStudies() {
         ))}
       </div>
 
-      <div className="max-w-5xl mx-auto mt-16 text-center">
+      <div className="max-w-5xl mx-auto px-6 mt-16 text-center">
         <a href="#" className="text-sm text-zinc-400 hover:text-white transition-colors duration-200">
           View all work →
         </a>

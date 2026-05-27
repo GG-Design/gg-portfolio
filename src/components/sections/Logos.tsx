@@ -3,7 +3,7 @@ const logos = [
   { src: "/logos/natwest.svg", alt: "NatWest" },
   { src: "/logos/tide.svg", alt: "Tide" },
   { src: "/logos/hsbc.svg", alt: "HSBC" },
-  { src: "/logos/hive.svg", alt: "Hive" },
+  { src: "/logos/hive.svg", alt: "HiveHome" },
   { src: "/logos/the.svg", alt: "Times Higher Education" },
   { src: "/logos/ovo.svg", alt: "OVO Energy" },
 ]

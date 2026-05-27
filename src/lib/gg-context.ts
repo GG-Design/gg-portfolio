@@ -9,7 +9,7 @@ At GlintPay (fintech startup, like Revolut but with Gold as currency) he redesig
 
 At NatWest CurrencyPay he worked on the onboarding and KYC flow for an international money transfer app.
 
-Other experience includes Tide, Hive, OVO Energy, HSBC, Kabbee, Dennis Publishing, MailOnline.
+Other experience includes Tide, HiveHome, OVO Energy, HSBC, Kabbee, Dennis Publishing, MailOnline.
 
 GG is looking for remote contract or permanent roles in Europe, particularly where he can explore AI-assisted design. He's based in London, potentially relocating to Italy. Contact: pierluigi.baroncelli@gmail.com
 `;
