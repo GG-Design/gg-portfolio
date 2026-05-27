@@ -59,25 +59,18 @@ function StatCard({ value, label }: { value: string; label: string }) {
   )
 }
 
-/** Placeholder image */
-function ImageBlock({
-  label,
-  ratio = "16/9",
-  className = "",
-}: {
-  label: string
-  ratio?: string
-  className?: string
-}) {
+
+/** Real image on cyan background — matches the home-page card pattern */
+function CyanImageBlock({ src, alt }: { src: string; alt: string }) {
   return (
-    <Card
-      className={`w-full shadow-none border-dashed border-stone-300 overflow-hidden ${className}`}
-      style={{ aspectRatio: ratio, backgroundColor: "#F0EDE8" }}
-    >
-      <CardContent className="h-full flex items-center justify-center p-0 min-h-[120px]">
-        <span className="text-stone-400 font-mono text-xs tracking-wide select-none">{label}</span>
-      </CardContent>
-    </Card>
+    <div className="bg-[#06B6D4] rounded-2xl py-16 px-20 overflow-hidden
+                    flex items-center justify-center">
+      <img
+        src={src}
+        alt={alt}
+        className="w-auto h-auto max-w-full block rounded-lg"
+      />
+    </div>
   )
 }
 
@@ -196,7 +189,10 @@ export default function CaseStudyTHE() {
 
       {/* Hero image */}
       <FadeUp className="max-w-5xl mx-auto px-6 pb-20">
-        <ImageBlock label="University Profile — redesigned overview" ratio="16/7" />
+        <CyanImageBlock
+          src="/images/profile_header.png"
+          alt="University Profile — redesigned overview"
+        />
       </FadeUp>
 
       <PageDivider />
@@ -219,7 +215,14 @@ export default function CaseStudyTHE() {
               </p>
             </FadeUp>
             <FadeUp>
-              <ImageBlock label="Before — fragmented profile templates side by side" ratio="16/9" />
+              <div className="bg-stone-100 rounded-2xl py-16 px-20 overflow-hidden
+                              flex items-center justify-center">
+                <img
+                  src="/images/old_profile_header.png"
+                  alt="Before — fragmented profile templates side by side"
+                  className="w-auto h-auto max-w-full block rounded-lg"
+                />
+              </div>
             </FadeUp>
           </div>
         </SectionGrid>
@@ -261,8 +264,20 @@ export default function CaseStudyTHE() {
             </FadeUp>
 
             <FadeUp className="grid grid-cols-2 gap-4">
-              <ImageBlock label="Research synthesis — Hotjar + Maze" ratio="4/3" />
-              <ImageBlock label="Stakeholder workshop outputs"        ratio="4/3" />
+              <div className="bg-zinc-100 rounded-2xl overflow-hidden p-8 flex items-center justify-center">
+                <img
+                  src="/images/maze.png"
+                  alt="Research synthesis — Hotjar + Maze"
+                  className="w-auto h-auto max-w-full block"
+                />
+              </div>
+              <div className="bg-zinc-100 rounded-2xl overflow-hidden p-8 flex items-center justify-center">
+                <img
+                  src="/images/maze%202.png"
+                  alt="Stakeholder workshop outputs"
+                  className="w-auto h-auto max-w-full block"
+                />
+              </div>
             </FadeUp>
 
             {/* Key insights */}
@@ -317,8 +332,16 @@ export default function CaseStudyTHE() {
               </p>
             </FadeUp>
 
+            {/* Redesigned profile — desktop, full scroll */}
             <FadeUp>
-              <ImageBlock label="Redesigned profile — desktop, full scroll" ratio="16/9" />
+              <div className="bg-zinc-100 rounded-2xl p-16 overflow-hidden
+                              flex items-center justify-center">
+                <img
+                  src="/images/desktop%20nav.png"
+                  alt="Redesigned profile — desktop, full scroll"
+                  className="w-auto h-auto max-w-full mx-auto block"
+                />
+              </div>
             </FadeUp>
 
             {/* Key components list */}
@@ -351,8 +374,22 @@ export default function CaseStudyTHE() {
             </FadeUp>
 
             <FadeUp className="grid grid-cols-2 gap-4">
-              <ImageBlock label="Mobile — overview tab, essentials above fold" ratio="9/16" />
-              <ImageBlock label="Mobile — rankings tab with methodology link"   ratio="9/16" />
+              <div className="bg-zinc-100 rounded-2xl overflow-hidden p-8
+                              flex items-center justify-center">
+                <img
+                  src="/images/mobileabovefold.png"
+                  alt="Mobile — overview tab, essentials above fold"
+                  className="w-auto h-auto max-w-full mx-auto block"
+                />
+              </div>
+              <div className="bg-zinc-100 rounded-2xl overflow-hidden p-8
+                              flex items-center justify-center">
+                <img
+                  src="/images/mobilerankings.png"
+                  alt="Mobile — rankings tab with methodology link"
+                  className="w-auto h-auto max-w-full mx-auto block"
+                />
+              </div>
             </FadeUp>
           </div>
         </SectionGrid>
