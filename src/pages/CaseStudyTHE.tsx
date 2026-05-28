@@ -502,9 +502,9 @@ export default function CaseStudyTHE() {
             <Button variant="ghost" size="sm" asChild
               className="text-zinc-500 hover:text-zinc-900 hover:bg-stone-900/5"
             >
-              <Link to="/">
-                <ArrowLeft className="w-3.5 h-3.5" />
-                Back to all work
+              <Link to="/work/glintpay">
+                Next case study
+                <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </Button>
           </FadeUp>
