@@ -81,34 +81,6 @@ function PageDivider() {
   )
 }
 
-// ─── Image placeholder (dashed border, zinc-100) ─────────────────────────────
-
-function PlaceholderBlock({ label, ratio = "16/9" }: { label: string; ratio?: string }) {
-  return (
-    <div
-      className="w-full rounded-2xl border-2 border-dashed border-zinc-200 bg-zinc-100
-                 overflow-hidden flex items-center justify-center"
-      style={{ aspectRatio: ratio, minHeight: "160px" }}
-    >
-      <span className="text-zinc-400 font-mono text-xs tracking-wide select-none">{label}</span>
-    </div>
-  )
-}
-
-// ─── Cyan placeholder (final design showcase) ─────────────────────────────────
-
-function CyanPlaceholderBlock({ label }: { label: string }) {
-  return (
-    <div
-      className="w-full bg-[#06B6D4] rounded-2xl py-16 px-20 overflow-hidden
-                 flex items-center justify-center"
-      style={{ minHeight: "240px" }}
-    >
-      <span className="text-cyan-900/50 font-mono text-xs tracking-wide select-none">{label}</span>
-    </div>
-  )
-}
-
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function CaseStudyGlintPay() {
