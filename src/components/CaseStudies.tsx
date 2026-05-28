@@ -19,7 +19,7 @@ const cards = [
   },
   {
     id: 2,
-    slug: null as string | null,
+    slug: "/work/glintpay" as string | null,
     imagePath: "/images/glint.png",
     badge:     "Fintech · Mobile",
     title:     "GlintPay",

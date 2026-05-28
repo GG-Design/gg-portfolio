@@ -9,6 +9,7 @@ import { Contact }      from "@/components/sections/Contact"
 import { Footer }       from "@/components/Footer"
 import { useLenis }     from "@/hooks/useLenis"
 import CaseStudyTHE     from "@/pages/CaseStudyTHE"
+import CaseStudyGlintPay from "@/pages/CaseStudyGlintPay"
 import ScrollToTop      from "@/components/ScrollToTop"
 
 function HomePage() {
@@ -36,6 +37,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/work/times-higher-education" element={<CaseStudyTHE />} />
+        <Route path="/work/glintpay" element={<CaseStudyGlintPay />} />
       </Routes>
     </BrowserRouter>
   )
