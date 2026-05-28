@@ -49,21 +49,17 @@ export function Hero() {
             <h1 className="text-4xl md:text-[4.25rem] font-bold leading-[1.05] tracking-tight text-zinc-50">
               Lead Product Designer
             </h1>
-            <h1 className="text-4xl md:text-[4.25rem] font-bold leading-[1.05] tracking-tight">
-              <span className="text-cyan-400">15+ years</span>
-              <span className="text-zinc-50"> of impact.</span>
+            <h1 className="text-4xl md:text-[4.25rem] font-bold leading-[1.05] tracking-tight text-cyan-400">
+              Design to deployed,<br />with AI.
             </h1>
           </motion.div>
 
           {/* Subtitle */}
-          <motion.p
-            variants={up}
-            className="text-xl text-zinc-300 font-light max-w-xl leading-relaxed"
-          >
-            I'm Pierluigi ("GG") — a lead product designer with 15+ years across
-            fintech, education and technology, helping organisations scale design
-            and deliver measurable impact.
-          </motion.p>
+          <motion.div variants={up} className="flex flex-col items-center gap-2 max-w-xl">
+            <p className="text-xl text-zinc-300 font-light leading-relaxed text-center">
+              15+ years leading design across fintech, edtech and SaaS. I now use AI to go further — from strategy and systems to working prototypes and live products.
+            </p>
+          </motion.div>
 
           {/* AI input bar */}
           <motion.div variants={up} className="w-full max-w-xl">
