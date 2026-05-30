@@ -5,8 +5,8 @@ interface TaglineProps {
   /** ArrowUpRight at the end.
    *  Defaults to true when no lucideIcon; defaults to false when lucideIcon is set. */
   icon?: boolean
-  /** Green dot before the label (ignored when lucideIcon is set). */
-  dot?: "green"
+  /** Coloured dot before the label (ignored when lucideIcon is set). */
+  dot?: "green" | "orange"
   /** Lucide icon before the label — takes precedence over dot. */
   lucideIcon?: LucideIcon
   /** Text content — alternative to children for self-closing usage. */
@@ -41,8 +41,9 @@ export function Tagline({
   const label     = text ?? children
   // Arrow visible by default; suppressed by default when a lucideIcon is provided
   const showArrow = Icon ? icon === true : icon !== false
-  // Dot only when no lucideIcon, and either arrow-mode is active or dot="green" is explicit
-  const showDot   = !Icon && (showArrow || dot === "green")
+  // Dot shown when no lucideIcon, and either arrow-mode is active or dot is explicitly set
+  const showDot   = !Icon && (showArrow || !!dot)
+  const dotColor  = dot === "orange" ? "bg-orange-400" : "bg-green-400"
 
   return (
     <div
@@ -52,8 +53,8 @@ export function Tagline({
         className
       )}
     >
-      {Icon      && <Icon size={12} className="text-zinc-500 shrink-0" />}
-      {showDot   && <span className="w-1.5 h-1.5 bg-green-500 rounded-full shrink-0" />}
+      {Icon    && <Icon size={12} className="text-zinc-500 shrink-0" />}
+      {showDot && <span className={cn("w-2 h-2 rounded-full shrink-0", dotColor)} />}
       <span className="text-sm font-medium text-zinc-900 whitespace-nowrap">{label}</span>
       {showArrow && <ArrowUpRight size={14} className="text-zinc-400 shrink-0" />}
     </div>
