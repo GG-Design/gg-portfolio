@@ -119,7 +119,7 @@ export function Contact() {
                 <Label htmlFor="subject" className="text-zinc-300">What's this about?</Label>
                 <Select
                   value={form.subject}
-                  onValueChange={(val) => setForm(prev => ({ ...prev, subject: val }))}
+                  onValueChange={(val: string) => setForm(prev => ({ ...prev, subject: val }))}
                 >
                   <SelectTrigger
                     id="subject"
