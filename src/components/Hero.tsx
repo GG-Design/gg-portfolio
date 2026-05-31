@@ -73,12 +73,12 @@ export function Hero() {
                 value={question}
                 onChange={(e) => setQuestion(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
-                placeholder="Ask me anything about my work..."
+                placeholder="Ask GG anything..."
                 className="flex-1 text-sm text-zinc-300 placeholder:text-zinc-500 bg-transparent outline-none"
               />
               <button
                 onClick={handleSubmit}
-                className="hidden sm:inline-flex text-xs text-zinc-400 bg-zinc-800 hover:bg-zinc-700 px-3 py-1 rounded-full flex-shrink-0 transition-colors"
+                className="hidden sm:inline-flex text-xs text-zinc-400 bg-zinc-800 px-3 py-1 rounded-full flex-shrink-0"
               >
                 Ask GG
               </button>

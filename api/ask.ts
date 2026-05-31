@@ -113,6 +113,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(500).json({ error: 'Server configuration error.' })
   }
 
+  // TODO: remove after confirming key is read correctly
+  console.log('Key present:', !!process.env.ANTHROPIC_API_KEY)
+  console.log('Key length:', process.env.ANTHROPIC_API_KEY?.length)
+  console.log('Key prefix:', process.env.ANTHROPIC_API_KEY?.slice(0, 15))
+
   const upstream = await fetch('https://api.anthropic.com/v1/messages', {
     method:  'POST',
     headers: {
