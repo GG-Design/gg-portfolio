@@ -3,7 +3,7 @@ const logos = [
   { src: "/logos/natwest.svg", alt: "NatWest" },
   { src: "/logos/tide.svg", alt: "Tide" },
   { src: "/logos/hsbc.svg", alt: "HSBC" },
-  { src: "/logos/hive.svg", alt: "HiveHome" },
+  { src: "/logos/hive.svg", alt: "Hive" },
   { src: "/logos/the.svg", alt: "Times Higher Education" },
   { src: "/logos/ovo.svg", alt: "OVO Energy" },
 ]
@@ -33,7 +33,7 @@ export function Logos() {
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className="h-8 w-auto grayscale brightness-0 invert opacity-40 hover:opacity-80 transition-opacity duration-300 mx-10"
+                className="h-8 max-w-[80px] w-auto object-contain grayscale brightness-0 invert opacity-40 hover:opacity-80 transition-opacity duration-300 mx-10"
               />
               <span className="w-px h-4 bg-zinc-700 flex-shrink-0" />
             </span>

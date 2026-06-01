@@ -1,3 +1,5 @@
+import { Download } from "lucide-react"
+
 export function About() {
   return (
     <section id="about" className="min-h-screen flex items-center px-6 py-32">
@@ -7,7 +9,7 @@ export function About() {
 
           <div className="max-w-2xl space-y-8">
             <p className="text-2xl md:text-3xl font-light text-zinc-50 leading-snug">
-              I'm Pierluigi — GG. A lead product designer with 15+ years shaping digital products across fintech, edtech and SaaS.
+              I'm Pierluigi — GG. A lead product designer with 15+ years shaping digital products across fintech and edtech.
             </p>
 
             <p className="text-lg text-zinc-400 font-light leading-relaxed">
@@ -21,6 +23,15 @@ export function About() {
             <p className="text-sm text-zinc-500">
               Based in London. Available for senior roles and select freelance projects.
             </p>
+
+            <a
+              href="/cv.pdf"
+              download
+              className="inline-flex items-center gap-2 text-sm font-medium text-zinc-400 hover:text-zinc-50 border border-zinc-700 hover:border-zinc-500 rounded-full px-5 py-2.5 transition-colors w-fit"
+            >
+              <Download className="w-4 h-4" />
+              Download CV
+            </a>
           </div>
         </div>
       </div>

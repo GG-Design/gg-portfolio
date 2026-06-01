@@ -57,7 +57,7 @@ export function Hero() {
           {/* Subtitle */}
           <motion.div variants={up} className="flex flex-col items-center gap-2 max-w-xl">
             <p className="text-xl text-zinc-300 font-light leading-relaxed text-center">
-              15+ years leading design across fintech, edtech and SaaS. I now use AI to go further — from strategy and systems to working prototypes and live products.
+              15+ years leading design across fintech and edtech. I now use AI to go further — from strategy and systems to working prototypes and live products.
             </p>
           </motion.div>
 
@@ -74,7 +74,8 @@ export function Hero() {
                 onChange={(e) => setQuestion(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
                 placeholder="Ask GG anything..."
-                className="flex-1 text-sm text-zinc-300 placeholder:text-zinc-500 bg-transparent outline-none"
+                style={{ fontSize: "16px" }}
+                className="flex-1 text-zinc-300 placeholder:text-zinc-500 bg-transparent outline-none"
               />
               <button
                 onClick={handleSubmit}
