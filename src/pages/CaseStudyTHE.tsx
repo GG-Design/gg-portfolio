@@ -180,10 +180,10 @@ export default function CaseStudyTHE() {
 
         {/* Stat cards */}
         <FadeUp delay={0.14} className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3">
-          <StatCard value="23%" label="Profile conversion rate improvement" />
-          <StatCard value="28%" label="Page engagement improvement" />
-          <StatCard value="13%" label="Decrease in bounce rate" />
-          <StatCard value="1st" label="Reusable block system at THE" />
+          <StatCard value="700+" label="Students who validated the final structure" />
+          <StatCard value="80%+" label="Task success rate in usability testing" />
+          <StatCard value="77%"  label="Would rely on profiles to compare universities" />
+          <StatCard value="4"    label="Internal teams aligned: Editorial, Sales, SEO, Rankings" />
         </FadeUp>
       </section>
 
@@ -408,10 +408,10 @@ export default function CaseStudyTHE() {
           <div className="space-y-8">
 
             <FadeUp className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              <StatCard value="700+" label="Students validated the structure globally" />
-              <StatCard value="80%+" label="Task success rate in usability testing" />
-              <StatCard value="4"    label="Internal teams aligned" />
-              <StatCard value="1st"  label="Reusable block system at THE" />
+              <StatCard value="23%" label="Profile conversion rate improvement" />
+              <StatCard value="28%" label="Page engagement improvement" />
+              <StatCard value="13%" label="Decrease in bounce rate" />
+              <StatCard value="1st" label="Reusable block system at THE" />
             </FadeUp>
 
             <FadeUp>
