@@ -33,7 +33,7 @@ export function Logos() {
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className="h-8 max-w-[80px] w-auto object-contain grayscale brightness-0 invert opacity-40 hover:opacity-80 transition-opacity duration-300 mx-10"
+                className="h-8 w-auto grayscale brightness-0 invert opacity-40 hover:opacity-80 transition-opacity duration-300 mx-10"
               />
               <span className="w-px h-4 bg-zinc-700 flex-shrink-0" />
             </span>
