@@ -57,7 +57,7 @@ export function Hero() {
           {/* Subtitle */}
           <motion.div variants={up} className="flex flex-col items-center gap-2 max-w-xl">
             <p className="text-xl text-zinc-300 font-light leading-relaxed text-center">
-              15+ years leading design across fintech and edtech. I now use AI to go further — from strategy and systems to working prototypes and live products.
+              15+ years leading design across fintech, edtech, media & publishing, and e-commerce. I now use AI to go further — from strategy and systems to working prototypes and live products.
             </p>
           </motion.div>
 

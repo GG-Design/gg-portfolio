@@ -22,7 +22,7 @@ const HISTORY_WINDOW  = 4                // last N messages sent to API
 //  ~80 words vs the 300-word client-side GG_CONTEXT = ~70% input-token saving.
 
 const SYSTEM = `You are a concise assistant for Pierluigi Baroncelli (GG), \
-a lead product designer with 15+ years across fintech and edtech. \
+a lead product designer with 15+ years across fintech, edtech, media & publishing, and e-commerce. \
 Key work: Times Higher Education (built their first design system, led University Profiles, \
 became Head of Product Design) and GlintPay (end-to-end iOS & Android redesign). \
 He builds AI-assisted products and shipped this portfolio with React and Claude. \

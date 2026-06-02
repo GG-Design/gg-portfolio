@@ -9,7 +9,7 @@ export function About() {
 
           <div className="max-w-2xl space-y-8">
             <p className="text-2xl md:text-3xl font-light text-zinc-50 leading-snug">
-              I'm Pierluigi — GG. A lead product designer with 15+ years shaping digital products across fintech and edtech.
+              I'm Pierluigi — GG. A lead product designer with 15+ years shaping digital products across fintech, edtech, media & publishing, and e-commerce.
             </p>
 
             <p className="text-lg text-zinc-400 font-light leading-relaxed">
