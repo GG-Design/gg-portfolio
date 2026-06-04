@@ -13,7 +13,7 @@ export function About() {
             </p>
 
             <p className="text-lg text-zinc-400 font-light leading-relaxed">
-              I've led design at Times Higher Education, where I built their first design system and directed a platform used by 100+ universities worldwide. Before that, Glint, Tide, NatWest, Hive, OVO Energy, HSBC and others.
+              I've led design at Times Higher Education, where I built their first design system and directed a platform used by 10,000+ universities worldwide. Before that, Glint, Tide, NatWest, Hive, OVO Energy, HSBC and others.
             </p>
 
             <p className="text-lg text-zinc-400 font-light leading-relaxed">
