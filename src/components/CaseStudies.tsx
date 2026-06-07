@@ -187,10 +187,6 @@ export default function CaseStudies() {
 
   return (
     <section id="work" className="bg-[#09090b] pt-24 pb-8">
-      <p className="text-xs tracking-widest text-zinc-500 uppercase mb-16 max-w-5xl mx-auto px-6">
-        Featured Work
-      </p>
-
       <div
         ref={containerRef}
         style={{ height: `${cards.length * 100}vh` }}
