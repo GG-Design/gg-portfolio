@@ -25,7 +25,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#08090a] py-8">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#08090a] pt-24 pb-8">
 
       {/* Dotted texture */}
       <div
@@ -49,7 +49,7 @@ export function Hero() {
       />
 
       {/* Card */}
-      <div className="relative z-10 w-full max-w-none rounded-[28px] border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.015] px-6 py-12 text-center shadow-[0_40px_120px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.06)] sm:px-10 sm:py-14">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 rounded-[28px] border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.015] py-12 text-center shadow-[0_40px_120px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.06)] sm:py-14">
         <motion.div variants={container} initial="hidden" animate="show">
 
           {/* Headline */}
@@ -84,7 +84,7 @@ export function Hero() {
                 type="button"
                 onClick={handleSubmit}
                 aria-label="Ask GG"
-                className="shrink-0 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-[#aeb3b9]"
+                className="shrink-0 rounded-md border border-white/10 bg-white/5 p-3 text-sm font-medium text-[#aeb3b9]"
               >
                 ⌘K
               </button>
@@ -99,7 +99,7 @@ export function Hero() {
           </motion.div>
 
           {/* CTAs — stacked, centered */}
-          <motion.div variants={up} className="mt-6 flex flex-col items-center gap-3">
+          <motion.div variants={up} className="mt-6 flex flex-col items-center gap-6">
             {/* View work — WHITE pill with arrow.
                 NOTE: spec truncated — text colour not given, added text-[#08090a] for legibility. */}
             <a
