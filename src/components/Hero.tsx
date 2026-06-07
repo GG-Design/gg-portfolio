@@ -25,7 +25,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#08090a] pt-24 pb-8">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#08090a] pt-24 pb-8 px-6">
 
       {/* Dotted texture */}
       <div
@@ -49,7 +49,7 @@ export function Hero() {
       />
 
       {/* Card */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 rounded-[28px] border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.015] py-12 text-center shadow-[0_40px_120px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.06)] sm:py-14">
+      <div className="relative z-10 max-w-5xl mx-auto w-full px-6 rounded-[28px] border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.015] py-12 text-center shadow-[0_40px_120px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.06)] sm:py-14">
         <motion.div variants={container} initial="hidden" animate="show">
 
           {/* Headline */}
