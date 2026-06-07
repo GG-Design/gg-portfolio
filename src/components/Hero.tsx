@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import { Sparkles, ArrowRight } from "lucide-react"
 import { AskMe } from "@/components/AskMe"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
@@ -25,7 +26,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#08090a] pt-24 pb-8 px-6">
+    <section className="relative flex min-h-screen items-center justify-center bg-[#08090a] pt-24 pb-8 px-6 sm:px-8">
 
       {/* Dotted texture */}
       <div
@@ -56,7 +57,7 @@ export function Hero() {
           <motion.div variants={up}>
             <h1 className="text-[clamp(2.5rem,6vw,4rem)] font-extrabold leading-[1.02] tracking-[-0.03em] text-[#f4f5f7]">
               Lead Product Designer
-              <span className="block bg-gradient-to-r from-[#2fc8f0] to-[#7fe0ff] bg-clip-text text-transparent lg:whitespace-nowrap">Design to deployed, with AI.</span>
+              <span className="block bg-gradient-to-r from-[#2fc8f0] to-[#7fe0ff] bg-clip-text text-transparent">Design to deployed, with AI.</span>
             </h1>
           </motion.div>
 
@@ -71,23 +72,14 @@ export function Hero() {
           <motion.div variants={up}>
             <div className="mx-auto mt-8 flex max-w-[540px] items-center gap-3 rounded-full border border-white/10 bg-[#0a0c0e]/70 py-3 pl-5 pr-3 transition focus-within:border-[#2fc8f0]/60 focus-within:bg-[#0c1013]/90 focus-within:shadow-[0_0_0_4px_rgba(47,200,240,0.12),0_0_30px_rgba(47,200,240,0.18)]">
               <Sparkles className="text-[#2fc8f0]" size={20} />
-              <input
-                type="text"
+              <Input
                 value={question}
                 onChange={(e) => setQuestion(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
                 placeholder="Ask GG anything…"
-                className="min-w-0 flex-1 border-none bg-transparent text-base text-[#f4f5f7] outline-none placeholder:text-[#8b9096]"
+                className="min-w-0 flex-1 border-none bg-transparent text-base text-[#f4f5f7] shadow-none outline-none placeholder:text-[#8b9096] focus-visible:ring-0 focus-visible:ring-offset-0"
               />
-              {/* ⌘K chip — wired to existing handleSubmit (the Ask GG action) */}
-              <button
-                type="button"
-                onClick={handleSubmit}
-                aria-label="Ask GG"
-                className="shrink-0 rounded-md border border-white/10 bg-white/5 p-3 text-sm font-medium text-[#aeb3b9]"
-              >
-                ⌘K
-              </button>
+              <kbd className="text-xs px-2 py-1 rounded-md border border-white/20 bg-white/10 text-muted-foreground font-sans">⌘K</kbd>
             </div>
 
             {showAnswer && (
@@ -100,15 +92,9 @@ export function Hero() {
 
           {/* CTAs — stacked, centered */}
           <motion.div variants={up} className="mt-6 flex flex-col items-center gap-6">
-            {/* View work — WHITE pill with arrow.
-                NOTE: spec truncated — text colour not given, added text-[#08090a] for legibility. */}
-            <a
-              href="#work"
-              className="inline-flex items-center gap-2 rounded-full bg-[#f4f5f7] px-7 py-3 text-[15px] font-semibold text-[#08090a]"
-            >
-              View work
-              <ArrowRight className="h-4 w-4" />
-            </a>
+            <Button variant="secondary" asChild className="gap-2 rounded-full px-7 py-3 text-[15px] font-semibold">
+              <a href="#work">View work <ArrowRight className="h-4 w-4" /></a>
+            </Button>
             {/* Download CV — spec truncated, preserving existing ghost button */}
             <Button
               asChild
