@@ -79,7 +79,7 @@ export function Hero() {
                 placeholder="Ask GG anything…"
                 className="min-w-0 flex-1 border-none bg-transparent text-base text-[#f4f5f7] shadow-none outline-none placeholder:text-[#8b9096] focus-visible:ring-0 focus-visible:ring-offset-0"
               />
-              <kbd className="text-xs px-2 py-1 rounded-md border border-white/20 bg-white/10 text-muted-foreground font-sans">⌘K</kbd>
+              <kbd className="text-xs p-3 rounded-md border border-white/20 bg-white/10 text-muted-foreground font-sans">⌘K</kbd>
             </div>
 
             {showAnswer && (
