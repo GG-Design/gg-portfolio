@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { Sparkles } from "lucide-react"
+import { Sparkles, ArrowRight } from "lucide-react"
 import { AskMe } from "@/components/AskMe"
 import { Button } from "@/components/ui/button"
 
@@ -104,10 +104,15 @@ export function Hero() {
                   placeholder="Ask GG anything..."
                   className="flex-1 text-base text-zinc-300 placeholder:text-zinc-500 bg-transparent outline-none"
                 />
-                {/* ⌘K key-hint chip */}
-                <span className="hidden sm:inline-flex items-center text-[11px] font-mono text-zinc-500 border border-zinc-700 rounded-md px-1.5 py-0.5 leading-none select-none">
+                {/* ⌘K key-hint chip — wired to existing handleSubmit */}
+                <button
+                  type="button"
+                  onClick={handleSubmit}
+                  aria-label="Ask GG"
+                  className="hidden sm:inline-flex items-center text-xs font-mono text-zinc-400 bg-zinc-800/80 border border-zinc-700 rounded-md px-2 py-1 leading-none select-none flex-shrink-0 hover:text-zinc-200 hover:border-zinc-600 transition-colors"
+                >
                   ⌘K
-                </span>
+                </button>
               </div>
 
               {showAnswer && (
@@ -124,7 +129,10 @@ export function Hero() {
                 asChild
                 className="rounded-full px-6 bg-zinc-50 hover:bg-white text-zinc-900 font-semibold"
               >
-                <a href="#work">View work</a>
+                <a href="#work">
+                  View work
+                  <ArrowRight className="w-4 h-4" />
+                </a>
               </Button>
               <Button
                 asChild
