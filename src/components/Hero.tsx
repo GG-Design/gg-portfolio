@@ -2,6 +2,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Sparkles } from "lucide-react"
 import { AskMe } from "@/components/AskMe"
+import { Button } from "@/components/ui/button"
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
@@ -64,18 +65,16 @@ export function Hero() {
           {/* AI input bar */}
           <motion.div variants={up} className="w-full max-w-xl">
             <div
-              className="flex items-center gap-3 px-4 py-3 rounded-full bg-zinc-900 border border-cyan-400/40 hover:border-cyan-400/60 hover:shadow-[0_0_30px_rgba(34,211,238,0.25)] transition-all cursor-text group"
-              style={{ animation: "borderPulse 3s ease-in-out infinite" }}
+              className="flex items-center gap-3 px-4 py-3 rounded-full bg-zinc-900 border border-zinc-700 focus-within:border-cyan-400 focus-within:ring-2 focus-within:ring-cyan-400/40 transition-all cursor-text group"
             >
-              <Sparkles className="w-4 h-4 text-zinc-500 flex-shrink-0 group-hover:text-zinc-400 transition-colors" />
+              <Sparkles className="w-4 h-4 text-zinc-500 flex-shrink-0 group-focus-within:text-cyan-400 transition-colors" />
               <input
                 type="text"
                 value={question}
                 onChange={(e) => setQuestion(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
                 placeholder="Ask GG anything..."
-                style={{ fontSize: "16px" }}
-                className="flex-1 text-zinc-300 placeholder:text-zinc-500 bg-transparent outline-none"
+                className="flex-1 text-base text-zinc-300 placeholder:text-zinc-500 bg-transparent outline-none"
               />
               <button
                 onClick={handleSubmit}
@@ -91,22 +90,33 @@ export function Hero() {
                 onClose={() => setShowAnswer(false)}
               />
             )}
+
+            {/* CTA buttons */}
+            <div className="flex items-center gap-3 mt-5">
+              <Button
+                asChild
+                className="rounded-full px-6 bg-cyan-400 hover:bg-cyan-300 text-black font-semibold"
+              >
+                <a href="#work">View work</a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="rounded-full px-6 border-zinc-700 text-zinc-300 hover:text-zinc-50 hover:border-zinc-500 bg-transparent"
+              >
+                <a href="/cv.pdf" download>Download CV</a>
+              </Button>
+            </div>
           </motion.div>
 
           {/* Featured work row */}
           <motion.div
             variants={fadeIn}
-            className="w-full max-w-xl flex items-center justify-between pt-2"
+            className="w-full max-w-xl flex items-center pt-2"
           >
             <span className="text-xs tracking-[0.18em] uppercase text-zinc-600 font-light">
               Featured Work
             </span>
-            <a
-              href="#work"
-              className="text-xs text-zinc-500 hover:text-zinc-50 transition-colors"
-            >
-              View all →
-            </a>
           </motion.div>
 
         </motion.div>
