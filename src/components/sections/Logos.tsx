@@ -12,7 +12,7 @@ export function Logos() {
   const doubled = [...logos, ...logos]
 
   return (
-    <section className="w-full bg-zinc-950 py-16">
+    <section className="w-full bg-transparent py-16">
       <p className="text-xs tracking-widest uppercase text-zinc-600 text-center mb-8">
         Brands I&apos;ve Worked With
       </p>

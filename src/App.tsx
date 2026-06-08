@@ -15,7 +15,7 @@ import ScrollToTop      from "@/components/ScrollToTop"
 function HomePage() {
   useLenis()
   return (
-    <div className="bg-zinc-950 text-zinc-50 min-h-screen">
+    <div className="bg-transparent text-zinc-50 min-h-screen">
       <Nav />
       <main>
         <Hero />
