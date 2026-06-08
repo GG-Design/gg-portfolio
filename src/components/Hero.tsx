@@ -31,7 +31,7 @@ export function Hero() {
       setShowAnswer(true)
       setTimeout(() => {
         document.getElementById("ask-me-panel")?.scrollIntoView({ behavior: "smooth", block: "start" })
-      }, 0)
+      }, 500)
     }
   }
 
