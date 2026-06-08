@@ -27,7 +27,12 @@ export function Hero() {
   const [showAnswer, setShowAnswer] = useState(false)
 
   function handleSubmit() {
-    if (question.trim()) setShowAnswer(true)
+    if (question.trim()) {
+      setShowAnswer(true)
+      setTimeout(() => {
+        document.getElementById("ask-me-panel")?.scrollIntoView({ behavior: "smooth", block: "start" })
+      }, 0)
+    }
   }
 
   return (
@@ -84,10 +89,12 @@ export function Hero() {
             </div>
 
             {showAnswer && (
-              <AskMe
-                question={question}
-                onClose={() => setShowAnswer(false)}
-              />
+              <div id="ask-me-panel">
+                <AskMe
+                  question={question}
+                  onClose={() => setShowAnswer(false)}
+                />
+              </div>
             )}
           </motion.div>
 
