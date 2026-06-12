@@ -10,6 +10,8 @@ import { Footer }       from "@/components/Footer"
 import { useLenis }     from "@/hooks/useLenis"
 import CaseStudyTHE     from "@/pages/CaseStudyTHE"
 import CaseStudyGlintPay from "@/pages/CaseStudyGlintPay"
+import CaseStudyDataPoints from "@/pages/CaseStudyDataPoints"
+import CaseStudyCurrencyPay from "@/pages/CaseStudyCurrencyPay"
 import ScrollToTop      from "@/components/ScrollToTop"
 
 function HomePage() {
@@ -38,6 +40,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/work/times-higher-education" element={<CaseStudyTHE />} />
         <Route path="/work/glintpay" element={<CaseStudyGlintPay />} />
+        <Route path="/work/the-datapoints" element={<CaseStudyDataPoints />} />
+        <Route path="/work/currencypay" element={<CaseStudyCurrencyPay />} />
       </Routes>
     </BrowserRouter>
   )

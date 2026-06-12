@@ -24,6 +24,19 @@ const cards = [
   },
   {
     id:        2,
+    slug:      "/work/the-datapoints" as string | null,
+    imagePath: "/images/datapoints_card.png" as string | null,
+    badge:     "B2B · EdTech · SaaS",
+    title:     "THE DataPoints",
+    subline:   "Analytics platform for 3,500+ universities — redesigned end-to-end",
+    bg:        "#ffffff",
+    textColor: "#09090b",
+    mutedColor:"#71717a",
+    imageBg:   "#06B6D4",
+    status:    "live" as const,
+  },
+  {
+    id:        3,
     slug:      "/work/glintpay" as string | null,
     imagePath: "/images/glint.png",
     badge:     "Fintech · Mobile",
@@ -36,7 +49,20 @@ const cards = [
     status:    "live" as const,
   },
   {
-    id:        3,
+    id:        4,
+    slug:      "/work/currencypay" as string | null,
+    imagePath: "/images/currencypay_card.png" as string | null,
+    badge:     "Fintech · Contract",
+    title:     "NatWest CurrencyPay",
+    subline:   "KYC onboarding — iOS & Android registration flow",
+    bg:        "#ffffff",
+    textColor: "#09090b",
+    mutedColor:"#71717a",
+    imageBg:   "#06B6D4",
+    status:    "live" as const,
+  },
+  {
+    id:        5,
     slug:      null as string | null,
     imagePath: null as string | null,
     badge:     "AI · Coming Soon",
@@ -122,25 +148,22 @@ function ImageCard({ card }: { card: CardData }) {
       </div>
 
       {/* Image stage */}
-      <div
+      <motion.div
         className="mx-6 mb-6 rounded-2xl p-6 overflow-hidden max-h-[280px]"
         style={{ background: card.imageBg }}
+        whileHover={{ backgroundColor: "#0891B2" }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
       >
         {card.imagePath ? (
-          <motion.div
-            whileHover={{ y: -40 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-          >
-            <img
-              src={card.imagePath}
-              alt={card.title}
-              className="w-full object-contain block max-h-[420px]"
-            />
-          </motion.div>
+          <img
+            src={card.imagePath}
+            alt={card.title}
+            className="w-full object-contain block max-h-[420px]"
+          />
         ) : (
           <ComingSoonPlaceholder />
         )}
-      </div>
+      </motion.div>
     </Card>
   );
 }
