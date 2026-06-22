@@ -5,6 +5,7 @@ import {
   ArrowLeft, ArrowRight,
   Briefcase, Clock, Users,
   AlertCircle, Search, Layers, TrendingUp, RefreshCw,
+  Target, ArrowUp, Database,
   type LucideIcon,
 } from "lucide-react"
 import { Tagline }                        from "@/components/ui/tagline"
@@ -247,21 +248,6 @@ export default function CaseStudyTHE() {
               </p>
             </FadeUp>
 
-            {/* Research numbers */}
-            <FadeUp className="grid grid-cols-3 gap-3">
-              {[
-                { value: "77%",  label: "of students said they'd rely on profiles to compare universities" },
-                { value: "80%+", label: "reached their intended section in usability testing" },
-                { value: "700+", label: "students worldwide validated the final structure" },
-              ].map(s => (
-                <Card key={s.value} className="shadow-none border border-stone-200 bg-white">
-                  <CardContent className="p-5 flex flex-col gap-2">
-                    <span className="text-2xl font-bold text-cyan-600">{s.value}</span>
-                    <span className="text-xs text-zinc-600 leading-snug">{s.label}</span>
-                  </CardContent>
-                </Card>
-              ))}
-            </FadeUp>
 
             <FadeUp className="grid grid-cols-2 gap-4">
               <div className="bg-zinc-100 rounded-2xl overflow-hidden p-8 flex items-center justify-center">
@@ -281,34 +267,32 @@ export default function CaseStudyTHE() {
             </FadeUp>
 
             {/* Key insights */}
-            <FadeUp>
-              <Card className="shadow-none border border-stone-200 bg-white overflow-hidden">
-                <CardContent className="p-0">
-                  {[
-                    { n: "01", insight: "Students come to decide, not explore",
-                               detail:  "Essentials must be visible immediately — not behind scroll or tabs." },
-                    { n: "02", insight: "Long pages work when the top works",
-                               detail:  "Early exits spiked whenever essentials were buried below the fold." },
-                    { n: "03", insight: "One template can't fit real data",
-                               detail:  "Institutions publish wildly uneven fields — the system had to adapt." },
-                  ].map((item, i) => (
-                    <div key={item.n}>
-                      {i > 0 && <Separator className="bg-stone-200" />}
-                      <div className="px-6 py-5 flex gap-4 items-start">
-                        <span className="shrink-0 inline-flex items-center justify-center
-                                         w-8 h-8 rounded-lg border border-cyan-200
-                                         bg-cyan-50 text-xs text-cyan-700 font-semibold">
-                          {item.n}
-                        </span>
-                        <div>
-                          <p className="text-sm font-semibold text-zinc-800 mb-0.5">{item.insight}</p>
-                          <p className="text-sm font-medium text-zinc-600">{item.detail}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
+            <FadeUp className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              {[
+                {
+                  icon:  <Target size={24} className="text-zinc-900 mb-4" />,
+                  label: "Students come to decide, not explore",
+                  desc:  "Essentials must be visible immediately — not behind scroll or tabs.",
+                },
+                {
+                  icon:  <ArrowUp size={24} className="text-zinc-900 mb-4" />,
+                  label: "Long pages work when the top works",
+                  desc:  "Early exits spiked whenever essentials were buried below the fold.",
+                },
+                {
+                  icon:  <Database size={24} className="text-zinc-900 mb-4" />,
+                  label: "One template can't fit real data",
+                  desc:  "Institutions publish wildly uneven fields — the system had to adapt.",
+                },
+              ].map(item => (
+                <Card key={item.label} className="rounded-2xl border border-zinc-200 bg-white p-6">
+                  <CardContent className="p-0 flex flex-col">
+                    {item.icon}
+                    <span className="font-semibold text-zinc-900 mb-2">{item.label}</span>
+                    <span className="text-sm text-zinc-500">{item.desc}</span>
+                  </CardContent>
+                </Card>
+              ))}
             </FadeUp>
           </div>
         </SectionGrid>
