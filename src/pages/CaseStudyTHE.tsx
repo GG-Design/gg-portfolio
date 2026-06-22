@@ -5,7 +5,7 @@ import {
   ArrowLeft, ArrowRight,
   Briefcase, Clock, Users,
   AlertCircle, Search, Layers, TrendingUp, RefreshCw,
-  Target, ArrowUp, Database,
+  GraduationCap, SlidersHorizontal,
   type LucideIcon,
 } from "lucide-react"
 import { Tagline }                        from "@/components/ui/tagline"
@@ -270,19 +270,19 @@ export default function CaseStudyTHE() {
             <FadeUp className="grid grid-cols-1 md:grid-cols-3 gap-3">
               {[
                 {
-                  icon:  <Target size={24} className="text-zinc-900 mb-4" />,
-                  label: "Students come to decide, not explore",
-                  desc:  "Essentials must be visible immediately — not behind scroll or tabs.",
+                  icon:  <GraduationCap size={24} className="text-zinc-900 mb-4" />,
+                  label: "Students decide, not browse",
+                  desc:  "Most visited to evaluate a specific university. Key info had to be immediate — not buried behind scroll or tabs.",
                 },
                 {
-                  icon:  <ArrowUp size={24} className="text-zinc-900 mb-4" />,
+                  icon:  <Layers size={24} className="text-zinc-900 mb-4" />,
                   label: "Long pages work when the top works",
-                  desc:  "Early exits spiked whenever essentials were buried below the fold.",
+                  desc:  "Early exits spiked whenever essentials were buried below the fold. The header had to earn the scroll.",
                 },
                 {
-                  icon:  <Database size={24} className="text-zinc-900 mb-4" />,
+                  icon:  <SlidersHorizontal size={24} className="text-zinc-900 mb-4" />,
                   label: "One template can't fit real data",
-                  desc:  "Institutions publish wildly uneven fields — the system had to adapt.",
+                  desc:  "Institutions publish wildly uneven fields — the system needed hide-when-empty rules to stay coherent at scale.",
                 },
               ].map(item => (
                 <Card key={item.label} className="rounded-2xl border border-zinc-200 bg-white p-6">
