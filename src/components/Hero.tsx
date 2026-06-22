@@ -113,7 +113,7 @@ export function Hero() {
               <ArrowRight size={16} />
             </Button>
             <Button variant="outline" asChild>
-              <a href="/cv.pdf">Download CV</a>
+              <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
             </Button>
           </motion.div>
 

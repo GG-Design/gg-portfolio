@@ -26,7 +26,8 @@ export function About() {
 
             <a
               href="/cv.pdf"
-              download
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-medium text-zinc-400 hover:text-zinc-50 border border-zinc-700 hover:border-zinc-500 rounded-full px-5 py-2.5 transition-colors w-fit"
             >
               <Download className="w-4 h-4" />
