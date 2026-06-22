@@ -36,7 +36,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center bg-transparent px-6 pt-16">
+    <section className="relative min-h-screen flex flex-col items-center justify-center bg-transparent px-6 pt-16 pb-24">
 
       {/* Radial gradient for depth */}
       <div
