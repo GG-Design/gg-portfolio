@@ -58,14 +58,6 @@ function GreyImageBlock({ src, alt }: { src: string; alt: string }) {
   )
 }
 
-function ImagePlaceholder({ label }: { label: string }) {
-  return (
-    <div className="rounded-2xl border-2 border-dashed border-stone-300 bg-stone-50 flex items-center justify-center py-20 px-8">
-      <span className="text-sm text-stone-400 font-medium">{label}</span>
-    </div>
-  )
-}
-
 function SectionGrid({ children }: { children: React.ReactNode }) {
   return (
     <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-[180px_1fr] gap-8 md:gap-16">
@@ -152,7 +144,7 @@ export default function CaseStudyDataPoints() {
       </section>
 
       <FadeUp className="max-w-5xl mx-auto px-6 pb-20">
-        <ImagePlaceholder label="Hero — full platform overview (Datapoint_Flow.png)" />
+        <CyanImageBlock src="/images/Datapoint Flow.png" alt="THE DataPoints — full platform overview" />
       </FadeUp>
 
       <PageDivider />
@@ -266,7 +258,7 @@ export default function CaseStudyDataPoints() {
             <FadeUp>
               <p className="text-zinc-500 font-semibold text-sm mb-1">01 — Home Dashboard</p>
               <p className="text-base text-zinc-600 leading-relaxed mb-5">A clear mission-control view: current rankings at a glance, immediate access to the most recent data cycle, and a direct path into each module. Built to answer "how are we doing?" in under ten seconds.</p>
-              <ImagePlaceholder label="Home Dashboard screenshot" />
+              <GreyImageBlock src="/images/homedashboard.png" alt="Home Dashboard screenshot" />
             </FadeUp>
 
             <ModuleDivider />
@@ -274,7 +266,7 @@ export default function CaseStudyDataPoints() {
             <FadeUp>
               <p className="text-zinc-500 font-semibold text-sm mb-1">02 — Analyse Results</p>
               <p className="text-base text-zinc-600 leading-relaxed mb-5">The most data-dense module. Redesigned around benchmarking as the primary use case — persistent filters, peer comparison always visible, metric breakdown surfaced without drill-down. Save to plan and download chart actions inline.</p>
-              <ImagePlaceholder label="Analyse Results screenshot" />
+              <GreyImageBlock src="/images/analysisresults.png" alt="Analyse Results screenshot" />
             </FadeUp>
 
             <ModuleDivider />
@@ -282,7 +274,7 @@ export default function CaseStudyDataPoints() {
             <FadeUp>
               <p className="text-zinc-500 font-semibold text-sm mb-1">03 — Plan Builder</p>
               <p className="text-base text-zinc-600 leading-relaxed mb-5">A structured workspace for building multi-year strategy plans from ranking data. Sections for performance narrative, targets, and actions — exportable as a self-contained document. Replaced the spreadsheet workarounds strategy teams were using outside the platform.</p>
-              <ImagePlaceholder label="Plan Builder screenshot" />
+              <GreyImageBlock src="/images/planbuilder.png" alt="Plan Builder screenshot" />
             </FadeUp>
 
             <ModuleDivider />
@@ -290,7 +282,7 @@ export default function CaseStudyDataPoints() {
             <FadeUp>
               <p className="text-zinc-500 font-semibold text-sm mb-1">04 — Export Presentation</p>
               <p className="text-base text-zinc-600 leading-relaxed mb-5">Generate board-ready presentations directly from the platform. Select your metrics, choose your format, download. No reformatting in PowerPoint, no copy-pasting chart screenshots.</p>
-              <ImagePlaceholder label="Export Presentation screenshot" />
+              <GreyImageBlock src="/images/exportpresentation.png" alt="Export Presentation screenshot" />
             </FadeUp>
 
             <ModuleDivider />
@@ -298,7 +290,7 @@ export default function CaseStudyDataPoints() {
             <FadeUp>
               <p className="text-zinc-500 font-semibold text-sm mb-1">05 — Share Externally</p>
               <p className="text-base text-zinc-600 leading-relaxed mb-5">A controlled sharing layer allowing institutions to surface selected ranking data to external stakeholders — prospective students, partners, accreditation bodies — without exposing the full platform.</p>
-              <ImagePlaceholder label="Share Externally screenshot" />
+              <GreyImageBlock src="/images/shareexternally.png" alt="Share Externally screenshot" />
             </FadeUp>
           </div>
         </SectionGrid>
@@ -338,7 +330,7 @@ export default function CaseStudyDataPoints() {
               </Card>
             </FadeUp>
             <FadeUp>
-              <ImagePlaceholder label="Data Collection tool — form flow screenshot" />
+              <GreyImageBlock src="/images/gethelpform.png" alt="Data Collection tool — form flow" />
             </FadeUp>
           </div>
         </SectionGrid>

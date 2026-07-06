@@ -25,7 +25,8 @@ const cards = [
   {
     id:        2,
     slug:      "/work/the-datapoints" as string | null,
-    imagePath: "/images/datapoints_card.png" as string | null,
+    imagePath: "/images/Datapoint Flow.png" as string | null,
+    imageAlt:  "THE DataPoints — analytics platform",
     badge:     "B2B · EdTech · SaaS",
     title:     "THE DataPoints",
     subline:   "Analytics platform for 3,500+ universities — redesigned end-to-end",
@@ -51,7 +52,8 @@ const cards = [
   {
     id:        4,
     slug:      "/work/currencypay" as string | null,
-    imagePath: "/images/currencypay_card.png" as string | null,
+    imagePath: "/images/natwestkycflow.png" as string | null,
+    imageAlt:  "NatWest CurrencyPay — KYC flow",
     badge:     "Fintech · Contract",
     title:     "NatWest CurrencyPay",
     subline:   "KYC onboarding — iOS & Android registration flow",
@@ -157,7 +159,7 @@ function ImageCard({ card }: { card: CardData }) {
         {card.imagePath ? (
           <img
             src={card.imagePath}
-            alt={card.title}
+            alt={card.imageAlt ?? card.title}
             className="w-full object-contain block max-h-[420px]"
           />
         ) : (

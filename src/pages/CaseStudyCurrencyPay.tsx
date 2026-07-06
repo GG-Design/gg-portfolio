@@ -42,14 +42,6 @@ function StatCard({ value, label }: { value: string; label: string }) {
   )
 }
 
-function ImagePlaceholder({ label }: { label: string }) {
-  return (
-    <div className="rounded-2xl border-2 border-dashed border-stone-300 bg-stone-50 flex items-center justify-center py-20 px-8">
-      <span className="text-sm text-stone-400 font-medium">{label}</span>
-    </div>
-  )
-}
-
 function SectionGrid({ children }: { children: React.ReactNode }) {
   return (
     <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-[180px_1fr] gap-8 md:gap-16">
@@ -146,7 +138,14 @@ export default function CaseStudyCurrencyPay() {
       </section>
 
       <FadeUp className="max-w-5xl mx-auto px-6 pb-20">
-        <ImagePlaceholder label="Hero — full registration flow overview" />
+        <div className="bg-[#06B6D4] rounded-2xl py-16 px-20 overflow-hidden
+                        flex items-center justify-center">
+          <img
+            src="/images/natwestkycflow.png"
+            alt="NatWest CurrencyPay — KYC flow"
+            className="w-auto h-auto max-w-full block rounded-lg"
+          />
+        </div>
       </FadeUp>
 
       <PageDivider />
@@ -227,9 +226,6 @@ export default function CaseStudyCurrencyPay() {
               </Card>
             </FadeUp>
 
-            <FadeUp>
-              <ImagePlaceholder label="Competitive audit — Revolut, TransferWise, Monzo flow comparison" />
-            </FadeUp>
           </div>
         </SectionGrid>
       </section>
@@ -274,19 +270,6 @@ export default function CaseStudyCurrencyPay() {
                   ))}
                 </CardContent>
               </Card>
-            </FadeUp>
-
-            <FadeUp className="grid grid-cols-2 gap-4">
-              <div className="bg-zinc-100 rounded-2xl p-8 overflow-hidden flex items-center justify-center">
-                <ImagePlaceholder label="Splash + notifications screens" />
-              </div>
-              <div className="bg-zinc-100 rounded-2xl p-8 overflow-hidden flex items-center justify-center">
-                <ImagePlaceholder label="Passcode + photo capture screens" />
-              </div>
-            </FadeUp>
-
-            <FadeUp>
-              <ImagePlaceholder label="Full 20-screen flow — all steps in sequence" />
             </FadeUp>
 
             {/* Prototype link inline */}
