@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import {
   ArrowLeft, ArrowRight,
   Briefcase, Clock, Users,
-  AlertCircle, Search, Layers, TrendingUp, RefreshCw, ExternalLink,
+  AlertCircle, Search, Layers, RefreshCw, ExternalLink,
   type LucideIcon,
 } from "lucide-react"
 import { Tagline }           from "@/components/ui/tagline"
