@@ -36,7 +36,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center bg-transparent px-6 pt-16">
+    <section className="relative min-h-screen flex flex-col items-center justify-center bg-transparent px-6 pt-16 pb-24">
 
       {/* Radial gradient for depth */}
       <div
@@ -113,7 +113,7 @@ export function Hero() {
               <ArrowRight size={16} />
             </Button>
             <Button variant="outline" asChild>
-              <a href="/cv.pdf">Download CV</a>
+              <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
             </Button>
           </motion.div>
 
