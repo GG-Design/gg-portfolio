@@ -34,7 +34,7 @@ const cards = [
     textColor: "#09090b",
     mutedColor:"#71717a",
     imageBg:   "#06B6D4",
-    status:    "live" as const,
+    status:    "coming-soon" as const,
   },
   {
     id:        3,
