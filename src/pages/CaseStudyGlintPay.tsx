@@ -463,6 +463,10 @@ export default function CaseStudyGlintPay() {
             <FadeUp>
               <p className="text-xl font-semibold text-zinc-900 mb-3">Outcomes</p>
             </FadeUp>
+            <FadeUp className="grid grid-cols-2 gap-3">
+              <StatCard value="13%" label="Increase in user retention" />
+              <StatCard value="15%" label="Increase in monthly transactions" />
+            </FadeUp>
             <FadeUp className="grid grid-cols-1 md:grid-cols-3 gap-3">
               {[
                 {

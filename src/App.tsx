@@ -12,6 +12,8 @@ import CaseStudyTHE     from "@/pages/CaseStudyTHE"
 import CaseStudyGlintPay from "@/pages/CaseStudyGlintPay"
 import CaseStudyDataPoints from "@/pages/CaseStudyDataPoints"
 import CaseStudyCurrencyPay from "@/pages/CaseStudyCurrencyPay"
+import CaseStudyHive    from "@/pages/CaseStudyHive"
+import CaseStudyTide    from "@/pages/CaseStudyTide"
 import ScrollToTop      from "@/components/ScrollToTop"
 
 function HomePage() {
@@ -42,6 +44,8 @@ function App() {
         <Route path="/work/glintpay" element={<CaseStudyGlintPay />} />
         <Route path="/work/the-datapoints" element={<CaseStudyDataPoints />} />
         <Route path="/work/currencypay" element={<CaseStudyCurrencyPay />} />
+        <Route path="/work/hive" element={<CaseStudyHive />} />
+        <Route path="/work/tide" element={<CaseStudyTide />} />
       </Routes>
     </BrowserRouter>
   )

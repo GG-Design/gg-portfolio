@@ -36,7 +36,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center bg-transparent px-6 pt-16 pb-24">
+    <section className="relative min-h-[85vh] flex flex-col items-center justify-center bg-transparent px-6 pt-16 pb-4">
 
       {/* Radial gradient for depth */}
       <div
@@ -62,12 +62,12 @@ export function Hero() {
           <motion.div variants={up} className="flex flex-col items-center gap-1">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-[#f4f5f7]">
               Lead Product Designer
-              <span className="block bg-gradient-to-r from-[#2fc8f0] to-[#7fe0ff] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] pb-3">Design to deployed, with AI.</span>
+              <span className="block mt-2 bg-gradient-to-r from-[#2fc8f0] to-[#7fe0ff] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] pb-3">Design to deployed, with AI.</span>
             </h1>
           </motion.div>
 
           {/* Subtitle */}
-          <motion.div variants={up} className="flex flex-col items-center gap-2 max-w-xl">
+          <motion.div variants={up} className="flex flex-col items-center gap-2 max-w-2xl">
             <p className="text-xl text-zinc-300 font-light leading-relaxed text-center">
               15+ years leading design across fintech, edtech, media & publishing, and e-commerce. I now use AI to go further — from strategy and systems to working prototypes and live products.
             </p>
@@ -112,28 +112,10 @@ export function Hero() {
               View work
               <ArrowRight size={16} />
             </Button>
-            <Button variant="outline" asChild>
-              <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
-            </Button>
           </motion.div>
 
         </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 0.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
-          className="w-px h-10"
-          style={{ background: "linear-gradient(to bottom, #52525b, transparent)" }}
-        />
-      </motion.div>
     </section>
   )
 }

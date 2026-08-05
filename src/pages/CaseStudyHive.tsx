@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import {
   ArrowLeft, ArrowRight,
   Briefcase, Clock, Users,
-  AlertCircle, Search, Layers, RefreshCw, ExternalLink,
+  AlertCircle, Search, Layers, RefreshCw,
   type LucideIcon,
 } from "lucide-react"
 import { Tagline }           from "@/components/ui/tagline"
@@ -54,7 +54,7 @@ function PageDivider() {
   return <div className="max-w-5xl mx-auto px-6"><Separator className="bg-stone-200" /></div>
 }
 
-export default function CaseStudyCurrencyPay() {
+export default function CaseStudyHive() {
   const [scrollProgress, setScrollProgress] = useState(0)
   const [navVisible, setNavVisible] = useState(false)
 
@@ -91,7 +91,7 @@ export default function CaseStudyCurrencyPay() {
           <Button variant="ghost" size="sm" asChild className="-ml-3 text-zinc-500 hover:text-zinc-900 hover:bg-stone-900/5">
             <Link to="/"><ArrowLeft className="w-3.5 h-3.5" />Back</Link>
           </Button>
-          <span className="absolute left-1/2 -translate-x-1/2 text-sm font-semibold text-zinc-900">NatWest CurrencyPay</span>
+          <span className="absolute left-1/2 -translate-x-1/2 text-sm font-semibold text-zinc-900">Hive</span>
         </div>
       </div>
 
@@ -103,37 +103,24 @@ export default function CaseStudyCurrencyPay() {
 
         <FadeUp className="mb-6 flex flex-wrap gap-2">
           <Tagline lucideIcon={Briefcase} text="Lead Product Designer" />
-          <Tagline lucideIcon={Clock} text="Contract" />
-          <Tagline lucideIcon={Users} text="PM · iOS · Android · Compliance" />
+          <Tagline lucideIcon={Clock}     text="2018" />
+          <Tagline lucideIcon={Users}     text="Team of 7 · 2 Designers, 3 Devs, 2 PMs" />
         </FadeUp>
 
         <FadeUp delay={0.06}>
           <h1 className="text-5xl md:text-7xl font-bold leading-none tracking-tight mb-6 text-zinc-900">
-            NatWest<br />CurrencyPay
+            Hive
           </h1>
           <p className="text-xl text-zinc-600 max-w-2xl leading-relaxed">
-            Designed the end-to-end KYC onboarding flow for NatWest's CurrencyPay — a regulated FX mobile app for iOS and Android. The challenge was meeting compliance requirements without the registration experience feeling like a compliance process.
+            Led the end-to-end redesign of hivehome.com — introducing a subscription-based plan model and migrating the existing user base, across 6 international markets.
           </p>
         </FadeUp>
 
         <FadeUp delay={0.14} className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3">
-          <StatCard value="20"    label="Screens across the full registration flow" />
-          <StatCard value="2"     label="Platforms: iOS and Android" />
-          <StatCard value="3"     label="Competitors audited: Revolut, TransferWise, Monzo" />
-          <StatCard value="Jumio" label="Identity verification provider integrated into the flow" />
-        </FadeUp>
-
-        {/* Prototype CTA */}
-        <FadeUp delay={0.2} className="mt-8">
-          <a
-            href="https://currencypayregistration.netlify.app/#/screens"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-zinc-900 text-white text-sm font-medium hover:bg-zinc-700 transition-colors"
-          >
-            View prototype
-            <ExternalLink className="w-3.5 h-3.5" />
-          </a>
+          <StatCard value="7"    label="Team led — 2 designers, 3 devs, 2 PMs" />
+          <StatCard value="6"    label="International markets supported end-to-end" />
+          <StatCard value="1M+"  label="Users reached across all markets" />
+          <StatCard value="2018" label="Delivered" />
         </FadeUp>
       </section>
 
@@ -141,8 +128,8 @@ export default function CaseStudyCurrencyPay() {
         <div className="bg-[#06B6D4] rounded-2xl py-16 px-20 overflow-hidden
                         flex items-center justify-center">
           <img
-            src="/images/natwestkycflow.png"
-            alt="NatWest CurrencyPay — KYC flow"
+            src="/images/hive_CHECKOUT_ui.webp"
+            alt="Hive — redesigned checkout flow"
             className="w-auto h-auto max-w-full block rounded-lg"
           />
         </div>
@@ -159,16 +146,16 @@ export default function CaseStudyCurrencyPay() {
           <div className="space-y-8">
             <FadeUp>
               <p className="text-lg text-zinc-600 leading-relaxed">
-                CurrencyPay was entering a market where Monzo, Revolut, and TransferWise had already reset user expectations for financial app onboarding. The product needed to satisfy FCA-regulated KYC requirements — identity documents, selfie capture, device registration, passcode setup — while feeling as frictionless as the consumer neobanks users were comparing it to.
+                Hive hired us to redesign hivehome.com end-to-end. The redesign needed to introduce a subscription-based plan model on top of the existing one-off purchase experience, without disrupting or losing the existing user base — across six markets, each with its own product range, pricing and upsell structure.
               </p>
             </FadeUp>
             <FadeUp>
               <Card className="shadow-none border border-stone-200 bg-white overflow-hidden">
                 <CardContent className="p-0">
                   {[
-                    { n: "01", insight: "Compliance can't look like compliance", detail: "Every required step — camera permissions, document capture, passcode — needed to feel purposeful and guided, not bureaucratic." },
-                    { n: "02", insight: "Third-party handoffs break trust", detail: "Jumio identity verification is a necessary integration — but an abrupt context switch at the most sensitive moment would cause drop-off." },
-                    { n: "03", insight: "Two platforms, one experience", detail: "iOS and Android users needed identical confidence and flow parity despite platform-level differences in permissions UX." },
+                    { n: "01", insight: "Migrating, not just launching", detail: "Existing customers needed a clear path onto the new subscription model — this couldn't be designed as if every user was new." },
+                    { n: "02", insight: "Six markets, one system", detail: "Product range, pricing and upsells varied by country. The site needed a shared structure that could flex per market without forking the design." },
+                    { n: "03", insight: "Multiple stakeholders, one vision", detail: "Head of Web, Brand and Marketing all had a stake in the outcome — alignment had to happen continuously, not just at sign-off." },
                   ].map((item, i) => (
                     <div key={item.n}>
                       {i > 0 && <Separator className="bg-stone-200" />}
@@ -199,17 +186,27 @@ export default function CaseStudyCurrencyPay() {
           <div className="space-y-8">
             <FadeUp>
               <p className="text-lg text-zinc-600 leading-relaxed">
-                I ran a competitive audit of Revolut, TransferWise, and Monzo — mapping every step of their registration and identity verification flows. The focus was on how each handled the highest-friction moments: permission requests, document upload, selfie capture, and the wait state after submission.
+                We started with a competitive analysis and a full website architecture and sitemap exercise, then ran user labs to validate the proposed structure — building personas and analysing existing behavioural data to ground decisions in evidence rather than assumption.
               </p>
+            </FadeUp>
+
+            <FadeUp>
+              <div className="bg-white rounded-2xl p-10 overflow-hidden flex items-center justify-center border border-stone-200">
+                <img
+                  src="/images/hive_sitemap+UK.webp"
+                  alt="Hive — UK sitemap and website architecture"
+                  className="w-auto h-auto max-w-full mx-auto"
+                />
+              </div>
             </FadeUp>
 
             <FadeUp>
               <Card className="shadow-none border border-stone-200 bg-white overflow-hidden">
                 <CardContent className="p-0">
                   {[
-                    { n: "01", insight: "Monzo's model was the benchmark", detail: "One ask per screen, clear rationale for each permission, no dead ends. We used this as the structural reference." },
-                    { n: "02", insight: "Revolut front-loaded friction", detail: "Document upload appeared earlier in the flow, causing higher drop-off before users had established trust with the product." },
-                    { n: "03", insight: "TransferWise over-explained", detail: "Lengthy copy on permission screens slowed momentum. Users scan — they don't read." },
+                    { n: "01", insight: "Competitive audit shaped the architecture", detail: "Mapping competitor sitemaps first meant our own architecture started from what already worked in the category, not a blank page." },
+                    { n: "02", insight: "User labs surfaced real behaviour", detail: "Lab sessions and personas grounded the subscription and migration flows in how people actually shopped, not how we assumed they would." },
+                    { n: "03", insight: "Data validated the plan", detail: "Reviewing existing analytics before committing to the new structure caught assumptions that didn't hold up." },
                   ].map((item, i) => (
                     <div key={item.n}>
                       {i > 0 && <Separator className="bg-stone-200" />}
@@ -225,7 +222,6 @@ export default function CaseStudyCurrencyPay() {
                 </CardContent>
               </Card>
             </FadeUp>
-
           </div>
         </SectionGrid>
       </section>
@@ -241,22 +237,29 @@ export default function CaseStudyCurrencyPay() {
           <div className="space-y-8">
             <FadeUp>
               <p className="text-lg text-zinc-600 leading-relaxed">
-                A 20-screen progressive registration flow modelled on Monzo's one-ask-per-screen principle. Each permission request was framed around user benefit, not legal obligation. The Jumio identity capture step was wrapped in native UI so it felt continuous rather than like a third-party handoff.
+                From the sitemap and research, I drew the core user flows — the key challenge being how to introduce the subscription plan model and migrate existing users onto it without a jarring transition. Wireframes were built in Sketch, then taken to high-fidelity UI, backed by a modular component system built to handle per-country product variations, pricing and upsells across all six markets.
               </p>
             </FadeUp>
 
             <FadeUp>
-              <p className="text-zinc-500 font-semibold text-sm mb-3">Flow stages</p>
+              <div className="bg-white rounded-2xl p-10 overflow-hidden flex items-center justify-center border border-stone-200">
+                <img
+                  src="/images/hive_byo+wireframes.webp"
+                  alt="Hive — wireframes"
+                  className="w-auto h-auto max-w-full mx-auto"
+                />
+              </div>
+            </FadeUp>
+
+            <FadeUp>
+              <p className="text-zinc-500 font-semibold text-sm mb-3">What shipped</p>
               <Card className="shadow-none border border-stone-200 bg-white overflow-hidden">
                 <CardContent className="p-0">
                   {[
-                    "Get started — brand splash establishing context before any asks",
-                    "Notifications — permission framed as 'payment authentication', not marketing",
-                    "Camera — permission framed around QR device registration and photo ID",
-                    "Register device — QR code scan linking mobile to web account",
-                    "Passcode — 6-digit setup with clear security rationale",
-                    "Take a photo — Jumio selfie capture wrapped in guided native UI",
-                    "Confirmation — clear 'your account is being reviewed' end state",
+                    "User flows for the new subscription plan model and existing-user migration",
+                    "Wireframes in Sketch, refined into high-fidelity UI",
+                    "A modular component system handling per-country product, pricing and upsell variation",
+                    "Redesigned checkout flow across all six markets",
                   ].map((item, i) => (
                     <div key={i}>
                       {i > 0 && <Separator className="bg-stone-200" />}
@@ -271,26 +274,23 @@ export default function CaseStudyCurrencyPay() {
                 </CardContent>
               </Card>
             </FadeUp>
+          </div>
+        </SectionGrid>
+      </section>
 
-            {/* Prototype link inline */}
+      <PageDivider />
+
+      {/* TEAM & PROCESS */}
+      <section className="py-20">
+        <SectionGrid>
+          <FadeUp className="self-start">
+            <SectionLabel lucideIcon={Users}>Team & Process</SectionLabel>
+          </FadeUp>
+          <div className="space-y-8">
             <FadeUp>
-              <Card className="shadow-none border border-stone-200 bg-white overflow-hidden">
-                <CardContent className="px-6 py-5 flex items-center justify-between gap-4">
-                  <div>
-                    <p className="text-sm font-semibold text-zinc-800 mb-0.5">Interactive prototype</p>
-                    <p className="text-sm text-zinc-500">Full clickable flow — iOS registration end-to-end</p>
-                  </div>
-                  <a
-                    href="https://currencypayregistration.netlify.app/#/screens"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 text-white text-sm font-medium hover:bg-zinc-700 transition-colors"
-                  >
-                    View prototype
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
-                </CardContent>
-              </Card>
+              <p className="text-lg text-zinc-600 leading-relaxed">
+                I managed a design team of a product designer, a digital designer and a UX researcher, working alongside 3 developers and 2 PMs. Stakeholder alignment ran throughout — regular meetings with the Head of Web, Brand and Marketing kept the redesign consistent with brand direction, and close collaboration with engineering and QA made sure design guidelines held up all the way to release.
+              </p>
             </FadeUp>
           </div>
         </SectionGrid>
@@ -306,23 +306,13 @@ export default function CaseStudyCurrencyPay() {
           </FadeUp>
           <div className="space-y-10">
             <FadeUp>
-              <p className="text-zinc-500 font-semibold text-sm mb-4">What I'd do differently</p>
-              <Card className="shadow-none bg-white border border-stone-200 border-l-2 border-l-cyan-400 rounded-sm overflow-visible">
-                <CardContent className="pl-5 pr-6 py-5">
-                  <p className="text-lg font-medium text-zinc-700 leading-relaxed">
-                    The Jumio integration was a constraint we designed around, not with. Given more access to the SDK I'd have pushed for deeper visual customisation of the capture step — the one moment where the seam between native and third-party was most visible.
-                  </p>
-                </CardContent>
-              </Card>
-            </FadeUp>
-            <FadeUp>
               <p className="text-zinc-500 font-semibold text-sm mb-4">What I'd carry forward</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {[
-                  "Frame every permission around user benefit — never legal necessity",
-                  "One ask per screen is slower to build and faster to complete",
-                  "The wait state after document submission is a trust moment — design it carefully",
-                  "Competitive audits are most useful when you map the emotional low points, not just the steps",
+                  "Modular components pay off fastest when variation across markets is unavoidable, not optional",
+                  "Migrating existing users onto a new model needs its own dedicated flow — it can't be an afterthought to the new-user journey",
+                  "Aligning Brand, Marketing and Web stakeholders early avoids late-stage rework",
+                  "Sitemap and architecture work upfront makes every downstream decision faster",
                 ].map((item, i) => (
                   <Card key={i} className="shadow-none bg-white border border-stone-200 rounded-2xl">
                     <CardContent className="px-5 py-4 flex gap-3 items-start">
@@ -344,11 +334,11 @@ export default function CaseStudyCurrencyPay() {
           <FadeUp className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
               <p className="text-zinc-500 font-semibold text-sm mb-2">Next</p>
-              <h3 className="text-2xl font-bold text-zinc-900">Hive</h3>
-              <p className="text-zinc-600 mt-1">Website redesign</p>
+              <h3 className="text-2xl font-bold text-zinc-900">GlintPay</h3>
+              <p className="text-zinc-600 mt-1">GlintPay App redesign</p>
             </div>
             <Button variant="ghost" size="sm" asChild className="text-zinc-500 hover:text-zinc-900 hover:bg-stone-900/5">
-              <Link to="/work/hive">
+              <Link to="/work/glintpay">
                 Next case study
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>

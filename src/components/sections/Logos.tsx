@@ -1,3 +1,5 @@
+import { motion } from "framer-motion"
+
 const logos = [
   { src: "/logos/glint.svg", alt: "GlintPay" },
   { src: "/logos/natwest.svg", alt: "NatWest" },
@@ -12,8 +14,8 @@ export function Logos() {
   const doubled = [...logos, ...logos]
 
   return (
-    <section className="w-full bg-transparent py-16">
-      <p className="text-xs tracking-widest uppercase text-zinc-600 text-center mb-8">
+    <section className="w-full bg-transparent pt-2 pb-8">
+      <p className="text-xs tracking-widest uppercase text-zinc-300 text-center mb-8">
         Brands I&apos;ve Worked With
       </p>
 
@@ -40,6 +42,21 @@ export function Logos() {
           ))}
         </div>
       </div>
+
+      {/* Scroll indicator — points down to the work cards */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.4, duration: 0.8 }}
+        className="flex flex-col items-center mt-12"
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
+          className="w-px h-10"
+          style={{ background: "linear-gradient(to bottom, #52525b, transparent)" }}
+        />
+      </motion.div>
     </section>
   )
 }
