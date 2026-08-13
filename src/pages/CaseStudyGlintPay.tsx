@@ -217,18 +217,18 @@ export default function CaseStudyGlintPay() {
               {[
                 {
                   icon:  <Layers size={24} className="text-zinc-900 mb-4" />,
-                  label: "Comprehensive",
-                  desc:  "Cover essentials for day‑one success: funding, spending, exchanging, and card control — without detours.",
+                  label: "Day-one essentials",
+                  desc:  "Fund, spend, exchange and control the card — all reachable from the home screen without detours.",
                 },
                 {
                   icon:  <GitBranch size={24} className="text-zinc-900 mb-4" />,
-                  label: "Scalable",
-                  desc:  "Support multiple wallets (Gold/GBP/USD/EUR) and markets, reuse the same truth across dashboard, exchange, and card settings.",
+                  label: "Built for multiple wallets",
+                  desc:  "Gold, GBP, USD and EUR all behave the same way across dashboard, exchange and card settings — one pattern, four currencies.",
                 },
                 {
                   icon:  <SlidersHorizontal size={24} className="text-zinc-900 mb-4" />,
-                  label: "Adjustable",
-                  desc:  "Allow safe customisation (limits, source switching, education banners) and future personalisation without UX debt.",
+                  label: "Safe to customise",
+                  desc:  "Users can set spending limits and switch card sources with confirmation. The system supports future features without rebuilding.",
                 },
               ].map(item => (
                 <Card key={item.label} className="rounded-2xl border border-zinc-200 bg-white p-6">
