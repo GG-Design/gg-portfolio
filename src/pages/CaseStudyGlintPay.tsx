@@ -171,7 +171,7 @@ export default function CaseStudyGlintPay() {
 
         {/* Stat cards */}
         <FadeUp delay={0.14} className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3">
-          <StatCard value="3 wallets"     label="Gold, GBP and USD unified in one dashboard" />
+          <StatCard value="4 wallets"     label="Gold, GBP, USD and EUR unified in one dashboard" />
           <StatCard value="2 platforms"   label="iOS and Android, same behaviour, platform‑native feel" />
           <StatCard value="1 interaction" label="Hidden swipe replaced with explicit modal switcher" />
           <StatCard value="0 dead ends"   label="Streamlined KYC with clear progress and fewer drop-offs" />
