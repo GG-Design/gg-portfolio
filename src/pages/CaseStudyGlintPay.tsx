@@ -205,7 +205,7 @@ export default function CaseStudyGlintPay() {
                 The Glint dilemma: making spending from gold feel obvious and safe
               </p>
               <p className="text-lg text-zinc-600 leading-relaxed">
-                Glint's card lets people spend from Gold, GBP, or USD — but the legacy app hid the
+                Glint's card lets people spend from Gold, GBP, USD, or EUR — but the legacy app hid the
                 control behind a horizontal swipe. Onboarding was branched and unpredictable, and
                 day‑one actions sat below the fold. I rebuilt the core so it's clear where money
                 comes from, simple to get started, and consistent across iOS and Android.
@@ -223,7 +223,7 @@ export default function CaseStudyGlintPay() {
                 {
                   icon:  <GitBranch size={24} className="text-zinc-900 mb-4" />,
                   label: "Scalable",
-                  desc:  "Support multiple wallets (Gold/GBP/USD) and markets, reuse the same truth across dashboard, exchange, and card settings.",
+                  desc:  "Support multiple wallets (Gold/GBP/USD/EUR) and markets, reuse the same truth across dashboard, exchange, and card settings.",
                 },
                 {
                   icon:  <SlidersHorizontal size={24} className="text-zinc-900 mb-4" />,
@@ -429,7 +429,7 @@ export default function CaseStudyGlintPay() {
               <Card className="shadow-none border border-stone-200 bg-white overflow-hidden">
                 <CardContent className="p-0">
                   {[
-                    { n: "01", label: "Dashboard header",   desc: "Balances + Card spends from (Gold | GBP | USD) + primary CTAs (Add Money, Spend, Exchange)" },
+                    { n: "01", label: "Dashboard header",   desc: "Balances + Card spends from (Gold | GBP | USD | EUR) + primary CTAs (Add Money, Spend, Exchange)" },
                     { n: "02", label: "KYC & registration", desc: "Streamlined checks with clear progress, fewer dead ends and faster first access." },
                     { n: "03", label: "System",             desc: "Shared components and tokens across iOS and Android — same behaviour, platform‑native feel." },
                   ].map((item, i) => (
