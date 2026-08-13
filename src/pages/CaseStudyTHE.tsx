@@ -13,6 +13,7 @@ import { Button }                         from "@/components/ui/button"
 import { Card, CardContent }              from "@/components/ui/card"
 import { Progress }                       from "@/components/ui/progress"
 import { Separator }                      from "@/components/ui/separator"
+import { Lightbox, useLightbox }          from "@/components/Lightbox"
 
 // ─── Animation wrapper ────────────────────────────────────────────────────────
 
@@ -62,14 +63,15 @@ function StatCard({ value, label }: { value: string; label: string }) {
 
 
 /** Real image on cyan background — matches the home-page card pattern */
-function CyanImageBlock({ src, alt }: { src: string; alt: string }) {
+function CyanImageBlock({ src, alt, onOpen }: { src: string; alt: string; onOpen: (src: string, alt: string) => void }) {
   return (
     <div className="bg-[#06B6D4] rounded-2xl py-16 px-20 overflow-hidden
                     flex items-center justify-center">
       <img
         src={src}
         alt={alt}
-        className="w-auto h-auto max-w-full block rounded-lg"
+        onClick={() => onOpen(src, alt)}
+        className="w-auto h-auto max-w-full block rounded-lg cursor-pointer"
       />
     </div>
   )
@@ -98,6 +100,7 @@ function PageDivider() {
 export default function CaseStudyTHE() {
   const [scrollProgress, setScrollProgress] = useState(0)
   const [navVisible,     setNavVisible]     = useState(false)
+  const lightbox = useLightbox()
 
   useEffect(() => {
     const onScroll = () => {
@@ -193,6 +196,7 @@ export default function CaseStudyTHE() {
         <CyanImageBlock
           src="/images/profile_header.png"
           alt="University Profile — redesigned overview"
+          onOpen={lightbox.open}
         />
       </FadeUp>
 
@@ -221,7 +225,8 @@ export default function CaseStudyTHE() {
                 <img
                   src="/images/old_profile_header.png"
                   alt="Before — fragmented profile templates side by side"
-                  className="w-auto h-auto max-w-full block rounded-lg"
+                  onClick={() => lightbox.open("/images/old_profile_header.png", "Before — fragmented profile templates side by side")}
+                  className="w-auto h-auto max-w-full block rounded-lg cursor-pointer"
                 />
               </div>
             </FadeUp>
@@ -254,14 +259,16 @@ export default function CaseStudyTHE() {
                 <img
                   src="/images/maze.png"
                   alt="Research synthesis — Hotjar + Maze"
-                  className="w-auto h-auto max-w-full block"
+                  onClick={() => lightbox.open("/images/maze.png", "Research synthesis — Hotjar + Maze")}
+                  className="w-auto h-auto max-w-full block cursor-pointer"
                 />
               </div>
               <div className="bg-zinc-100 rounded-2xl overflow-hidden p-8 flex items-center justify-center">
                 <img
                   src="/images/maze2.png"
                   alt="Stakeholder workshop outputs"
-                  className="w-auto h-auto max-w-full block"
+                  onClick={() => lightbox.open("/images/maze2.png", "Stakeholder workshop outputs")}
+                  className="w-auto h-auto max-w-full block cursor-pointer"
                 />
               </div>
             </FadeUp>
@@ -323,7 +330,8 @@ export default function CaseStudyTHE() {
                 <img
                   src="/images/desktop_nav.png"
                   alt="Redesigned profile — desktop, full scroll"
-                  className="w-auto h-auto max-w-full mx-auto block"
+                  onClick={() => lightbox.open("/images/desktop_nav.png", "Redesigned profile — desktop, full scroll")}
+                  className="w-auto h-auto max-w-full mx-auto block cursor-pointer"
                 />
               </div>
             </FadeUp>
@@ -363,7 +371,8 @@ export default function CaseStudyTHE() {
                 <img
                   src="/images/mobileabovefold.png"
                   alt="Mobile — overview tab, essentials above fold"
-                  className="w-auto h-auto max-w-full mx-auto block"
+                  onClick={() => lightbox.open("/images/mobileabovefold.png", "Mobile — overview tab, essentials above fold")}
+                  className="w-auto h-auto max-w-full mx-auto block cursor-pointer"
                 />
               </div>
               <div className="bg-zinc-100 rounded-2xl overflow-hidden p-8
@@ -371,7 +380,8 @@ export default function CaseStudyTHE() {
                 <img
                   src="/images/mobilerankings.png"
                   alt="Mobile — rankings tab with methodology link"
-                  className="w-auto h-auto max-w-full mx-auto block"
+                  onClick={() => lightbox.open("/images/mobilerankings.png", "Mobile — rankings tab with methodology link")}
+                  className="w-auto h-auto max-w-full mx-auto block cursor-pointer"
                 />
               </div>
             </FadeUp>
@@ -480,13 +490,13 @@ export default function CaseStudyTHE() {
           <FadeUp className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
               <p className="text-zinc-500 font-semibold text-sm mb-2">Next</p>
-              <h3 className="text-2xl font-bold text-zinc-900">GlintPay</h3>
-              <p className="text-zinc-600 mt-1">iOS & Android end-to-end redesign</p>
+              <h3 className="text-2xl font-bold text-zinc-900">THE DataPoints</h3>
+              <p className="text-zinc-600 mt-1">Analytics platform for 3,500+ universities</p>
             </div>
             <Button variant="ghost" size="sm" asChild
               className="text-zinc-500 hover:text-zinc-900 hover:bg-stone-900/5"
             >
-              <Link to="/work/glintpay">
+              <Link to="/work/the-datapoints">
                 Next case study
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
@@ -494,6 +504,8 @@ export default function CaseStudyTHE() {
           </FadeUp>
         </div>
       </section>
+
+      <Lightbox image={lightbox.image} onClose={lightbox.close} />
 
     </div>
   )

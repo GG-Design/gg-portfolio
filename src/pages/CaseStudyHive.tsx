@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import {
   ArrowLeft, ArrowRight,
   Briefcase, Clock, Users,
-  AlertCircle, Search, Layers, RefreshCw,
+  AlertCircle, Search, Layers, RefreshCw, ExternalLink,
   type LucideIcon,
 } from "lucide-react"
 import { Tagline }           from "@/components/ui/tagline"
@@ -12,6 +12,7 @@ import { Button }            from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Progress }          from "@/components/ui/progress"
 import { Separator }         from "@/components/ui/separator"
+import { Lightbox, useLightbox } from "@/components/Lightbox"
 
 function FadeUp({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   return (
@@ -57,6 +58,7 @@ function PageDivider() {
 export default function CaseStudyHive() {
   const [scrollProgress, setScrollProgress] = useState(0)
   const [navVisible, setNavVisible] = useState(false)
+  const lightbox = useLightbox()
 
   useEffect(() => {
     const onScroll = () => {
@@ -130,7 +132,8 @@ export default function CaseStudyHive() {
           <img
             src="/images/hive_CHECKOUT_ui.webp"
             alt="Hive — redesigned checkout flow"
-            className="w-auto h-auto max-w-full block rounded-lg"
+            onClick={() => lightbox.open("/images/hive_CHECKOUT_ui.webp", "Hive — redesigned checkout flow")}
+            className="w-auto h-auto max-w-full block rounded-lg cursor-pointer"
           />
         </div>
       </FadeUp>
@@ -195,7 +198,8 @@ export default function CaseStudyHive() {
                 <img
                   src="/images/hive_sitemap+UK.webp"
                   alt="Hive — UK sitemap and website architecture"
-                  className="w-auto h-auto max-w-full mx-auto"
+                  onClick={() => lightbox.open("/images/hive_sitemap+UK.webp", "Hive — UK sitemap and website architecture")}
+                  className="w-auto h-auto max-w-full mx-auto cursor-pointer"
                 />
               </div>
             </FadeUp>
@@ -246,7 +250,8 @@ export default function CaseStudyHive() {
                 <img
                   src="/images/hive_byo+wireframes.webp"
                   alt="Hive — wireframes"
-                  className="w-auto h-auto max-w-full mx-auto"
+                  onClick={() => lightbox.open("/images/hive_byo+wireframes.webp", "Hive — wireframes")}
+                  className="w-auto h-auto max-w-full mx-auto cursor-pointer"
                 />
               </div>
             </FadeUp>
@@ -327,6 +332,57 @@ export default function CaseStudyHive() {
         </SectionGrid>
       </section>
 
+      <PageDivider />
+
+      {/* PROTOTYPES */}
+      <section className="py-20">
+        <SectionGrid>
+          <FadeUp className="self-start">
+            <SectionLabel lucideIcon={ExternalLink}>Prototypes</SectionLabel>
+          </FadeUp>
+          <div className="flex flex-col gap-3">
+            <FadeUp>
+              <Card className="shadow-none border border-stone-200 bg-white overflow-hidden">
+                <CardContent className="px-6 py-5 flex items-center justify-between gap-4">
+                  <div>
+                    <p className="text-sm font-semibold text-zinc-800 mb-0.5">Wireframes</p>
+                    <p className="text-sm text-zinc-500">Early UX wireframes — desktop web app</p>
+                  </div>
+                  <a
+                    href="https://hivewebsite.netlify.app/#/screens/313302153"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 text-white text-sm font-medium hover:bg-zinc-700 transition-colors"
+                  >
+                    View wireframes
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </CardContent>
+              </Card>
+            </FadeUp>
+            <FadeUp>
+              <Card className="shadow-none border border-stone-200 bg-white overflow-hidden">
+                <CardContent className="px-6 py-5 flex items-center justify-between gap-4">
+                  <div>
+                    <p className="text-sm font-semibold text-zinc-800 mb-0.5">UI Components</p>
+                    <p className="text-sm text-zinc-500">Modular component system — desktop and mobile</p>
+                  </div>
+                  <a
+                    href="https://hivewebsite.netlify.app/#/screens/313302842"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 text-white text-sm font-medium hover:bg-zinc-700 transition-colors"
+                  >
+                    View components
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </CardContent>
+              </Card>
+            </FadeUp>
+          </div>
+        </SectionGrid>
+      </section>
+
       {/* FOOTER */}
       <section className="py-24">
         <div className="max-w-5xl mx-auto px-6">
@@ -334,18 +390,20 @@ export default function CaseStudyHive() {
           <FadeUp className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
               <p className="text-zinc-500 font-semibold text-sm mb-2">Next</p>
-              <h3 className="text-2xl font-bold text-zinc-900">GlintPay</h3>
-              <p className="text-zinc-600 mt-1">GlintPay App redesign</p>
+              <h3 className="text-2xl font-bold text-zinc-900">Tide</h3>
+              <p className="text-zinc-600 mt-1">Web & mobile app redesign</p>
             </div>
             <Button variant="ghost" size="sm" asChild className="text-zinc-500 hover:text-zinc-900 hover:bg-stone-900/5">
-              <Link to="/work/glintpay">
-                Next case study
+              <Link to="/work/tide">
+                Next project
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </Button>
           </FadeUp>
         </div>
       </section>
+
+      <Lightbox image={lightbox.image} onClose={lightbox.close} />
 
     </div>
   )

@@ -12,6 +12,7 @@ import { Button }            from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Progress }          from "@/components/ui/progress"
 import { Separator }         from "@/components/ui/separator"
+import { Lightbox, useLightbox } from "@/components/Lightbox"
 
 function FadeUp({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   return (
@@ -57,6 +58,7 @@ function PageDivider() {
 export default function CaseStudyCurrencyPay() {
   const [scrollProgress, setScrollProgress] = useState(0)
   const [navVisible, setNavVisible] = useState(false)
+  const lightbox = useLightbox()
 
   useEffect(() => {
     const onScroll = () => {
@@ -143,7 +145,8 @@ export default function CaseStudyCurrencyPay() {
           <img
             src="/images/natwestkycflow.png"
             alt="NatWest CurrencyPay — KYC flow"
-            className="w-auto h-auto max-w-full block rounded-lg"
+            onClick={() => lightbox.open("/images/natwestkycflow.png", "NatWest CurrencyPay — KYC flow")}
+            className="w-auto h-auto max-w-full block rounded-lg cursor-pointer"
           />
         </div>
       </FadeUp>
@@ -349,13 +352,15 @@ export default function CaseStudyCurrencyPay() {
             </div>
             <Button variant="ghost" size="sm" asChild className="text-zinc-500 hover:text-zinc-900 hover:bg-stone-900/5">
               <Link to="/work/hive">
-                Next case study
+                Next project
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </Button>
           </FadeUp>
         </div>
       </section>
+
+      <Lightbox image={lightbox.image} onClose={lightbox.close} />
 
     </div>
   )

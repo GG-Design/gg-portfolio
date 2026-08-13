@@ -12,6 +12,7 @@ import { Button }            from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Progress }          from "@/components/ui/progress"
 import { Separator }         from "@/components/ui/separator"
+import { Lightbox, useLightbox } from "@/components/Lightbox"
 
 function FadeUp({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   return (
@@ -42,18 +43,18 @@ function StatCard({ value, label }: { value: string; label: string }) {
   )
 }
 
-function CyanImageBlock({ src, alt }: { src: string; alt: string }) {
+function CyanImageBlock({ src, alt, onOpen }: { src: string; alt: string; onOpen: (src: string, alt: string) => void }) {
   return (
     <div className="bg-[#06B6D4] rounded-2xl py-16 px-20 overflow-hidden flex items-center justify-center">
-      <img src={src} alt={alt} className="w-auto h-auto max-w-full block rounded-lg" />
+      <img src={src} alt={alt} onClick={() => onOpen(src, alt)} className="w-auto h-auto max-w-full block rounded-lg cursor-pointer" />
     </div>
   )
 }
 
-function GreyImageBlock({ src, alt }: { src: string; alt: string }) {
+function GreyImageBlock({ src, alt, onOpen }: { src: string; alt: string; onOpen: (src: string, alt: string) => void }) {
   return (
     <div className="bg-zinc-100 rounded-2xl p-12 overflow-hidden flex items-center justify-center">
-      <img src={src} alt={alt} className="w-auto h-auto max-w-full block rounded-lg" />
+      <img src={src} alt={alt} onClick={() => onOpen(src, alt)} className="w-auto h-auto max-w-full block rounded-lg cursor-pointer" />
     </div>
   )
 }
@@ -77,6 +78,7 @@ function ModuleDivider() {
 export default function CaseStudyDataPoints() {
   const [scrollProgress, setScrollProgress] = useState(0)
   const [navVisible, setNavVisible] = useState(false)
+  const lightbox = useLightbox()
 
   useEffect(() => {
     const onScroll = () => {
@@ -144,7 +146,7 @@ export default function CaseStudyDataPoints() {
       </section>
 
       <FadeUp className="max-w-5xl mx-auto px-6 pb-20">
-        <CyanImageBlock src="/images/Datapoint Flow.png" alt="THE DataPoints — full platform overview" />
+        <CyanImageBlock src="/images/Datapoint Flow.png" alt="THE DataPoints — full platform overview" onOpen={lightbox.open} />
       </FadeUp>
 
       <PageDivider />
@@ -258,7 +260,7 @@ export default function CaseStudyDataPoints() {
             <FadeUp>
               <p className="text-zinc-500 font-semibold text-sm mb-1">01 — Home Dashboard</p>
               <p className="text-base text-zinc-600 leading-relaxed mb-5">A clear mission-control view: current rankings at a glance, immediate access to the most recent data cycle, and a direct path into each module. Built to answer "how are we doing?" in under ten seconds.</p>
-              <GreyImageBlock src="/images/homedashboard.png" alt="Home Dashboard screenshot" />
+              <GreyImageBlock src="/images/homedashboard.png" alt="Home Dashboard screenshot" onOpen={lightbox.open} />
             </FadeUp>
 
             <ModuleDivider />
@@ -266,7 +268,7 @@ export default function CaseStudyDataPoints() {
             <FadeUp>
               <p className="text-zinc-500 font-semibold text-sm mb-1">02 — Analyse Results</p>
               <p className="text-base text-zinc-600 leading-relaxed mb-5">The most data-dense module. Redesigned around benchmarking as the primary use case — persistent filters, peer comparison always visible, metric breakdown surfaced without drill-down. Save to plan and download chart actions inline.</p>
-              <GreyImageBlock src="/images/analysisresults.png" alt="Analyse Results screenshot" />
+              <GreyImageBlock src="/images/analysisresults.png" alt="Analyse Results screenshot" onOpen={lightbox.open} />
             </FadeUp>
 
             <ModuleDivider />
@@ -274,7 +276,7 @@ export default function CaseStudyDataPoints() {
             <FadeUp>
               <p className="text-zinc-500 font-semibold text-sm mb-1">03 — Plan Builder</p>
               <p className="text-base text-zinc-600 leading-relaxed mb-5">A structured workspace for building multi-year strategy plans from ranking data. Sections for performance narrative, targets, and actions — exportable as a self-contained document. Replaced the spreadsheet workarounds strategy teams were using outside the platform.</p>
-              <GreyImageBlock src="/images/planbuilder.png" alt="Plan Builder screenshot" />
+              <GreyImageBlock src="/images/planbuilder.png" alt="Plan Builder screenshot" onOpen={lightbox.open} />
             </FadeUp>
 
             <ModuleDivider />
@@ -282,7 +284,7 @@ export default function CaseStudyDataPoints() {
             <FadeUp>
               <p className="text-zinc-500 font-semibold text-sm mb-1">04 — Export Presentation</p>
               <p className="text-base text-zinc-600 leading-relaxed mb-5">Generate board-ready presentations directly from the platform. Select your metrics, choose your format, download. No reformatting in PowerPoint, no copy-pasting chart screenshots.</p>
-              <GreyImageBlock src="/images/exportpresentation.png" alt="Export Presentation screenshot" />
+              <GreyImageBlock src="/images/exportpresentation.png" alt="Export Presentation screenshot" onOpen={lightbox.open} />
             </FadeUp>
 
             <ModuleDivider />
@@ -290,7 +292,7 @@ export default function CaseStudyDataPoints() {
             <FadeUp>
               <p className="text-zinc-500 font-semibold text-sm mb-1">05 — Share Externally</p>
               <p className="text-base text-zinc-600 leading-relaxed mb-5">A controlled sharing layer allowing institutions to surface selected ranking data to external stakeholders — prospective students, partners, accreditation bodies — without exposing the full platform.</p>
-              <GreyImageBlock src="/images/shareexternally.png" alt="Share Externally screenshot" />
+              <GreyImageBlock src="/images/shareexternally.png" alt="Share Externally screenshot" onOpen={lightbox.open} />
             </FadeUp>
           </div>
         </SectionGrid>
@@ -330,7 +332,7 @@ export default function CaseStudyDataPoints() {
               </Card>
             </FadeUp>
             <FadeUp>
-              <GreyImageBlock src="/images/gethelpform.png" alt="Data Collection tool — form flow" />
+              <GreyImageBlock src="/images/gethelpform.png" alt="Data Collection tool — form flow" onOpen={lightbox.open} />
             </FadeUp>
           </div>
         </SectionGrid>
@@ -418,11 +420,11 @@ export default function CaseStudyDataPoints() {
           <FadeUp className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
               <p className="text-zinc-500 font-semibold text-sm mb-2">Next</p>
-              <h3 className="text-2xl font-bold text-zinc-900">Times Higher Education</h3>
-              <p className="text-zinc-600 mt-1">University Profiles — design system &amp; validation</p>
+              <h3 className="text-2xl font-bold text-zinc-900">GlintPay</h3>
+              <p className="text-zinc-600 mt-1">iOS &amp; Android end-to-end redesign</p>
             </div>
             <Button variant="ghost" size="sm" asChild className="text-zinc-500 hover:text-zinc-900 hover:bg-stone-900/5">
-              <Link to="/work/times-higher-education">
+              <Link to="/work/glintpay">
                 Next case study
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
@@ -430,6 +432,8 @@ export default function CaseStudyDataPoints() {
           </FadeUp>
         </div>
       </section>
+
+      <Lightbox image={lightbox.image} onClose={lightbox.close} />
 
     </div>
   )

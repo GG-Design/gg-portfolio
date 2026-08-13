@@ -13,6 +13,7 @@ import { Button }            from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Progress }          from "@/components/ui/progress"
 import { Separator }         from "@/components/ui/separator"
+import { Lightbox, useLightbox } from "@/components/Lightbox"
 
 // ─── Animation wrapper ────────────────────────────────────────────────────────
 
@@ -86,6 +87,7 @@ function PageDivider() {
 export default function CaseStudyGlintPay() {
   const [scrollProgress, setScrollProgress] = useState(0)
   const [navVisible,     setNavVisible]     = useState(false)
+  const lightbox = useLightbox()
 
   useEffect(() => {
     const onScroll = () => {
@@ -180,7 +182,8 @@ export default function CaseStudyGlintPay() {
             <img
               src="/images/glint.png"
               alt="GlintPay app"
-              className="w-auto h-auto max-w-full mx-auto"
+              onClick={() => lightbox.open("/images/glint.png", "GlintPay app")}
+              className="w-auto h-auto max-w-full mx-auto cursor-pointer"
             />
           </div>
         </FadeUp>
@@ -298,7 +301,8 @@ export default function CaseStudyGlintPay() {
                 <img
                   src="/images/GlintpayFlow.png"
                   alt="KYC flow and source selector"
-                  className="w-auto h-auto max-w-full mx-auto"
+                  onClick={() => lightbox.open("/images/GlintpayFlow.png", "KYC flow and source selector")}
+                  className="w-auto h-auto max-w-full mx-auto cursor-pointer"
                 />
               </div>
             </FadeUp>
@@ -357,7 +361,8 @@ export default function CaseStudyGlintPay() {
                 <img
                   src="/images/glintframesoptions.png"
                   alt="Dashboard exploration — option A vs option B"
-                  className="w-auto h-auto max-w-full mx-auto"
+                  onClick={() => lightbox.open("/images/glintframesoptions.png", "Dashboard exploration — option A vs option B")}
+                  className="w-auto h-auto max-w-full mx-auto cursor-pointer"
                 />
               </div>
             </FadeUp>
@@ -413,7 +418,8 @@ export default function CaseStudyGlintPay() {
                 <img
                   src="/images/glint screens.png"
                   alt="Final design — dashboard and card linking flow"
-                  className="w-auto h-auto max-w-full mx-auto block"
+                  onClick={() => lightbox.open("/images/glint screens.png", "Final design — dashboard and card linking flow")}
+                  className="w-auto h-auto max-w-full mx-auto block cursor-pointer"
                 />
               </div>
             </FadeUp>
@@ -534,20 +540,22 @@ export default function CaseStudyGlintPay() {
           <FadeUp className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
               <p className="text-zinc-500 font-semibold text-sm mb-2">Next</p>
-              <h3 className="text-2xl font-bold text-zinc-900">Times Higher Education</h3>
-              <p className="text-zinc-600 mt-1">University Profiles — first design system, validated with 700+ students</p>
+              <h3 className="text-2xl font-bold text-zinc-900">NatWest CurrencyPay</h3>
+              <p className="text-zinc-600 mt-1">KYC onboarding — iOS &amp; Android registration flow</p>
             </div>
             <Button variant="ghost" size="sm" asChild
               className="text-zinc-500 hover:text-zinc-900 hover:bg-stone-900/5"
             >
-              <Link to="/work/times-higher-education">
-                Next case study
+              <Link to="/work/currencypay">
+                Next project
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </Button>
           </FadeUp>
         </div>
       </section>
+
+      <Lightbox image={lightbox.image} onClose={lightbox.close} />
 
     </div>
   )
