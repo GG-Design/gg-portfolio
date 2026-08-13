@@ -146,7 +146,7 @@ export default function CaseStudyCurrencyPay() {
             src="/images/natwestkycflow.png"
             alt="NatWest CurrencyPay — KYC flow"
             onClick={() => lightbox.open("/images/natwestkycflow.png", "NatWest CurrencyPay — KYC flow")}
-            className="w-auto h-auto max-w-full block rounded-lg cursor-pointer"
+            className="w-auto h-auto max-w-full block rounded-lg cursor-zoom-in"
           />
         </div>
       </FadeUp>

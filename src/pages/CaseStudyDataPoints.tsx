@@ -46,7 +46,7 @@ function StatCard({ value, label }: { value: string; label: string }) {
 function CyanImageBlock({ src, alt, onOpen }: { src: string; alt: string; onOpen: (src: string, alt: string) => void }) {
   return (
     <div className="bg-[#06B6D4] rounded-2xl py-16 px-20 overflow-hidden flex items-center justify-center">
-      <img src={src} alt={alt} onClick={() => onOpen(src, alt)} className="w-auto h-auto max-w-full block rounded-lg cursor-pointer" />
+      <img src={src} alt={alt} onClick={() => onOpen(src, alt)} className="w-auto h-auto max-w-full block rounded-lg cursor-zoom-in" />
     </div>
   )
 }
@@ -54,7 +54,7 @@ function CyanImageBlock({ src, alt, onOpen }: { src: string; alt: string; onOpen
 function GreyImageBlock({ src, alt, onOpen }: { src: string; alt: string; onOpen: (src: string, alt: string) => void }) {
   return (
     <div className="bg-zinc-100 rounded-2xl p-12 overflow-hidden flex items-center justify-center">
-      <img src={src} alt={alt} onClick={() => onOpen(src, alt)} className="w-auto h-auto max-w-full block rounded-lg cursor-pointer" />
+      <img src={src} alt={alt} onClick={() => onOpen(src, alt)} className="w-auto h-auto max-w-full block rounded-lg cursor-zoom-in" />
     </div>
   )
 }

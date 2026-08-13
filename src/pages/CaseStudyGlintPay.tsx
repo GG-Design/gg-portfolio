@@ -183,7 +183,7 @@ export default function CaseStudyGlintPay() {
               src="/images/glint.png"
               alt="GlintPay app"
               onClick={() => lightbox.open("/images/glint.png", "GlintPay app")}
-              className="w-auto h-auto max-w-full mx-auto cursor-pointer"
+              className="w-auto h-auto max-w-full mx-auto cursor-zoom-in"
             />
           </div>
         </FadeUp>
@@ -302,7 +302,7 @@ export default function CaseStudyGlintPay() {
                   src="/images/GlintpayFlow.png"
                   alt="KYC flow and source selector"
                   onClick={() => lightbox.open("/images/GlintpayFlow.png", "KYC flow and source selector")}
-                  className="w-auto h-auto max-w-full mx-auto cursor-pointer"
+                  className="w-auto h-auto max-w-full mx-auto cursor-zoom-in"
                 />
               </div>
             </FadeUp>
@@ -362,7 +362,7 @@ export default function CaseStudyGlintPay() {
                   src="/images/glintframesoptions.png"
                   alt="Dashboard exploration — option A vs option B"
                   onClick={() => lightbox.open("/images/glintframesoptions.png", "Dashboard exploration — option A vs option B")}
-                  className="w-auto h-auto max-w-full mx-auto cursor-pointer"
+                  className="w-auto h-auto max-w-full mx-auto cursor-zoom-in"
                 />
               </div>
             </FadeUp>
@@ -419,7 +419,7 @@ export default function CaseStudyGlintPay() {
                   src="/images/glint screens.png"
                   alt="Final design — dashboard and card linking flow"
                   onClick={() => lightbox.open("/images/glint screens.png", "Final design — dashboard and card linking flow")}
-                  className="w-auto h-auto max-w-full mx-auto block cursor-pointer"
+                  className="w-auto h-auto max-w-full mx-auto block cursor-zoom-in"
                 />
               </div>
             </FadeUp>

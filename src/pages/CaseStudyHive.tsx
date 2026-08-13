@@ -133,7 +133,7 @@ export default function CaseStudyHive() {
             src="/images/hive_CHECKOUT_ui.webp"
             alt="Hive — redesigned checkout flow"
             onClick={() => lightbox.open("/images/hive_CHECKOUT_ui.webp", "Hive — redesigned checkout flow")}
-            className="w-auto h-auto max-w-full block rounded-lg cursor-pointer"
+            className="w-auto h-auto max-w-full block rounded-lg cursor-zoom-in"
           />
         </div>
       </FadeUp>
@@ -199,7 +199,7 @@ export default function CaseStudyHive() {
                   src="/images/hive_sitemap+UK.webp"
                   alt="Hive — UK sitemap and website architecture"
                   onClick={() => lightbox.open("/images/hive_sitemap+UK.webp", "Hive — UK sitemap and website architecture")}
-                  className="w-auto h-auto max-w-full mx-auto cursor-pointer"
+                  className="w-auto h-auto max-w-full mx-auto cursor-zoom-in"
                 />
               </div>
             </FadeUp>
@@ -251,7 +251,7 @@ export default function CaseStudyHive() {
                   src="/images/hive_byo+wireframes.webp"
                   alt="Hive — wireframes"
                   onClick={() => lightbox.open("/images/hive_byo+wireframes.webp", "Hive — wireframes")}
-                  className="w-auto h-auto max-w-full mx-auto cursor-pointer"
+                  className="w-auto h-auto max-w-full mx-auto cursor-zoom-in"
                 />
               </div>
             </FadeUp>

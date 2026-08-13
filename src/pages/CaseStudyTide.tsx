@@ -128,7 +128,7 @@ export default function CaseStudyTide() {
             src="/images/Tide_wireframes.webp"
             alt="Tide — web app wireframes"
             onClick={() => lightbox.open("/images/Tide_wireframes.webp", "Tide — web app wireframes")}
-            className="w-auto h-auto max-w-full block rounded-lg cursor-pointer"
+            className="w-auto h-auto max-w-full block rounded-lg cursor-zoom-in"
           />
         </div>
       </FadeUp>
@@ -155,7 +155,7 @@ export default function CaseStudyTide() {
                   src="/images/Tide_Notications.webp"
                   alt="Tide — in-app notifications"
                   onClick={() => lightbox.open("/images/Tide_Notications.webp", "Tide — in-app notifications")}
-                  className="w-auto h-auto max-w-full mx-auto cursor-pointer"
+                  className="w-auto h-auto max-w-full mx-auto cursor-zoom-in"
                 />
               </div>
             </FadeUp>

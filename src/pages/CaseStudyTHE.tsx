@@ -71,7 +71,7 @@ function CyanImageBlock({ src, alt, onOpen }: { src: string; alt: string; onOpen
         src={src}
         alt={alt}
         onClick={() => onOpen(src, alt)}
-        className="w-auto h-auto max-w-full block rounded-lg cursor-pointer"
+        className="w-auto h-auto max-w-full block rounded-lg cursor-zoom-in"
       />
     </div>
   )
@@ -226,7 +226,7 @@ export default function CaseStudyTHE() {
                   src="/images/old_profile_header.png"
                   alt="Before — fragmented profile templates side by side"
                   onClick={() => lightbox.open("/images/old_profile_header.png", "Before — fragmented profile templates side by side")}
-                  className="w-auto h-auto max-w-full block rounded-lg cursor-pointer"
+                  className="w-auto h-auto max-w-full block rounded-lg cursor-zoom-in"
                 />
               </div>
             </FadeUp>
@@ -260,7 +260,7 @@ export default function CaseStudyTHE() {
                   src="/images/maze.png"
                   alt="Research synthesis — Hotjar + Maze"
                   onClick={() => lightbox.open("/images/maze.png", "Research synthesis — Hotjar + Maze")}
-                  className="w-auto h-auto max-w-full block cursor-pointer"
+                  className="w-auto h-auto max-w-full block cursor-zoom-in"
                 />
               </div>
               <div className="bg-zinc-100 rounded-2xl overflow-hidden p-8 flex items-center justify-center">
@@ -268,7 +268,7 @@ export default function CaseStudyTHE() {
                   src="/images/maze2.png"
                   alt="Stakeholder workshop outputs"
                   onClick={() => lightbox.open("/images/maze2.png", "Stakeholder workshop outputs")}
-                  className="w-auto h-auto max-w-full block cursor-pointer"
+                  className="w-auto h-auto max-w-full block cursor-zoom-in"
                 />
               </div>
             </FadeUp>
@@ -331,7 +331,7 @@ export default function CaseStudyTHE() {
                   src="/images/desktop_nav.png"
                   alt="Redesigned profile — desktop, full scroll"
                   onClick={() => lightbox.open("/images/desktop_nav.png", "Redesigned profile — desktop, full scroll")}
-                  className="w-auto h-auto max-w-full mx-auto block cursor-pointer"
+                  className="w-auto h-auto max-w-full mx-auto block cursor-zoom-in"
                 />
               </div>
             </FadeUp>
@@ -372,7 +372,7 @@ export default function CaseStudyTHE() {
                   src="/images/mobileabovefold.png"
                   alt="Mobile — overview tab, essentials above fold"
                   onClick={() => lightbox.open("/images/mobileabovefold.png", "Mobile — overview tab, essentials above fold")}
-                  className="w-auto h-auto max-w-full mx-auto block cursor-pointer"
+                  className="w-auto h-auto max-w-full mx-auto block cursor-zoom-in"
                 />
               </div>
               <div className="bg-zinc-100 rounded-2xl overflow-hidden p-8
@@ -381,7 +381,7 @@ export default function CaseStudyTHE() {
                   src="/images/mobilerankings.png"
                   alt="Mobile — rankings tab with methodology link"
                   onClick={() => lightbox.open("/images/mobilerankings.png", "Mobile — rankings tab with methodology link")}
-                  className="w-auto h-auto max-w-full mx-auto block cursor-pointer"
+                  className="w-auto h-auto max-w-full mx-auto block cursor-zoom-in"
                 />
               </div>
             </FadeUp>
