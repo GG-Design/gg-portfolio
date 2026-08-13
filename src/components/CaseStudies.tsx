@@ -270,19 +270,29 @@ interface PortfolioCardProps {
 
 // Tuning constants for the stack — independent of card count, so adding or
 // removing cards never requires touching these.
-const STACK_TOP_OFFSET  = 20;   // px each card's sticky position steps down by
+const STACK_TOP_OFFSET  = 8;    // px each card's sticky position steps down by
 const SCALE_STEP        = 0.035; // additional shrink per card stacked on top of this one
 const MIN_SCALE         = 0.82;  // floor — cards never shrink past this, however deep the stack gets
 const MAX_VISIBLE_DEPTH = 2;     // cards more than this many steps back freeze in place
 
+// Each card's sticky slot is shorter than a full 100vh on purpose: a card's
+// own rendered height (~700px) is fixed regardless of viewport height, so a
+// full 100vh slot leaves a growing dead zone below the card on taller
+// laptop/desktop screens before the next card's top edge peeks in. Shrinking
+// the slot keeps a small dwell margin (so the sticky pin still holds
+// briefly) while making sure the next card's top is already visible as soon
+// as the current one becomes active, instead of only appearing after
+// scrolling partway through that card's dwell.
+const CARD_SLOT_VH = 90;
+
 function PortfolioCard({ card, index, total, progress }: PortfolioCardProps) {
-  // Every card's sticky wrapper occupies exactly one viewport-height
-  // (h-screen), so the container is `total` viewport-heights tall — but
-  // Framer's scrollYProgress (offset "start start" → "end end") reaches 1.0
-  // once the container's BOTTOM meets the viewport's bottom, which happens
-  // after only (total - 1) viewport-heights of actual scrolling (the last
-  // slot never needs to scroll past itself). So progress 0→1 spans
-  // (total - 1) slot-widths, not `total`: a card's real slot boundary sits
+  // Every card's sticky wrapper occupies exactly one CARD_SLOT_VH-tall slot,
+  // so the container is `total` slots tall — but Framer's scrollYProgress
+  // (offset "start start" → "end end") reaches 1.0 once the container's
+  // BOTTOM meets the viewport's bottom, which happens after only
+  // (total - 1) slot-heights of actual scrolling (the last slot never needs
+  // to scroll past itself). So progress 0→1 spans (total - 1) slot-widths,
+  // not `total`: a card's real slot boundary sits
   // at index / (total - 1) of progress, not index / total. Using `total`
   // as the denominator underestimates every later card's hand-off point,
   // and the error compounds with index — negligible for card 1, but by the
@@ -339,11 +349,11 @@ function PortfolioCard({ card, index, total, progress }: PortfolioCardProps) {
   const scale = useTransform(progress, scaleInputs, scaleOutputs);
 
   return (
-    // The wrapper is pinned to a fixed 100vh scroll slot (h-screen) — the
-    // same allocation the container below gives every card (cards.length *
-    // 100vh total). This keeps the index/total scroll-progress math locked
-    // to each card's actual sticky hand-off regardless of how tall its
-    // content is. Without a fixed slot, cards with little content (no
+    // The wrapper is pinned to a fixed CARD_SLOT_VH scroll slot — the same
+    // allocation the container below gives every card (cards.length *
+    // CARD_SLOT_VH total). This keeps the index/total scroll-progress math
+    // locked to each card's actual sticky hand-off regardless of how tall
+    // its content is. Without a fixed slot, cards with little content (no
     // image, e.g. Hive or the "coming soon" card) consume their scroll
     // runway far faster than cards with a big image, which desyncs the
     // progress-based recede timing from when the card is actually visible
@@ -355,8 +365,8 @@ function PortfolioCard({ card, index, total, progress }: PortfolioCardProps) {
     // earlier ones, regardless of DOM/paint-order quirks — this is what
     // guarantees clean stacking as card count grows.
     <div
-      className="sticky w-full h-screen"
-      style={{ top: `${72 + index * STACK_TOP_OFFSET}px`, zIndex: index + 1 }}
+      className="sticky w-full"
+      style={{ top: `${72 + index * STACK_TOP_OFFSET}px`, height: `${CARD_SLOT_VH}vh`, zIndex: index + 1 }}
     >
       <motion.div
         style={{ scale, transformOrigin: "top center", willChange: "transform" }}
@@ -385,7 +395,7 @@ export default function CaseStudies() {
 
       <div
         ref={containerRef}
-        style={{ height: `${visibleCards.length * 100}vh` }}
+        style={{ height: `${visibleCards.length * CARD_SLOT_VH}vh` }}
         className="relative"
       >
         {visibleCards.map((card, index) => (
