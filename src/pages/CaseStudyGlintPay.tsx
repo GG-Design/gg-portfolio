@@ -272,10 +272,10 @@ export default function CaseStudyGlintPay() {
               <Card className="shadow-none border border-stone-200 bg-white overflow-hidden">
                 <CardContent className="p-0">
                   {[
-                    { n: "01", insight: "Predictable verification", detail: "Linear KYC with clear progress and realistic time‑to‑complete." },
-                    { n: "02", insight: "Explicit control",         detail: "Visible selector for card spending source with confirmation." },
-                    { n: "03", insight: "Fast first action",        detail: "Primary CTAs reachable in one tap, predictable outcomes." },
-                    { n: "04", insight: "Inline clarity",           detail: 'Contextual hints (e.g., "Card spends from: Gold Wallet") over generic help.' },
+                    { n: "01", insight: "Know where you stand",         detail: "Show clear progress through verification — how many steps are left and how long it'll take." },
+                    { n: "02", insight: "See what the card spends from", detail: "A visible control to choose which wallet the card uses, with a confirmation step before it changes." },
+                    { n: "03", insight: "Do the main thing immediately", detail: "Add money, spend and exchange reachable in one tap from the home screen." },
+                    { n: "04", insight: "Contextual over generic",       detail: "Surface key information inline — like which wallet the card is linked to — instead of relying on help pages or tooltips." },
                   ].map((item, i) => (
                     <div key={item.n}>
                       {i > 0 && <Separator className="bg-stone-200" />}
