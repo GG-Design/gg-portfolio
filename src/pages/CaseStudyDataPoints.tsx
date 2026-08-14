@@ -146,7 +146,7 @@ export default function CaseStudyDataPoints() {
       </section>
 
       <FadeUp className="max-w-5xl mx-auto px-6 pb-20">
-        <CyanImageBlock src="/images/Datapoint Flow.png" alt="THE DataPoints — full platform overview" onOpen={lightbox.open} />
+        <CyanImageBlock src="/images/DatapointFlow.png" alt="THE DataPoints — full platform overview" onOpen={lightbox.open} />
       </FadeUp>
 
       <PageDivider />

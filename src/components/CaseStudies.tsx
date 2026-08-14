@@ -26,7 +26,7 @@ const cards = [
   {
     id:        2,
     slug:      "/work/the-datapoints" as string | null,
-    imagePath: "/images/Datapoint Flow.png" as string | null,
+    imagePath: "/images/DatapointFlow.png" as string | null,
     imageAlt:  "THE DataPoints — analytics platform",
     logo:      "/logos/times_higher_education_logo.svg" as string | null,
     badge:     "B2B · EdTech · SaaS",
