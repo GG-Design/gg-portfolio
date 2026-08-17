@@ -91,7 +91,7 @@ export function Lightbox({ image, onClose }: { image: LightboxImage | null; onCl
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.96 }}
                 transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                className="m-auto block max-w-[95vw] max-h-[90vh] object-contain rounded-lg shadow-2xl cursor-zoom-in"
+                className="m-auto block max-w-[95vw] max-h-[90vh] object-contain shadow-2xl cursor-zoom-in"
                 onClick={(e) => {
                   e.stopPropagation()
                   setZoomed(true)

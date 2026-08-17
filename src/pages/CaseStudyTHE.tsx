@@ -71,7 +71,7 @@ function CyanImageBlock({ src, alt, onOpen }: { src: string; alt: string; onOpen
         src={src}
         alt={alt}
         onClick={() => onOpen(src, alt)}
-        className="w-auto h-auto max-w-full block rounded-lg cursor-zoom-in"
+        className="w-auto h-auto max-w-full block rounded-sm cursor-zoom-in"
       />
     </div>
   )
@@ -172,32 +172,33 @@ export default function CaseStudyTHE() {
 
         {/* Title + subtitle */}
         <FadeUp delay={0.06}>
-          <h1 className="text-5xl md:text-7xl font-bold leading-none tracking-tight mb-6 text-zinc-900">
-            Times Higher<br />Education
+          <h1 className="text-4xl md:text-6xl font-bold leading-none tracking-tight mb-6 text-zinc-900">
+            Times Higher Education
           </h1>
           <p className="text-xl text-zinc-600 max-w-2xl leading-relaxed">
-            Redesigned THE's university profile system from fragmented legacy pages into a
-            modular, data-driven platform — validated with 700+ students and shipped across
-            thousands of institutions worldwide.
+            Redesigned THE's university profile pages. The old system was fragmented, inconsistent,
+            and hard to maintain. I rebuilt it as a modular platform, validated the structure with
+            700+ students, and shipped it across thousands of institutions.
           </p>
         </FadeUp>
 
-        {/* Stat cards */}
-        <FadeUp delay={0.14} className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3">
-          <StatCard value="700+" label="Students who validated the final structure" />
-          <StatCard value="80%+" label="Task success rate in usability testing" />
-          <StatCard value="77%"  label="Would rely on profiles to compare universities" />
-          <StatCard value="4"    label="Internal teams aligned: Editorial, Sales, SEO, Rankings" />
-        </FadeUp>
       </section>
 
       {/* Hero image */}
-      <FadeUp className="max-w-5xl mx-auto px-6 pb-20">
+      <FadeUp className="max-w-5xl mx-auto px-6 pb-12">
         <CyanImageBlock
           src="/images/profile_header.png"
           alt="University Profile — redesigned overview"
           onOpen={lightbox.open}
         />
+      </FadeUp>
+
+      {/* Stat cards */}
+      <FadeUp delay={0.14} className="max-w-5xl mx-auto px-6 pb-20 grid grid-cols-2 md:grid-cols-4 gap-3">
+        <StatCard value="700+" label="Students who validated the final structure" />
+        <StatCard value="80%+" label="Task success rate in usability testing" />
+        <StatCard value="77%"  label="Would rely on profiles to compare universities" />
+        <StatCard value="4"    label="Internal teams aligned: Editorial, Sales, SEO, Rankings" />
       </FadeUp>
 
       <PageDivider />
@@ -213,10 +214,10 @@ export default function CaseStudyTHE() {
           <div className="space-y-8">
             <FadeUp>
               <p className="text-lg text-zinc-600 leading-relaxed">
-                THE's university profile pages had grown organically over years — multiple templates,
-                duplicated content, no shared data layer. For students mid-decision, the most important
-                information (rankings, fees, programmes, admissions) was buried or inconsistent. For
-                THE's editorial and commercial teams, updates were slow and error-prone.
+                The profile pages had been built up over years with no shared structure. Multiple
+                templates, duplicated content, no single data source. Students looking to compare
+                universities couldn't find rankings, fees or programmes without digging. THE's own
+                teams couldn't update content without breaking something.
               </p>
             </FadeUp>
             <FadeUp>
@@ -226,7 +227,7 @@ export default function CaseStudyTHE() {
                   src="/images/old_profile_header.png"
                   alt="Before — fragmented profile templates side by side"
                   onClick={() => lightbox.open("/images/old_profile_header.png", "Before — fragmented profile templates side by side")}
-                  className="w-auto h-auto max-w-full block rounded-lg cursor-zoom-in"
+                  className="w-auto h-auto max-w-full block rounded-sm cursor-zoom-in"
                 />
               </div>
             </FadeUp>
@@ -247,9 +248,9 @@ export default function CaseStudyTHE() {
           <div className="space-y-8">
             <FadeUp>
               <p className="text-lg text-zinc-600 leading-relaxed">
-                I ran stakeholder workshops across Editorial, Sales, SEO and Rankings. Combined Hotjar
-                heatmaps and analytics with Maze surveys and moderated interviews — globally, across
-                700+ students.
+                I ran workshops with Editorial, Sales, SEO and Rankings to understand what each team
+                needed from profiles. Then I combined Hotjar heatmaps and analytics with a Maze survey
+                and moderated interviews across 700+ students globally.
               </p>
             </FadeUp>
 
@@ -316,10 +317,10 @@ export default function CaseStudyTHE() {
           <div className="space-y-8">
             <FadeUp>
               <p className="text-lg text-zinc-600 leading-relaxed">
-                A single long-scroll page built from configurable blocks powered by THE's DataPoints
-                API. Hide-when-empty rules meant pages adapted to uneven institutional data. Sticky
-                in-page navigation on desktop, tabs on mobile — with Overview and Rankings open by
-                default.
+                I designed a single long-scroll page built from configurable blocks, all powered by
+                THE's DataPoints API. Pages adapted automatically to uneven data using hide-when-empty
+                rules. Desktop got sticky in-page navigation, mobile got tabs, with Overview and
+                Rankings open by default.
               </p>
             </FadeUp>
 
@@ -450,10 +451,9 @@ export default function CaseStudyTHE() {
               >
                 <CardContent className="pl-5 pr-6 py-5">
                   <p className="text-lg font-medium text-zinc-700 leading-relaxed">
-                    The project was genuinely ambitious. Engineers and the business signed off on the
-                    scope, but the estimates weren't grounded in delivery reality. I'd push for vertical
-                    slicing from the start — ship the highest-value profile type end-to-end first, learn
-                    from it, then scale the block architecture.
+                    The scope was ambitious and everyone signed off on it, but the estimates weren't
+                    realistic. Next time I'd push for vertical slicing from the start. Ship the
+                    highest-value profile type first, learn from it, then scale.
                   </p>
                 </CardContent>
               </Card>

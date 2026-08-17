@@ -160,21 +160,13 @@ export default function CaseStudyGlintPay() {
 
         {/* Title + subtitle */}
         <FadeUp delay={0.06}>
-          <h1 className="text-5xl md:text-7xl font-bold leading-none tracking-tight mb-6 text-zinc-900">
+          <h1 className="text-4xl md:text-6xl font-bold leading-none tracking-tight mb-6 text-zinc-900">
             GlintPay
           </h1>
           <p className="text-xl text-zinc-600 max-w-2xl leading-relaxed">
-            Redesigned the iOS and Android apps end-to-end — making spending from gold feel
+            Redesigned the iOS and Android apps end-to-end, making spending from gold feel
             obvious, safe and fast.
           </p>
-        </FadeUp>
-
-        {/* Stat cards */}
-        <FadeUp delay={0.14} className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3">
-          <StatCard value="4 wallets"     label="Gold, GBP, USD and EUR unified in one dashboard" />
-          <StatCard value="2 platforms"   label="iOS and Android, same behaviour, platform‑native feel" />
-          <StatCard value="1 interaction" label="Hidden swipe replaced with explicit modal switcher" />
-          <StatCard value="0 dead ends"   label="Streamlined KYC with clear progress and fewer drop-offs" />
         </FadeUp>
 
         <FadeUp className="mt-8">
@@ -186,6 +178,14 @@ export default function CaseStudyGlintPay() {
               className="w-auto h-auto max-w-full mx-auto cursor-zoom-in"
             />
           </div>
+        </FadeUp>
+
+        {/* Stat cards */}
+        <FadeUp delay={0.14} className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3">
+          <StatCard value="4 wallets"     label="Gold, GBP, USD and EUR unified in one dashboard" />
+          <StatCard value="2 platforms"   label="iOS and Android, same behaviour, platform‑native feel" />
+          <StatCard value="1 interaction" label="Hidden swipe replaced with explicit modal switcher" />
+          <StatCard value="0 dead ends"   label="Streamlined KYC with clear progress and fewer drop-offs" />
         </FadeUp>
       </section>
 
@@ -205,10 +205,10 @@ export default function CaseStudyGlintPay() {
                 The Glint dilemma: making spending from gold feel obvious and safe
               </p>
               <p className="text-lg text-zinc-600 leading-relaxed">
-                Glint's card lets people spend from Gold, GBP, USD, or EUR — but the legacy app hid the
+                Glint's card lets people spend from Gold, GBP, USD or EUR, but the app hid that
                 control behind a horizontal swipe. Onboarding was branched and unpredictable, and
-                day‑one actions sat below the fold. I rebuilt the core so it's clear where money
-                comes from, simple to get started, and consistent across iOS and Android.
+                the main actions sat below the fold. I rebuilt the core so it's clear where money
+                comes from, simple to get started, and consistent across both platforms.
               </p>
             </FadeUp>
 
@@ -263,7 +263,7 @@ export default function CaseStudyGlintPay() {
               </p>
               <p className="text-lg text-zinc-600 leading-relaxed">
                 We interviewed existing and prospective users and reviewed support tickets to
-                understand how trust is earned in a gold‑backed spending app.
+                understand what builds trust in a gold-backed spending app.
               </p>
             </FadeUp>
 
@@ -326,7 +326,7 @@ export default function CaseStudyGlintPay() {
                 Choosing the dashboard pattern
               </p>
               <p className="text-lg text-zinc-600 leading-relaxed">
-                The core problem was how to make the card‑linked currency unmistakable on the Home
+                The core question was how to make the card-linked currency unmistakable on the Home
                 screen. Research showed people missed the current source and didn't trust the hidden
                 interaction.
               </p>
@@ -521,8 +521,8 @@ export default function CaseStudyGlintPay() {
               >
                 <CardContent className="pl-5 pr-6 py-5">
                   <p className="text-lg font-medium text-zinc-700 leading-relaxed">
-                    Patterns that seem efficient (gestures, branching) often erode trust when
-                    controls are safety‑critical.
+                    Patterns that seem efficient like gestures and branching often erode trust when
+                    the controls are safety-critical.
                   </p>
                 </CardContent>
               </Card>

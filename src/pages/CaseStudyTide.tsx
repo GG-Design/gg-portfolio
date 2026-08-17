@@ -99,7 +99,7 @@ export default function CaseStudyTide() {
         </FadeUp>
 
         <FadeUp delay={0.06}>
-          <h1 className="text-5xl md:text-7xl font-bold leading-none tracking-tight mb-6 text-zinc-900">
+          <h1 className="text-4xl md:text-6xl font-bold leading-none tracking-tight mb-6 text-zinc-900">
             Tide
           </h1>
           <p className="text-xl text-zinc-600 max-w-2xl leading-relaxed">
@@ -128,7 +128,7 @@ export default function CaseStudyTide() {
             src="/images/Tide_wireframes.webp"
             alt="Tide — web app wireframes"
             onClick={() => lightbox.open("/images/Tide_wireframes.webp", "Tide — web app wireframes")}
-            className="w-auto h-auto max-w-full block rounded-lg cursor-zoom-in"
+            className="w-auto h-auto max-w-full block rounded-sm cursor-zoom-in"
           />
         </div>
       </FadeUp>

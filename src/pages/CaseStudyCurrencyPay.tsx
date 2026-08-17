@@ -110,23 +110,16 @@ export default function CaseStudyCurrencyPay() {
         </FadeUp>
 
         <FadeUp delay={0.06}>
-          <h1 className="text-5xl md:text-7xl font-bold leading-none tracking-tight mb-6 text-zinc-900">
-            NatWest<br />CurrencyPay
+          <h1 className="text-4xl md:text-6xl font-bold leading-none tracking-tight mb-6 text-zinc-900">
+            NatWest CurrencyPay
           </h1>
           <p className="text-xl text-zinc-600 max-w-2xl leading-relaxed">
             Designed the end-to-end KYC onboarding flow for NatWest's CurrencyPay — a regulated FX mobile app for iOS and Android. The challenge was meeting compliance requirements without the registration experience feeling like a compliance process.
           </p>
         </FadeUp>
 
-        <FadeUp delay={0.14} className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3">
-          <StatCard value="20"    label="Screens across the full registration flow" />
-          <StatCard value="2"     label="Platforms: iOS and Android" />
-          <StatCard value="3"     label="Competitors audited: Revolut, TransferWise, Monzo" />
-          <StatCard value="Jumio" label="Identity verification provider integrated into the flow" />
-        </FadeUp>
-
         {/* Prototype CTA */}
-        <FadeUp delay={0.2} className="mt-8">
+        <FadeUp delay={0.14} className="mt-8">
           <a
             href="https://currencypayregistration.netlify.app/#/screens"
             target="_blank"
@@ -139,16 +132,23 @@ export default function CaseStudyCurrencyPay() {
         </FadeUp>
       </section>
 
-      <FadeUp className="max-w-5xl mx-auto px-6 pb-20">
+      <FadeUp className="max-w-5xl mx-auto px-6 pb-12">
         <div className="bg-[#06B6D4] rounded-2xl py-16 px-20 overflow-hidden
                         flex items-center justify-center">
           <img
             src="/images/natwestkycflow.png"
             alt="NatWest CurrencyPay — KYC flow"
             onClick={() => lightbox.open("/images/natwestkycflow.png", "NatWest CurrencyPay — KYC flow")}
-            className="w-auto h-auto max-w-full block rounded-lg cursor-zoom-in"
+            className="w-auto h-auto max-w-full block rounded-sm cursor-zoom-in"
           />
         </div>
+      </FadeUp>
+
+      <FadeUp delay={0.06} className="max-w-5xl mx-auto px-6 pb-20 grid grid-cols-2 md:grid-cols-4 gap-3">
+        <StatCard value="20"    label="Screens across the full registration flow" />
+        <StatCard value="2"     label="Platforms: iOS and Android" />
+        <StatCard value="3"     label="Competitors audited: Revolut, TransferWise, Monzo" />
+        <StatCard value="Jumio" label="Identity verification provider integrated into the flow" />
       </FadeUp>
 
       <PageDivider />

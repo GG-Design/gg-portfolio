@@ -110,7 +110,7 @@ export default function CaseStudyHive() {
         </FadeUp>
 
         <FadeUp delay={0.06}>
-          <h1 className="text-5xl md:text-7xl font-bold leading-none tracking-tight mb-6 text-zinc-900">
+          <h1 className="text-4xl md:text-6xl font-bold leading-none tracking-tight mb-6 text-zinc-900">
             Hive
           </h1>
           <p className="text-xl text-zinc-600 max-w-2xl leading-relaxed">
@@ -118,24 +118,25 @@ export default function CaseStudyHive() {
           </p>
         </FadeUp>
 
-        <FadeUp delay={0.14} className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3">
-          <StatCard value="7"    label="Team led — 2 designers, 3 devs, 2 PMs" />
-          <StatCard value="6"    label="International markets supported end-to-end" />
-          <StatCard value="1M+"  label="Users reached across all markets" />
-          <StatCard value="2018" label="Delivered" />
-        </FadeUp>
       </section>
 
-      <FadeUp className="max-w-5xl mx-auto px-6 pb-20">
+      <FadeUp delay={0.14} className="max-w-5xl mx-auto px-6 pb-12">
         <div className="bg-[#06B6D4] rounded-2xl py-16 px-20 overflow-hidden
                         flex items-center justify-center">
           <img
             src="/images/hive_CHECKOUT_ui.webp"
             alt="Hive — redesigned checkout flow"
             onClick={() => lightbox.open("/images/hive_CHECKOUT_ui.webp", "Hive — redesigned checkout flow")}
-            className="w-auto h-auto max-w-full block rounded-lg cursor-zoom-in"
+            className="w-auto h-auto max-w-full block rounded-sm cursor-zoom-in"
           />
         </div>
+      </FadeUp>
+
+      <FadeUp className="max-w-5xl mx-auto px-6 pb-20 grid grid-cols-2 md:grid-cols-4 gap-3">
+        <StatCard value="7"    label="Team led — 2 designers, 3 devs, 2 PMs" />
+        <StatCard value="6"    label="International markets supported end-to-end" />
+        <StatCard value="1M+"  label="Users reached across all markets" />
+        <StatCard value="2018" label="Delivered" />
       </FadeUp>
 
       <PageDivider />
