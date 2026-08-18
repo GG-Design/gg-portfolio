@@ -144,7 +144,7 @@ export default function CaseStudyTHE() {
             </Link>
           </Button>
 
-          <span className="absolute left-1/2 -translate-x-1/2 text-sm font-semibold text-zinc-900">Times Higher Education</span>
+          <span className="absolute left-1/2 -translate-x-1/2 text-sm font-semibold text-zinc-900">THE Profiles</span>
         </div>
       </div>
 
@@ -173,12 +173,10 @@ export default function CaseStudyTHE() {
         {/* Title + subtitle */}
         <FadeUp delay={0.06}>
           <h1 className="text-4xl md:text-6xl font-bold leading-none tracking-tight mb-6 text-zinc-900">
-            Times Higher Education
+            THE Profiles
           </h1>
           <p className="text-xl text-zinc-600 max-w-2xl leading-relaxed">
-            Redesigned THE's university profile pages. The old system was fragmented, inconsistent,
-            and hard to maintain. I rebuilt it as a modular platform, validated the structure with
-            700+ students, and shipped it across thousands of institutions.
+            Rebuilding university profile pages as a modular, scalable platform
           </p>
         </FadeUp>
 
@@ -188,7 +186,7 @@ export default function CaseStudyTHE() {
       <FadeUp className="max-w-5xl mx-auto px-6 pb-12">
         <CyanImageBlock
           src="/images/profile_header.png"
-          alt="University Profile — redesigned overview"
+          alt="THE Profiles — redesigned university profile overview"
           onOpen={lightbox.open}
         />
       </FadeUp>
@@ -214,10 +212,11 @@ export default function CaseStudyTHE() {
           <div className="space-y-8">
             <FadeUp>
               <p className="text-lg text-zinc-600 leading-relaxed">
-                The profile pages had been built up over years with no shared structure. Multiple
-                templates, duplicated content, no single data source. Students looking to compare
-                universities couldn't find rankings, fees or programmes without digging. THE's own
-                teams couldn't update content without breaking something.
+                THE's university profile pages had been patched together over years. Multiple
+                templates, duplicated content, no single source of truth. Students comparing
+                universities couldn't find rankings, fees, or programmes without digging. THE's own
+                editorial, sales, SEO, and rankings teams couldn't update content without breaking
+                something.
               </p>
             </FadeUp>
             <FadeUp>
@@ -280,7 +279,7 @@ export default function CaseStudyTHE() {
                 {
                   icon:  <GraduationCap size={24} className="text-zinc-900 mb-4" />,
                   label: "Students decide, not browse",
-                  desc:  "Most visited to evaluate a specific university. Key info had to be immediate — not buried behind scroll or tabs.",
+                  desc:  "Most visits were to evaluate a specific university. Key info had to be immediate, not buried behind scroll or tabs.",
                 },
                 {
                   icon:  <Layers size={24} className="text-zinc-900 mb-4" />,
@@ -290,7 +289,7 @@ export default function CaseStudyTHE() {
                 {
                   icon:  <SlidersHorizontal size={24} className="text-zinc-900 mb-4" />,
                   label: "One template can't fit real data",
-                  desc:  "Institutions publish wildly uneven fields — the system needed hide-when-empty rules to stay coherent at scale.",
+                  desc:  "Institutions publish wildly uneven fields. The system needed hide-when-empty rules to stay coherent at scale.",
                 },
               ].map(item => (
                 <Card key={item.label} className="rounded-2xl border border-zinc-200 bg-white p-6">
@@ -317,10 +316,9 @@ export default function CaseStudyTHE() {
           <div className="space-y-8">
             <FadeUp>
               <p className="text-lg text-zinc-600 leading-relaxed">
-                I designed a single long-scroll page built from configurable blocks, all powered by
-                THE's DataPoints API. Pages adapted automatically to uneven data using hide-when-empty
-                rules. Desktop got sticky in-page navigation, mobile got tabs, with Overview and
-                Rankings open by default.
+                Instead of building another rigid template, I designed a single long-scroll page built
+                from configurable blocks, all powered by THE's DataPoints API. Pages adapt
+                automatically to uneven data using hide-when-empty rules.
               </p>
             </FadeUp>
 
@@ -343,12 +341,12 @@ export default function CaseStudyTHE() {
               <Card className="shadow-none border border-stone-200 bg-white overflow-hidden">
                 <CardContent className="p-0">
                   {[
-                    "Key stats strip above the fold",
-                    "Sticky in-page navigation on desktop",
-                    "Tab navigation on mobile",
-                    "Rankings module with methodology link and source citation",
-                    "Programmes module routing directly to enquiry flow",
-                    "Clearly labelled commercial modules",
+                    "Key stats strip above the fold so students get essentials immediately",
+                    "Sticky in-page navigation on desktop so long pages stay scannable",
+                    "Tab navigation on mobile, only Overview and Rankings open by default",
+                    "Rankings module with methodology link and source citation to build trust",
+                    "Programmes module routing directly to enquiry flow to reduce friction",
+                    "Clearly labelled commercial modules to maintain credibility",
                   ].map((item, i) => (
                     <div key={i}>
                       {i > 0 && <Separator className="bg-stone-200" />}
@@ -415,8 +413,8 @@ export default function CaseStudyTHE() {
                   {[
                     "Shipped across thousands of university profiles at scale",
                     "Professionals cited visible methodology and source labelling as trust signals",
-                    "First reusable block system at THE",
-                    "4 internal teams aligned: Editorial, Sales, SEO, Rankings",
+                    "First reusable block system at THE, now used across the organisation",
+                    "4 internal teams aligned on one shared structure",
                   ].map((item, i) => (
                     <div key={i}>
                       {i > 0 && <Separator className="bg-stone-200" />}
@@ -466,7 +464,7 @@ export default function CaseStudyTHE() {
                   "Plain labels always beat clever section names",
                   "Anchor navigation must be obvious at the top and quieter on scroll",
                   "Tabs reduce mobile fatigue when only essentials open by default",
-                  "Get engineers in the room before estimates — not after the brief",
+                  "Get engineers in the room before estimates, not after the brief",
                 ].map((item, i) => (
                   <Card key={i} className="shadow-none bg-white border border-stone-200 rounded-2xl">
                     <CardContent className="px-5 py-4 flex gap-3 items-start">

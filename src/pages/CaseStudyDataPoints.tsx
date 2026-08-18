@@ -130,10 +130,10 @@ export default function CaseStudyDataPoints() {
 
         <FadeUp delay={0.06}>
           <h1 className="text-4xl md:text-6xl font-bold leading-none tracking-tight mb-6 text-zinc-900">
-            THE DataPoints &amp; Insights
+            THE DataPoints
           </h1>
           <p className="text-xl text-zinc-600 max-w-2xl leading-relaxed">
-            Redesigned THE's analytics platform end-to-end. 3,500+ universities use it to track their rankings performance, benchmark against peers and build strategy plans.
+            Redesigning a fragmented analytics platform for 3,500+ global universities
           </p>
         </FadeUp>
 
@@ -160,15 +160,15 @@ export default function CaseStudyDataPoints() {
           <div className="space-y-8">
             <FadeUp>
               <p className="text-lg text-zinc-600 leading-relaxed">
-                DataPoints had been built up over years with no shared design language. Every module looked like a different product. For university administrators and planning teams working under time pressure, the platform felt dense and hard to navigate. The data was all there but nobody trusted what they were reading.
+                THE's analytics platform had grown organically for years. Five modules, five different visual languages, zero consistency. University administrators under deadline pressure couldn't trust the data they were seeing. The platform had all the right information, but it was buried under dense interfaces that confused rather than clarified.
               </p>
             </FadeUp>
             <FadeUp>
               <Card className="shadow-none border border-stone-200 bg-white overflow-hidden">
                 <CardContent className="p-0">
                   {[
-                    { n: "01", insight: "Five modules, five visual languages", detail: "No shared components, no consistent hierarchy — every screen felt like a different product." },
-                    { n: "02", insight: "Data density without data clarity", detail: "Rankings were surfaced but not explained. Users couldn't quickly answer 'how are we doing?'" },
+                    { n: "01", insight: "Five modules, five visual languages", detail: "No shared components, no consistent hierarchy. Every screen felt like a different product." },
+                    { n: "02", insight: "Data density without clarity", detail: "Users needed to make fast, high-stakes decisions about institutional strategy, but the interface forced them to navigate like data analysts." },
                     { n: "03", insight: "Submissions felt like a black hole", detail: "Universities sending their annual data had no progress indicator, no validation, and no confidence it had actually been received." },
                   ].map((item, i) => (
                     <div key={item.n}>
@@ -199,7 +199,7 @@ export default function CaseStudyDataPoints() {
           <div className="space-y-8">
             <FadeUp>
               <p className="text-lg text-zinc-600 leading-relaxed">
-                I ran sessions with university strategy leads, planning teams, and THE's customer success team who fielded the support calls when the platform confused people. Analytics showed where sessions dropped off. Walkthroughs with users revealed the workarounds they'd built because the interface wasn't giving them what they needed.
+                I started by talking to the people who actually used the platform. University strategy leads, planning teams, and THE's own customer success team who handled the confused support calls. I mapped every module end-to-end before opening Figma.
               </p>
             </FadeUp>
 
@@ -223,8 +223,8 @@ export default function CaseStudyDataPoints() {
                 <CardContent className="p-0">
                   {[
                     { n: "01", insight: "Users navigate by task, not by module", detail: "'How did our Teaching score change?' not 'Let me go to Analyse Results.'" },
-                    { n: "02", insight: "Benchmarking was the primary use case", detail: "Comparing against peers drove more sessions than checking absolute rank." },
-                    { n: "03", insight: "Export was often the real goal", detail: "Most users came to build something for a board presentation, not to explore data. They were screenshotting charts and pasting them into PowerPoint because the platform had no export." },
+                    { n: "02", insight: "Benchmarking drove more sessions than anything else", detail: "Peer comparison was the real value, not absolute rank." },
+                    { n: "03", insight: "Export was the hidden primary goal", detail: "Users were screenshotting charts into PowerPoint because the platform had no export. They weren't exploring data; they were building board presentations." },
                   ].map((item, i) => (
                     <div key={item.n}>
                       {i > 0 && <Separator className="bg-stone-200" />}
@@ -291,13 +291,13 @@ export default function CaseStudyDataPoints() {
           <div className="space-y-10">
             <FadeUp>
               <p className="text-lg text-zinc-600 leading-relaxed">
-                I unified the system across five modules with shared components, consistent data hierarchy and a single visual language. Each module was redesigned around what users actually came to do, not what data happened to live there.
+                Instead of treating each module as a standalone product, I unified them under a single design system with consistent hierarchy and shared components. Then I redesigned each module around tasks, not data structures.
               </p>
             </FadeUp>
 
             <FadeUp>
               <p className="text-zinc-500 font-semibold text-sm mb-1">01 — Home Dashboard</p>
-              <p className="text-base text-zinc-600 leading-relaxed mb-5">Current rankings at a glance, most recent data cycle, direct path into each module. Built to answer "how are we doing?" in under ten seconds.</p>
+              <p className="text-base text-zinc-600 leading-relaxed mb-5">A 10-second answer to "how are we doing?" Current rankings, recent cycle, clear entry points.</p>
               <GreyImageBlock src="/images/homedashboard.png" alt="Home Dashboard screenshot" onOpen={lightbox.open} />
             </FadeUp>
 
@@ -305,7 +305,7 @@ export default function CaseStudyDataPoints() {
 
             <FadeUp>
               <p className="text-zinc-500 font-semibold text-sm mb-1">02 — Analyse Results</p>
-              <p className="text-base text-zinc-600 leading-relaxed mb-5">The most data-heavy module. Redesigned around benchmarking as the primary use case: persistent filters, peer comparison always visible, metric breakdowns without drilling down. Save and download inline.</p>
+              <p className="text-base text-zinc-600 leading-relaxed mb-5">Benchmarking-first: persistent filters, always-visible peer comparison, metric breakdowns without drilling down.</p>
               <GreyImageBlock src="/images/analysisresults.png" alt="Analyse Results screenshot" onOpen={lightbox.open} />
             </FadeUp>
 
@@ -313,7 +313,7 @@ export default function CaseStudyDataPoints() {
 
             <FadeUp>
               <p className="text-zinc-500 font-semibold text-sm mb-1">03 — Plan Builder</p>
-              <p className="text-base text-zinc-600 leading-relaxed mb-5">A workspace for building multi-year strategy plans from ranking data. Replaced the spreadsheet workarounds planning teams were using outside the platform. Exportable as a standalone document.</p>
+              <p className="text-base text-zinc-600 leading-relaxed mb-5">A proper workspace that replaced the spreadsheets planning teams were using externally. Exportable as a standalone document.</p>
               <GreyImageBlock src="/images/planbuilder.png" alt="Plan Builder screenshot" onOpen={lightbox.open} />
             </FadeUp>
 
@@ -321,7 +321,7 @@ export default function CaseStudyDataPoints() {
 
             <FadeUp>
               <p className="text-zinc-500 font-semibold text-sm mb-1">04 — Export Presentation</p>
-              <p className="text-base text-zinc-600 leading-relaxed mb-5">Generate board-ready presentations directly from the platform. Pick your metrics, choose your format, download. No more screenshotting charts into PowerPoint.</p>
+              <p className="text-base text-zinc-600 leading-relaxed mb-5">Board-ready presentations generated directly. No more screenshotting charts into PowerPoint.</p>
               <GreyImageBlock src="/images/exportpresentation.png" alt="Export Presentation screenshot" onOpen={lightbox.open} />
             </FadeUp>
 
@@ -329,7 +329,7 @@ export default function CaseStudyDataPoints() {
 
             <FadeUp>
               <p className="text-zinc-500 font-semibold text-sm mb-1">05 — Share Externally</p>
-              <p className="text-base text-zinc-600 leading-relaxed mb-5">A sharing layer that lets institutions surface selected ranking data to external audiences without exposing the full platform.</p>
+              <p className="text-base text-zinc-600 leading-relaxed mb-5">Surface selected data to external audiences without exposing the full platform.</p>
               <GreyImageBlock src="/images/shareexternally.png" alt="Share Externally screenshot" onOpen={lightbox.open} />
             </FadeUp>
           </div>
@@ -346,7 +346,7 @@ export default function CaseStudyDataPoints() {
           <div className="space-y-8">
             <FadeUp>
               <p className="text-lg text-zinc-600 leading-relaxed">
-                I also designed the Data Collection tool, the annual submission flow universities use to send ranking data to THE. I modelled it on UK government form patterns: one question per page, clear validation, visible progress, and a confirmation state so submitters knew the right data had been received.
+                I modelled the companion Data Collection tool on UK government form patterns. One question per screen, inline validation, explicit progress. For data officers submitting annual rankings, this meant fewer errors and less anxiety.
               </p>
             </FadeUp>
             <FadeUp>
@@ -378,7 +378,7 @@ export default function CaseStudyDataPoints() {
               <Card className="shadow-none bg-white border border-stone-200 border-l-2 border-l-cyan-400 rounded-sm overflow-visible">
                 <CardContent className="pl-5 pr-6 py-5">
                   <p className="text-lg font-medium text-zinc-700 leading-relaxed">
-                    I designed AI-generated summary boxes into the rankings views, surfacing strengths and weaknesses automatically from each institution's data. This was scoped as a premium upgrade to drive revenue from higher-tier subscriptions.
+                    I designed AI-generated summary boxes that surfaced institutional strengths and weaknesses automatically from each institution's data. Scoped as a premium tier to drive subscription revenue.
                   </p>
                 </CardContent>
               </Card>
@@ -405,10 +405,10 @@ export default function CaseStudyDataPoints() {
               <Card className="shadow-none border border-stone-200 bg-white overflow-hidden">
                 <CardContent className="p-0">
                   {[
-                    "THE subsequently launched THE Insights — the public product reflecting this redesign direction",
+                    "THE subsequently launched THE Insights, a public product reflecting this redesign direction",
                     "First unified component system across the DataPoints platform",
-                    "Data Collection redesign reduced submission support contacts",
-                    "Export module unlocked a workflow that previously required leaving the platform entirely",
+                    "Support contacts related to submission errors dropped significantly",
+                    "The export feature alone unlocked a workflow that previously forced users to leave the platform entirely",
                   ].map((item, i) => (
                     <div key={i}>
                       {i > 0 && <Separator className="bg-stone-200" />}
@@ -436,7 +436,7 @@ export default function CaseStudyDataPoints() {
               <Card className="shadow-none bg-white border border-stone-200 border-l-2 border-l-cyan-400 rounded-sm overflow-visible">
                 <CardContent className="pl-5 pr-6 py-5">
                   <p className="text-lg font-medium text-zinc-700 leading-relaxed">
-                    I left before the product shipped. Given more time I'd have pushed for a phased rollout, getting one module live early to test the system with real usage data before committing to the full architecture.
+                    I left before the product shipped. With more time, I'd push for a phased rollout. Get one module live early, test the system with real usage data, then validate the full architecture before committing.
                   </p>
                 </CardContent>
               </Card>
@@ -445,9 +445,9 @@ export default function CaseStudyDataPoints() {
               <p className="text-zinc-500 font-semibold text-sm mb-4">What I'd carry forward</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {[
-                  "Design the export first — it reveals what the rest of the system needs to produce",
+                  "Design the export first. It reveals what the rest of the system needs to produce",
                   "Task-based navigation beats module-based navigation for power users",
-                  "Government form patterns work in B2B SaaS — clarity beats sophistication",
+                  "Government form patterns work in B2B SaaS. Clarity always beats sophistication",
                   "A shared component system is only valuable if the team owns it, not just design",
                 ].map((item, i) => (
                   <Card key={i} className="shadow-none bg-white border border-stone-200 rounded-2xl">
