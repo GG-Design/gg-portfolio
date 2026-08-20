@@ -1,5 +1,3 @@
-import { Sparkles } from "lucide-react"
-
 function scrollToTop() {
   const w = window as typeof window & { __lenis?: { scrollTo: (target: number) => void } }
   if (w.__lenis) {
@@ -23,11 +21,6 @@ export function Footer() {
         >
           Back to top ↑
         </button>
-
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-zinc-800 text-xs font-light text-zinc-500">
-          <Sparkles className="w-3 h-3 text-[#06B6D4]" />
-          Built with Claude
-        </div>
       </div>
     </footer>
   )
