@@ -400,11 +400,20 @@ export default function CaseStudyTHE() {
           </FadeUp>
           <div className="space-y-8">
 
-            <FadeUp className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              <StatCard value="23%" label="Profile conversion rate improvement" />
-              <StatCard value="28%" label="Page engagement improvement" />
-              <StatCard value="13%" label="Decrease in bounce rate" />
-              <StatCard value="1st" label="Reusable block system at THE" />
+            <FadeUp className="grid grid-cols-3 gap-3">
+              {[
+                { value: "23%",  line1: "Profile conversion", line2: "2.4% → 2.95%" },
+                { value: "28%",  line1: "Page engagement",    line2: "1:10 → 1:30" },
+                { value: "−13%", line1: "Bounce rate",        line2: "55% → 47.9%" },
+              ].map(stat => (
+                <Card key={stat.line1} className="shadow-none border border-stone-200 bg-white rounded-2xl">
+                  <CardContent className="p-6 flex flex-col gap-0.5">
+                    <span className="text-3xl font-bold text-cyan-600 leading-none mb-2">{stat.value}</span>
+                    <span className="text-sm font-medium text-zinc-800 leading-snug">{stat.line1}</span>
+                    <span className="text-sm font-normal text-zinc-500 leading-snug">{stat.line2}</span>
+                  </CardContent>
+                </Card>
+              ))}
             </FadeUp>
 
             <FadeUp>
