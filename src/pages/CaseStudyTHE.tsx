@@ -304,13 +304,13 @@ export default function CaseStudyTHE() {
               {[
                 {
                   icon:  <GraduationCap size={24} className="text-cyan-600 mb-4" />,
-                  label: "Key info was buried",
-                  desc:  "Students, academics, and institutions all came to profiles to evaluate universities. But rankings, fees, and programmes were hidden behind scroll or tabs — the most important content required the most effort to find.",
+                  label: "Everything lived in one long scroll",
+                  desc:  "Students, academics, and institutions all came to profiles to evaluate universities. But every audience got the same undifferentiated long page — no way to jump to what they needed, and key info like rankings and fees was lost in the scroll.",
                 },
                 {
                   icon:  <Layers size={24} className="text-cyan-600 mb-4" />,
-                  label: "Navigation had to earn the scroll",
-                  desc:  "Long pages worked when users could orient themselves. I introduced anchor navigation on desktop and collapsible tabs on mobile so users always knew where they were and could jump to what mattered.",
+                  label: "No clear navigation or taxonomy",
+                  desc:  "The old page had no structure to orient users. I introduced audience tabs (Overview, For Students, For Professionals), anchor navigation on desktop, and collapsible sections on mobile with the top two open by default — so users could scan and jump straight to what mattered.",
                 },
                 {
                   icon:  <SlidersHorizontal size={24} className="text-cyan-600 mb-4" />,
