@@ -5,7 +5,7 @@ import {
   ArrowLeft, ArrowRight,
   Briefcase, Clock, Users,
   AlertCircle, Search, Layers, TrendingUp, RefreshCw,
-  Settings, ScrollText, Compass, LayoutTemplate,
+  Settings, MonitorSmartphone, Network, LayoutTemplate,
   type LucideIcon,
 } from "lucide-react"
 import { Tagline }                        from "@/components/ui/tagline"
@@ -303,19 +303,19 @@ export default function CaseStudyTHE() {
             <FadeUp className="grid grid-cols-1 md:grid-cols-3 gap-3">
               {[
                 {
-                  icon:  <ScrollText size={24} className="text-cyan-600 mb-4" />,
+                  icon:  <MonitorSmartphone size={24} className="text-cyan-600 mb-4" />,
                   label: "Everything lived in one long scroll",
-                  desc:  "Students, academics, and institutions all came to profiles to evaluate universities. But every audience got the same undifferentiated long page — no way to jump to what they needed, and key info like rankings and fees was lost in the scroll.",
+                  desc:  "Every audience — students, academics, institutions — got the same undifferentiated long page. No way to jump to what they needed, and key info like rankings and fees was lost in the scroll.",
                 },
                 {
-                  icon:  <Compass size={24} className="text-cyan-600 mb-4" />,
+                  icon:  <Network size={24} className="text-cyan-600 mb-4" />,
                   label: "No clear navigation or taxonomy",
-                  desc:  "The old page had no structure to orient users. I introduced audience tabs (Overview, For Students, For Professionals), anchor navigation on desktop, and collapsible sections on mobile with the top two open by default — so users could scan and jump straight to what mattered.",
+                  desc:  "The old page had no structure to orient users. I added audience tabs, anchor navigation on desktop, and collapsible sections on mobile — so users could scan and jump straight to what mattered.",
                 },
                 {
                   icon:  <LayoutTemplate size={24} className="text-cyan-600 mb-4" />,
                   label: "Real data broke every template",
-                  desc:  "Institutions publish wildly uneven content. Some had rich media and rankings across six categories; others had a paragraph and one score. A fixed layout couldn't handle both without looking broken.",
+                  desc:  "Institutions publish wildly uneven content — some rich with media and rankings, others just a paragraph and one score. A fixed layout couldn't handle both without looking broken.",
                 },
               ].map(item => (
                 <Card key={item.label} className="rounded-2xl border border-zinc-200 bg-white p-6">
