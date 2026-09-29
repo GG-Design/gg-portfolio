@@ -5,7 +5,8 @@ import {
   ArrowLeft, ArrowRight,
   Briefcase, Clock, Users,
   AlertCircle, Search, Layers, TrendingUp, RefreshCw,
-  Settings, MonitorSmartphone, Network, LayoutTemplate,
+  Settings, TextAlignJustify, Waypoints, LayoutTemplate,
+  Compass, Blocks,
   type LucideIcon,
 } from "lucide-react"
 import { Tagline }                        from "@/components/ui/tagline"
@@ -303,14 +304,14 @@ export default function CaseStudyTHE() {
             <FadeUp className="grid grid-cols-1 md:grid-cols-3 gap-3">
               {[
                 {
-                  icon:  <MonitorSmartphone size={24} className="text-cyan-600 mb-4" />,
+                  icon:  <TextAlignJustify size={24} className="text-cyan-600 mb-4" />,
                   label: "Everything lived in one long scroll",
                   desc:  "Every audience — students, academics, institutions — got the same undifferentiated long page. No way to jump to what they needed, and key info like rankings and fees was lost in the scroll.",
                 },
                 {
-                  icon:  <Network size={24} className="text-cyan-600 mb-4" />,
+                  icon:  <Waypoints size={24} className="text-cyan-600 mb-4" />,
                   label: "No clear navigation or taxonomy",
-                  desc:  "The old page had no structure to orient users. I added audience tabs, anchor navigation on desktop, and collapsible sections on mobile — so users could scan and jump straight to what mattered.",
+                  desc:  "The old page had no structure to orient users. Nothing signalled where to look or how the content was organised, so people scrolled aimlessly or gave up.",
                 },
                 {
                   icon:  <LayoutTemplate size={24} className="text-cyan-600 mb-4" />,
@@ -361,33 +362,32 @@ export default function CaseStudyTHE() {
               </div>
             </FadeUp>
 
-            {/* Key components list */}
-            <FadeUp>
-              <p className="text-zinc-500 font-semibold text-sm mb-3">Key components</p>
-              <Card className="shadow-none border border-stone-200 bg-white overflow-hidden">
-                <CardContent className="p-0">
-                  {[
-                    "Key stats strip above the fold so students get essentials immediately",
-                    "Sticky in-page navigation on desktop so long pages stay scannable",
-                    "Tab navigation on mobile, only Overview and Rankings open by default",
-                    "Rankings module with methodology link and source citation to build trust",
-                    "Programmes module routing directly to enquiry flow to reduce friction",
-                    "Clearly labelled commercial modules to maintain credibility",
-                  ].map((item, i) => (
-                    <div key={i}>
-                      {i > 0 && <Separator className="bg-stone-200" />}
-                      <div className="px-6 py-4 flex items-center gap-4">
-                        <span className="shrink-0 inline-flex items-center justify-center
-                                         w-8 h-8 rounded-lg border border-cyan-200
-                                         bg-cyan-50 text-xs text-cyan-700 font-semibold">
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
-                        <span className="text-sm font-medium text-zinc-700">{item}</span>
-                      </div>
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
+            <FadeUp className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              {[
+                {
+                  icon:  <Users size={24} className="text-cyan-600 mb-4" />,
+                  label: "Structured by audience",
+                  desc:  "Audience tabs — Overview, For Students, For Professionals — so each visitor started with content shaped for them, not a single undifferentiated page.",
+                },
+                {
+                  icon:  <Compass size={24} className="text-cyan-600 mb-4" />,
+                  label: "Navigation that orients",
+                  desc:  "Anchor navigation on desktop and collapsible sections on mobile, with the top two open by default. Users could always see where they were and jump straight to what mattered.",
+                },
+                {
+                  icon:  <Blocks size={24} className="text-cyan-600 mb-4" />,
+                  label: "Configurable, not fixed",
+                  desc:  "A modular system of blocks powered by THE's DataPoints API, with hide-when-empty rules. Pages adapted to whatever data an institution had, instead of breaking.",
+                },
+              ].map(item => (
+                <Card key={item.label} className="rounded-2xl border border-zinc-200 bg-white p-6">
+                  <CardContent className="p-0 flex flex-col">
+                    {item.icon}
+                    <span className="font-semibold text-zinc-900 mb-2 min-h-[3.5rem]">{item.label}</span>
+                    <span className="text-sm text-zinc-500">{item.desc}</span>
+                  </CardContent>
+                </Card>
+              ))}
             </FadeUp>
 
             <FadeUp className="grid grid-cols-2 gap-4">
