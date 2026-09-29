@@ -238,7 +238,7 @@ export default function CaseStudyTHE() {
                 <Card key={item.label} className="rounded-2xl border border-zinc-200 bg-white p-6">
                   <CardContent className="p-0 flex flex-col">
                     {item.icon}
-                    <span className="font-semibold text-zinc-900 mb-2">{item.label}</span>
+                    <span className="font-semibold text-zinc-900 mb-2 min-h-[3.5rem]">{item.label}</span>
                     <span className="text-sm text-zinc-500">{item.desc}</span>
                   </CardContent>
                 </Card>
@@ -321,7 +321,7 @@ export default function CaseStudyTHE() {
                 <Card key={item.label} className="rounded-2xl border border-zinc-200 bg-white p-6">
                   <CardContent className="p-0 flex flex-col">
                     {item.icon}
-                    <span className="font-semibold text-zinc-900 mb-2">{item.label}</span>
+                    <span className="font-semibold text-zinc-900 mb-2 min-h-[3.5rem]">{item.label}</span>
                     <span className="text-sm text-zinc-500">{item.desc}</span>
                   </CardContent>
                 </Card>
