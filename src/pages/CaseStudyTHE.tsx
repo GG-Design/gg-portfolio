@@ -304,18 +304,18 @@ export default function CaseStudyTHE() {
               {[
                 {
                   icon:  <GraduationCap size={24} className="text-cyan-600 mb-4" />,
-                  label: "Students decide, not browse",
-                  desc:  "Most visits were to evaluate a specific university. Key info had to be immediate, not buried behind scroll or tabs.",
+                  label: "Key info was buried",
+                  desc:  "Students, academics, and institutions all came to profiles to evaluate universities. But rankings, fees, and programmes were hidden behind scroll or tabs — the most important content required the most effort to find.",
                 },
                 {
                   icon:  <Layers size={24} className="text-cyan-600 mb-4" />,
-                  label: "Long pages work when the top works",
-                  desc:  "Early exits spiked whenever essentials were buried below the fold. The header had to earn the scroll.",
+                  label: "Navigation had to earn the scroll",
+                  desc:  "Long pages worked when users could orient themselves. I introduced anchor navigation on desktop and collapsible tabs on mobile so users always knew where they were and could jump to what mattered.",
                 },
                 {
                   icon:  <SlidersHorizontal size={24} className="text-cyan-600 mb-4" />,
-                  label: "One template can't fit real data",
-                  desc:  "Institutions publish wildly uneven fields. The system needed hide-when-empty rules to stay coherent at scale.",
+                  label: "Real data broke every template",
+                  desc:  "Institutions publish wildly uneven content. Some had rich media and rankings across six categories; others had a paragraph and one score. A fixed layout couldn't handle both without looking broken.",
                 },
               ].map(item => (
                 <Card key={item.label} className="rounded-2xl border border-zinc-200 bg-white p-6">
