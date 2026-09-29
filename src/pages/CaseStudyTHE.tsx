@@ -5,7 +5,7 @@ import {
   ArrowLeft, ArrowRight,
   Briefcase, Clock, Users,
   AlertCircle, Search, Layers, TrendingUp, RefreshCw,
-  GraduationCap, SlidersHorizontal,
+  GraduationCap, SlidersHorizontal, Settings,
   type LucideIcon,
 } from "lucide-react"
 import { Tagline }                        from "@/components/ui/tagline"
@@ -213,12 +213,38 @@ export default function CaseStudyTHE() {
             <FadeUp>
               <p className="text-lg text-zinc-600 leading-relaxed">
                 THE's university profile pages had been patched together over years. Multiple
-                templates, duplicated content, no single source of truth. Students comparing
-                universities couldn't find rankings, fees, or programmes without digging. THE's own
-                editorial, sales, SEO, and rankings teams couldn't update content without breaking
-                something.
+                templates, duplicated content, no single source of truth.
               </p>
             </FadeUp>
+
+            <FadeUp className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              {[
+                {
+                  icon:  <Users size={24} className="text-cyan-600 mb-4" />,
+                  label: "Users couldn't find what they needed",
+                  desc:  "Students, academics, and government bodies all relied on profiles to evaluate universities. Rankings, fees, and programmes were buried or inconsistent.",
+                },
+                {
+                  icon:  <Settings size={24} className="text-cyan-600 mb-4" />,
+                  label: "Internal teams couldn't maintain it",
+                  desc:  "Editorial, Sales, SEO, and Rankings all touched the same pages. Updates were slow, error-prone, and often broke something else.",
+                },
+                {
+                  icon:  <TrendingUp size={24} className="text-cyan-600 mb-4" />,
+                  label: "Product was underperforming",
+                  desc:  "Enhanced profiles were THE's paid offering for universities, but the fragmented system made it harder to demonstrate value or upsell premium features.",
+                },
+              ].map(item => (
+                <Card key={item.label} className="rounded-2xl border border-zinc-200 bg-white p-6">
+                  <CardContent className="p-0 flex flex-col">
+                    {item.icon}
+                    <span className="font-semibold text-zinc-900 mb-2">{item.label}</span>
+                    <span className="text-sm text-zinc-500">{item.desc}</span>
+                  </CardContent>
+                </Card>
+              ))}
+            </FadeUp>
+
             <FadeUp>
               <div className="bg-stone-100 rounded-2xl py-16 px-20 overflow-hidden
                               flex items-center justify-center">
@@ -277,17 +303,17 @@ export default function CaseStudyTHE() {
             <FadeUp className="grid grid-cols-1 md:grid-cols-3 gap-3">
               {[
                 {
-                  icon:  <GraduationCap size={24} className="text-zinc-900 mb-4" />,
+                  icon:  <GraduationCap size={24} className="text-cyan-600 mb-4" />,
                   label: "Students decide, not browse",
                   desc:  "Most visits were to evaluate a specific university. Key info had to be immediate, not buried behind scroll or tabs.",
                 },
                 {
-                  icon:  <Layers size={24} className="text-zinc-900 mb-4" />,
+                  icon:  <Layers size={24} className="text-cyan-600 mb-4" />,
                   label: "Long pages work when the top works",
                   desc:  "Early exits spiked whenever essentials were buried below the fold. The header had to earn the scroll.",
                 },
                 {
-                  icon:  <SlidersHorizontal size={24} className="text-zinc-900 mb-4" />,
+                  icon:  <SlidersHorizontal size={24} className="text-cyan-600 mb-4" />,
                   label: "One template can't fit real data",
                   desc:  "Institutions publish wildly uneven fields. The system needed hide-when-empty rules to stay coherent at scale.",
                 },

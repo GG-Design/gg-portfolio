@@ -216,17 +216,17 @@ export default function CaseStudyGlintPay() {
             <FadeUp className="grid grid-cols-1 md:grid-cols-3 gap-3">
               {[
                 {
-                  icon:  <Layers size={24} className="text-zinc-900 mb-4" />,
+                  icon:  <Layers size={24} className="text-cyan-600 mb-4" />,
                   label: "Day-one essentials",
                   desc:  "Fund, spend, exchange and control the card — all reachable from the home screen without detours.",
                 },
                 {
-                  icon:  <GitBranch size={24} className="text-zinc-900 mb-4" />,
+                  icon:  <GitBranch size={24} className="text-cyan-600 mb-4" />,
                   label: "Built for multiple wallets",
                   desc:  "Gold, GBP, USD and EUR all behave the same way across dashboard, exchange and card settings — one pattern, four currencies.",
                 },
                 {
-                  icon:  <SlidersHorizontal size={24} className="text-zinc-900 mb-4" />,
+                  icon:  <SlidersHorizontal size={24} className="text-cyan-600 mb-4" />,
                   label: "Safe to customise",
                   desc:  "Users can set spending limits and switch card sources with confirmation. The system supports future features without rebuilding.",
                 },
@@ -476,17 +476,17 @@ export default function CaseStudyGlintPay() {
             <FadeUp className="grid grid-cols-1 md:grid-cols-3 gap-3">
               {[
                 {
-                  icon:  <ShieldCheck size={24} className="text-zinc-900 mb-4" />,
+                  icon:  <ShieldCheck size={24} className="text-cyan-600 mb-4" />,
                   label: "Clarity & trust",
                   desc:  "Switching from a hidden swipe to a modal plus confirm made the card‑linked currency explicit. The persistent Card spends from: label removed doubt and increased confidence before spending.",
                 },
                 {
-                  icon:  <LayoutDashboard size={24} className="text-zinc-900 mb-4" />,
+                  icon:  <LayoutDashboard size={24} className="text-cyan-600 mb-4" />,
                   label: "Control on Home",
                   desc:  "Putting Add Money, Spend, Exchange on the Home screen gave people immediate control of key actions.",
                 },
                 {
-                  icon:  <Zap size={24} className="text-zinc-900 mb-4" />,
+                  icon:  <Zap size={24} className="text-cyan-600 mb-4" />,
                   label: "Activation speed",
                   desc:  "With source and balances visible on entry, more users completed add → spend in the same session.",
                 },
