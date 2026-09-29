@@ -16,7 +16,7 @@ const cards = [
     logo:      "/logos/times_higher_education_logo.svg" as string | null,
     badge:     "B2C · EdTech",
     title:     "THE Profiles",
-    subline:   "23% increase in profile conversion, validated with 700+ students",
+    subline:   "23% increase in profile conversion, validated with 700+ users",
     bg:        "#ffffff",
     textColor: "#09090b",
     mutedColor:"#71717a",

@@ -193,7 +193,7 @@ export default function CaseStudyTHE() {
 
       {/* Stat cards */}
       <FadeUp delay={0.14} className="max-w-5xl mx-auto px-6 pb-20 grid grid-cols-2 md:grid-cols-4 gap-3">
-        <StatCard value="700+" label="Students who validated the final structure" />
+        <StatCard value="700+" label="Students and academics who validated the final structure" />
         <StatCard value="80%+" label="Task success rate in usability testing" />
         <StatCard value="77%"  label="Would rely on profiles to compare universities" />
         <StatCard value="4"    label="Internal teams aligned: Editorial, Sales, SEO, Rankings" />
@@ -275,7 +275,7 @@ export default function CaseStudyTHE() {
               <p className="text-lg text-zinc-600 leading-relaxed">
                 I ran workshops with Editorial, Sales, SEO and Rankings to understand what each team
                 needed from profiles. Then I combined Hotjar heatmaps and analytics with a Maze survey
-                and moderated interviews across 700+ students globally.
+                and moderated interviews across 500+ students and 200+ academics globally.
               </p>
             </FadeUp>
 
