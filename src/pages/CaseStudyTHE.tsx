@@ -5,7 +5,7 @@ import {
   ArrowLeft, ArrowRight,
   Briefcase, Clock, Users,
   AlertCircle, Search, Layers, TrendingUp, RefreshCw,
-  GraduationCap, SlidersHorizontal, Settings,
+  Settings, ScrollText, Compass, LayoutTemplate,
   type LucideIcon,
 } from "lucide-react"
 import { Tagline }                        from "@/components/ui/tagline"
@@ -303,17 +303,17 @@ export default function CaseStudyTHE() {
             <FadeUp className="grid grid-cols-1 md:grid-cols-3 gap-3">
               {[
                 {
-                  icon:  <GraduationCap size={24} className="text-cyan-600 mb-4" />,
+                  icon:  <ScrollText size={24} className="text-cyan-600 mb-4" />,
                   label: "Everything lived in one long scroll",
                   desc:  "Students, academics, and institutions all came to profiles to evaluate universities. But every audience got the same undifferentiated long page — no way to jump to what they needed, and key info like rankings and fees was lost in the scroll.",
                 },
                 {
-                  icon:  <Layers size={24} className="text-cyan-600 mb-4" />,
+                  icon:  <Compass size={24} className="text-cyan-600 mb-4" />,
                   label: "No clear navigation or taxonomy",
                   desc:  "The old page had no structure to orient users. I introduced audience tabs (Overview, For Students, For Professionals), anchor navigation on desktop, and collapsible sections on mobile with the top two open by default — so users could scan and jump straight to what mattered.",
                 },
                 {
-                  icon:  <SlidersHorizontal size={24} className="text-cyan-600 mb-4" />,
+                  icon:  <LayoutTemplate size={24} className="text-cyan-600 mb-4" />,
                   label: "Real data broke every template",
                   desc:  "Institutions publish wildly uneven content. Some had rich media and rankings across six categories; others had a paragraph and one score. A fixed layout couldn't handle both without looking broken.",
                 },
