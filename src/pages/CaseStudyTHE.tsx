@@ -343,9 +343,10 @@ export default function CaseStudyTHE() {
           <div className="space-y-8">
             <FadeUp>
               <p className="text-lg text-zinc-600 leading-relaxed">
-                Instead of building another rigid template, I designed a single long-scroll page built
-                from configurable blocks, all powered by THE's DataPoints API. Pages adapt
-                automatically to uneven data using hide-when-empty rules.
+                Instead of building another rigid template, I designed a modular page of
+                configurable blocks, powered by THE's DataPoints API, with audience tabs and
+                anchor navigation. Pages adapt automatically to uneven data using
+                hide-when-empty rules.
               </p>
             </FadeUp>
 
