@@ -475,7 +475,7 @@ export default function CaseStudyDataPoints() {
           <FadeUp className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
               <p className="text-zinc-500 font-semibold text-sm mb-2">Next</p>
-              <h3 className="text-2xl font-bold text-zinc-900">GlintPay</h3>
+              <h3 className="text-2xl font-bold text-zinc-900">GlintPay App redesign</h3>
               <p className="text-zinc-600 mt-1">iOS &amp; Android end-to-end redesign</p>
             </div>
             <Button variant="ghost" size="sm" asChild className="text-zinc-500 hover:text-zinc-900 hover:bg-stone-900/5">
