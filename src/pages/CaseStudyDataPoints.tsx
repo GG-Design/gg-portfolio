@@ -13,6 +13,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Progress }          from "@/components/ui/progress"
 import { Separator }         from "@/components/ui/separator"
 import { Lightbox, useLightbox } from "@/components/Lightbox"
+import { CaseStudyMeta } from "@/components/CaseStudyMeta"
 
 function FadeUp({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   return (
@@ -75,6 +76,11 @@ function ModuleDivider() {
   return <div className="max-w-5xl mx-auto"><Separator className="bg-stone-100" /></div>
 }
 
+const clientLogo = {
+  src: "/logos/times_higher_education_logo.svg",
+  alt: "Times Higher Education",
+}
+
 export default function CaseStudyDataPoints() {
   const [scrollProgress, setScrollProgress] = useState(0)
   const [navVisible, setNavVisible] = useState(false)
@@ -122,11 +128,11 @@ export default function CaseStudyDataPoints() {
           <Link to="/"><ArrowLeft className="w-3.5 h-3.5" />Back</Link>
         </Button>
 
-        <FadeUp className="mb-6 flex flex-wrap gap-2">
+        <CaseStudyMeta clientLogo={clientLogo}>
           <Tagline lucideIcon={Briefcase} text="Principal Product Designer" />
           <Tagline lucideIcon={Clock} text="12 months" />
           <Tagline lucideIcon={Users} text="PM · Tech Lead · 3 FE · 2 BE · Data" />
-        </FadeUp>
+        </CaseStudyMeta>
 
         <FadeUp delay={0.06}>
           <h1 className="text-4xl md:text-6xl font-bold leading-none tracking-tight mb-6 text-zinc-900">

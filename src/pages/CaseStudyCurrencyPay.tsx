@@ -13,6 +13,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Progress }          from "@/components/ui/progress"
 import { Separator }         from "@/components/ui/separator"
 import { Lightbox, useLightbox } from "@/components/Lightbox"
+import { CaseStudyMeta } from "@/components/CaseStudyMeta"
 
 function FadeUp({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   return (
@@ -55,6 +56,11 @@ function PageDivider() {
   return <div className="max-w-5xl mx-auto px-6"><Separator className="bg-stone-200" /></div>
 }
 
+const clientLogo = {
+  src: "/logos/natwest-colour.png",
+  alt: "NatWest",
+}
+
 export default function CaseStudyCurrencyPay() {
   const [scrollProgress, setScrollProgress] = useState(0)
   const [navVisible, setNavVisible] = useState(false)
@@ -93,7 +99,7 @@ export default function CaseStudyCurrencyPay() {
           <Button variant="ghost" size="sm" asChild className="-ml-3 text-zinc-500 hover:text-zinc-900 hover:bg-stone-900/5">
             <Link to="/"><ArrowLeft className="w-3.5 h-3.5" />Back</Link>
           </Button>
-          <span className="absolute left-1/2 -translate-x-1/2 text-sm font-semibold text-zinc-900">NatWest CurrencyPay</span>
+          <span className="absolute left-1/2 -translate-x-1/2 text-sm font-semibold text-zinc-900">CurrencyPay KYC onboarding</span>
         </div>
       </div>
 
@@ -103,18 +109,18 @@ export default function CaseStudyCurrencyPay() {
           <Link to="/"><ArrowLeft className="w-3.5 h-3.5" />Back</Link>
         </Button>
 
-        <FadeUp className="mb-6 flex flex-wrap gap-2">
+        <CaseStudyMeta clientLogo={clientLogo}>
           <Tagline lucideIcon={Briefcase} text="Lead Product Designer" />
           <Tagline lucideIcon={Clock} text="Contract" />
           <Tagline lucideIcon={Users} text="PM · iOS · Android · Compliance" />
-        </FadeUp>
+        </CaseStudyMeta>
 
         <FadeUp delay={0.06}>
           <h1 className="text-4xl md:text-6xl font-bold leading-none tracking-tight mb-6 text-zinc-900">
-            NatWest CurrencyPay
+            CurrencyPay KYC onboarding
           </h1>
           <p className="text-xl text-zinc-600 max-w-2xl leading-relaxed">
-            Designed the end-to-end KYC onboarding flow for NatWest's CurrencyPay — a regulated FX mobile app for iOS and Android. The challenge was meeting compliance requirements without the registration experience feeling like a compliance process.
+            CurrencyPay is NatWest Markets' international payments platform for business customers. I was brought in on contract specifically to design the KYC onboarding flow: a 20-screen registration experience for iOS and Android. The challenge was meeting compliance requirements without the registration feeling like a compliance process.
           </p>
         </FadeUp>
 
@@ -347,7 +353,7 @@ export default function CaseStudyCurrencyPay() {
           <FadeUp className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
               <p className="text-zinc-500 font-semibold text-sm mb-2">Next</p>
-              <h3 className="text-2xl font-bold text-zinc-900">Hive</h3>
+              <h3 className="text-2xl font-bold text-zinc-900">Website redesign</h3>
               <p className="text-zinc-600 mt-1">Website redesign</p>
             </div>
             <Button variant="ghost" size="sm" asChild className="text-zinc-500 hover:text-zinc-900 hover:bg-stone-900/5">

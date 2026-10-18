@@ -13,6 +13,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Progress }          from "@/components/ui/progress"
 import { Separator }         from "@/components/ui/separator"
 import { Lightbox, useLightbox } from "@/components/Lightbox"
+import { CaseStudyMeta } from "@/components/CaseStudyMeta"
 
 function FadeUp({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   return (
@@ -42,6 +43,11 @@ function SectionGrid({ children }: { children: React.ReactNode }) {
 
 function PageDivider() {
   return <div className="max-w-5xl mx-auto px-6"><Separator className="bg-stone-200" /></div>
+}
+
+const clientLogo = {
+  src: "/logos/tide.svg",
+  alt: "Tide",
 }
 
 export default function CaseStudyTide() {
@@ -82,7 +88,7 @@ export default function CaseStudyTide() {
           <Button variant="ghost" size="sm" asChild className="-ml-3 text-zinc-500 hover:text-zinc-900 hover:bg-stone-900/5">
             <Link to="/"><ArrowLeft className="w-3.5 h-3.5" />Back</Link>
           </Button>
-          <span className="absolute left-1/2 -translate-x-1/2 text-sm font-semibold text-zinc-900">Tide</span>
+          <span className="absolute left-1/2 -translate-x-1/2 text-sm font-semibold text-zinc-900">Initial web app redesign</span>
         </div>
       </div>
 
@@ -92,15 +98,15 @@ export default function CaseStudyTide() {
           <Link to="/"><ArrowLeft className="w-3.5 h-3.5" />Back</Link>
         </Button>
 
-        <FadeUp className="mb-6 flex flex-wrap gap-2">
+        <CaseStudyMeta clientLogo={clientLogo}>
           <Tagline lucideIcon={Briefcase} text="Product Designer" />
           <Tagline lucideIcon={Clock}     text="Contract" />
           <Tagline lucideIcon={Users}     text="Web & Mobile" />
-        </FadeUp>
+        </CaseStudyMeta>
 
         <FadeUp delay={0.06}>
           <h1 className="text-4xl md:text-6xl font-bold leading-none tracking-tight mb-6 text-zinc-900">
-            Tide
+            Initial web app redesign
           </h1>
           <p className="text-xl text-zinc-600 max-w-2xl leading-relaxed">
             Contract work across Tide's web and mobile app — a redesigned responsive web app, bespoke non-intrusive in-app notifications, and a new login screen.

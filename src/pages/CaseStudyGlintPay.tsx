@@ -14,6 +14,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Progress }          from "@/components/ui/progress"
 import { Separator }         from "@/components/ui/separator"
 import { Lightbox, useLightbox } from "@/components/Lightbox"
+import { CaseStudyMeta } from "@/components/CaseStudyMeta"
 
 // ─── Animation wrapper ────────────────────────────────────────────────────────
 
@@ -51,12 +52,27 @@ function SectionLabel({ lucideIcon, children }: { lucideIcon?: LucideIcon; child
 
 // ─── Metric card ─────────────────────────────────────────────────────────────
 
-function StatCard({ value, label }: { value: string; label: string }) {
+function StatCard({
+  value,
+  label,
+  baseline,
+}: {
+  value: string
+  label: string
+  baseline?: string
+}) {
   return (
     <Card className="shadow-none border border-stone-200 bg-white rounded-2xl">
       <CardContent className="p-6 flex flex-col gap-2">
         <span className="text-3xl font-bold text-cyan-600 leading-none">{value}</span>
-        <span className="text-sm text-zinc-600 leading-snug">{label}</span>
+        {baseline ? (
+          <span className="flex flex-col gap-0.5">
+            <span className="text-sm text-zinc-600 leading-snug">{label}</span>
+            <span className="text-sm font-normal text-zinc-500 leading-snug">{baseline}</span>
+          </span>
+        ) : (
+          <span className="text-sm text-zinc-600 leading-snug">{label}</span>
+        )}
       </CardContent>
     </Card>
   )
@@ -83,6 +99,11 @@ function PageDivider() {
 }
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
+
+const clientLogo = {
+  src: "/logos/glint-app.png",
+  alt: "GlintPay",
+}
 
 export default function CaseStudyGlintPay() {
   const [scrollProgress, setScrollProgress] = useState(0)
@@ -152,11 +173,11 @@ export default function CaseStudyGlintPay() {
         </Button>
 
         {/* Metadata badges */}
-        <FadeUp className="mb-6 flex flex-wrap gap-2">
+        <CaseStudyMeta clientLogo={clientLogo}>
           <Tagline lucideIcon={Briefcase} text="Lead Product Designer" />
           <Tagline lucideIcon={Clock}     text="12 months" />
           <Tagline lucideIcon={Users}     text="1 PM · 1 User Researcher · 2 FE · 1 BE" />
-        </FadeUp>
+        </CaseStudyMeta>
 
         {/* Title + subtitle */}
         <FadeUp delay={0.06}>
@@ -470,8 +491,8 @@ export default function CaseStudyGlintPay() {
               <p className="text-xl font-semibold text-zinc-900 mb-3">Outcomes</p>
             </FadeUp>
             <FadeUp className="grid grid-cols-2 gap-3">
-              <StatCard value="13%" label="Increase in user retention" />
-              <StatCard value="15%" label="Increase in monthly transactions" />
+              <StatCard value="13%" label="Increase in user retention" baseline="48% → 54%" />
+              <StatCard value="15%" label="Increase in monthly transactions" baseline="12 → 13.8" />
             </FadeUp>
             <FadeUp className="grid grid-cols-1 md:grid-cols-3 gap-3">
               {[
@@ -540,7 +561,7 @@ export default function CaseStudyGlintPay() {
           <FadeUp className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
               <p className="text-zinc-500 font-semibold text-sm mb-2">Next</p>
-              <h3 className="text-2xl font-bold text-zinc-900">NatWest CurrencyPay</h3>
+              <h3 className="text-2xl font-bold text-zinc-900">CurrencyPay KYC onboarding</h3>
               <p className="text-zinc-600 mt-1">KYC onboarding — iOS &amp; Android registration flow</p>
             </div>
             <Button variant="ghost" size="sm" asChild

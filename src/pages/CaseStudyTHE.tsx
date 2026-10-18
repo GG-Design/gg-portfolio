@@ -15,6 +15,8 @@ import { Card, CardContent }              from "@/components/ui/card"
 import { Progress }                       from "@/components/ui/progress"
 import { Separator }                      from "@/components/ui/separator"
 import { Lightbox, useLightbox }          from "@/components/Lightbox"
+import { CaseStudyMeta }                  from "@/components/CaseStudyMeta"
+import { HeroVideo }                      from "@/components/HeroVideo"
 
 // ─── Animation wrapper ────────────────────────────────────────────────────────
 
@@ -63,21 +65,6 @@ function StatCard({ value, label }: { value: string; label: string }) {
 }
 
 
-/** Real image on cyan background — matches the home-page card pattern */
-function CyanImageBlock({ src, alt, onOpen }: { src: string; alt: string; onOpen: (src: string, alt: string) => void }) {
-  return (
-    <div className="bg-[#06B6D4] rounded-2xl py-16 px-20 overflow-hidden
-                    flex items-center justify-center">
-      <img
-        src={src}
-        alt={alt}
-        onClick={() => onOpen(src, alt)}
-        className="w-auto h-auto max-w-full block rounded-sm cursor-zoom-in"
-      />
-    </div>
-  )
-}
-
 /** Two-column section layout */
 function SectionGrid({ children }: { children: React.ReactNode }) {
   return (
@@ -98,10 +85,23 @@ function PageDivider() {
 
 // ─── Page ────────────────────────────────────────────────────────────────────
 
+const clientLogo = {
+  src: "/logos/times_higher_education_logo.svg",
+  alt: "Times Higher Education",
+}
+
 export default function CaseStudyTHE() {
   const [scrollProgress, setScrollProgress] = useState(0)
   const [navVisible,     setNavVisible]     = useState(false)
   const lightbox = useLightbox()
+
+  useEffect(() => {
+    const previousTitle = document.title
+    document.title = "University Profiles"
+    return () => {
+      document.title = previousTitle
+    }
+  }, [])
 
   useEffect(() => {
     const onScroll = () => {
@@ -145,7 +145,7 @@ export default function CaseStudyTHE() {
             </Link>
           </Button>
 
-          <span className="absolute left-1/2 -translate-x-1/2 text-sm font-semibold text-zinc-900">THE Profiles</span>
+          <span className="absolute left-1/2 -translate-x-1/2 text-sm font-semibold text-zinc-900">University Profiles</span>
         </div>
       </div>
 
@@ -165,16 +165,16 @@ export default function CaseStudyTHE() {
         </Button>
 
         {/* Metadata badges */}
-        <FadeUp className="mb-6 flex flex-wrap gap-2">
+        <CaseStudyMeta clientLogo={clientLogo}>
           <Tagline lucideIcon={Briefcase} text="Lead Product Designer" />
           <Tagline lucideIcon={Clock} text="9 months" />
           <Tagline lucideIcon={Users} text="PM · Tech Lead · 2 FE · 1 BE" />
-        </FadeUp>
+        </CaseStudyMeta>
 
         {/* Title + subtitle */}
         <FadeUp delay={0.06}>
           <h1 className="text-4xl md:text-6xl font-bold leading-none tracking-tight mb-6 text-zinc-900">
-            THE Profiles
+            University Profiles
           </h1>
           <p className="text-xl text-zinc-600 max-w-2xl leading-relaxed">
             Rebuilding university profile pages as a modular, scalable platform
@@ -183,13 +183,16 @@ export default function CaseStudyTHE() {
 
       </section>
 
-      {/* Hero image */}
+      {/* Hero video — same cyan frame as the previous static header */}
       <FadeUp className="max-w-5xl mx-auto px-6 pb-12">
-        <CyanImageBlock
-          src="/images/profile_header.png"
-          alt="THE Profiles — redesigned university profile overview"
-          onOpen={lightbox.open}
-        />
+        <div className="bg-[#06B6D4] rounded-2xl py-16 px-20 overflow-hidden
+                        flex items-center justify-center">
+          <HeroVideo
+            src="/videos/ranking_animation.mp4"
+            label="University Profiles — redesigned university profile overview"
+            className="aspect-[2030/1554] w-full max-w-full rounded-sm"
+          />
+        </div>
       </FadeUp>
 
       {/* Stat cards */}

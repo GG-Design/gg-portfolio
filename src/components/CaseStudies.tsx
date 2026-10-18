@@ -15,7 +15,7 @@ const cards = [
     imagePath: "/images/profiles.png",
     logo:      "/logos/times_higher_education_logo.svg" as string | null,
     badge:     "B2C · EdTech",
-    title:     "THE Profiles",
+    title:     "University Profiles",
     subline:   "23% increase in profile conversion, validated with 700+ users",
     bg:        "#ffffff",
     textColor: "#09090b",
