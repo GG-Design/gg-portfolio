@@ -152,7 +152,7 @@ export default function CaseStudyGlintPay() {
             </Link>
           </Button>
           <span className="absolute left-1/2 -translate-x-1/2 text-sm font-semibold text-zinc-900">
-            GlintPay
+            GlintPay App redesign
           </span>
         </div>
       </div>
@@ -182,7 +182,7 @@ export default function CaseStudyGlintPay() {
         {/* Title + subtitle */}
         <FadeUp delay={0.06}>
           <h1 className="text-4xl md:text-6xl font-bold leading-none tracking-tight mb-6 text-zinc-900">
-            GlintPay
+            GlintPay App redesign
           </h1>
           <p className="text-xl text-zinc-600 max-w-2xl leading-relaxed">
             Redesigned the iOS and Android apps end-to-end, making spending from gold feel
