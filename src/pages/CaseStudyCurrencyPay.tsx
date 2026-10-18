@@ -120,7 +120,7 @@ export default function CaseStudyCurrencyPay() {
             CurrencyPay KYC onboarding
           </h1>
           <p className="text-xl text-zinc-600 max-w-2xl leading-relaxed">
-            CurrencyPay is NatWest Markets' international payments platform for business customers. I was brought in on contract specifically to design the KYC onboarding flow: a 20-screen registration experience for iOS and Android. The challenge was meeting compliance requirements without the registration feeling like a compliance process.
+            CurrencyPay is NatWest Markets' international payments platform for business customers. I was brought in on contract specifically to design the KYC onboarding flow: a registration experience for iOS and Android. The challenge was meeting compliance requirements without the registration feeling like a compliance process.
           </p>
         </FadeUp>
 
@@ -150,8 +150,7 @@ export default function CaseStudyCurrencyPay() {
         </div>
       </FadeUp>
 
-      <FadeUp delay={0.06} className="max-w-5xl mx-auto px-6 pb-20 grid grid-cols-2 md:grid-cols-4 gap-3">
-        <StatCard value="20"    label="Screens across the full registration flow" />
+      <FadeUp delay={0.06} className="max-w-5xl mx-auto px-6 pb-20 grid grid-cols-1 md:grid-cols-3 gap-3">
         <StatCard value="2"     label="Platforms: iOS and Android" />
         <StatCard value="3"     label="Competitors audited: Revolut, TransferWise, Monzo" />
         <StatCard value="Jumio" label="Identity verification provider integrated into the flow" />
@@ -250,7 +249,7 @@ export default function CaseStudyCurrencyPay() {
           <div className="space-y-8">
             <FadeUp>
               <p className="text-lg text-zinc-600 leading-relaxed">
-                A 20-screen progressive registration flow modelled on Monzo's one-ask-per-screen principle. Each permission request was framed around user benefit, not legal obligation. The Jumio identity capture step was wrapped in native UI so it felt continuous rather than like a third-party handoff.
+                A progressive registration flow modelled on Monzo's one-ask-per-screen principle. Each permission request was framed around user benefit, not legal obligation. The Jumio identity capture step was wrapped in native UI so it felt continuous rather than like a third-party handoff.
               </p>
             </FadeUp>
 
